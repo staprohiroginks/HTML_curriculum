@@ -1,0 +1,79 @@
+body{
+    width: 1080px;
+    margin: 0 auto;
+}
+
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header ul{
+    width: 540px;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+header li{
+    color: black;
+    list-style:none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+header a{
+    text-decoration: none;
+}
+
+header li:hover{
+    opacity: 0.4;
+}
+
+.profile{
+    height: 370px;
+    display: flex;
+    background-color: beige;
+}
+
+.profile p,.profile h2{
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.games{
+    display: flex;
+    justify-content: space-between;
+}
+
+.game{
+    width: 300px;
+}
+
+.study-main table th{
+    border: 1px solid black;
+    width: 360px;
+    height: 50px;
+}
+
+.study-main table td{
+    border: 1px solid black;
+    height: 80px;
+}
+
+.dream-main p{
+    font-size: 20px;
+}
+
+.dream-main img{
+    float: right;
+}
+
+footer{
+    margin-top: 20px;
+    background-color: antiquewhite;
+    text-align: center;
+}
