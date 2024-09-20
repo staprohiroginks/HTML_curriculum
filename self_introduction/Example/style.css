@@ -1,0 +1,84 @@
+body{
+    width: 1080px;
+    margin: 0 auto;
+}
+
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+header li{
+    color: black;
+    margin-left: 60px;
+    list-style:none;
+    float: left;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+header li:hover{
+    opacity: 0.4;
+}
+
+main{
+    height: 370px;
+    display: flex;
+    background-color: beige;
+}
+
+.intro-main,.study-main,.dream-main{
+    height: 370px;
+    background-color: beige;
+}
+
+
+main p,main h2{
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+footer{
+    margin-top: 20px;
+    background-color: antiquewhite;
+    text-align: center;
+}
+
+.intro-main{
+    display: flex;
+    justify-content: space-between;
+}
+
+.intro-main h2{
+    margin-top: -1px;
+    text-align: center;
+}
+
+
+.study-main table th{
+    border: 1px solid black;
+    width: 400px;
+    height: 50px;
+}
+
+.study-main table td{
+    border: 1px solid black;
+    height: 80px;
+}
+
+.dream-main img{
+    float: right;
+    margin-top: 20px;
+    margin-right: 50px;
+}
+
+.dream-main p{
+    font-size: 20px;
+}
+
+.dream-main h2{
+    text-align: left;
+}
