@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>03.画像と埋め込み</title>
+        <link rel="stylesheet" href="00. カリキュラム用style.css">
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="画像と埋め込み">画像と埋め込み</h1>
+<p>サイトに画像やScratchの作品を表示させよう！</p>
+<h2 id="画像を表示しよう">画像を表示しよう</h2>
+<p>画像を表示させるためには<strong>imgタグ</strong>を使います。</p>
+<img src="img\03_img.png" width="700px">
+<ul>
+    <li>src(ソース属性と呼びます)：画像ファイル名（参照先）を指定します。</li>
+    <li>alt(オルト属性と呼びます)：インターネットに繋がらないなど、画像が読み込めなかった時に表示する文字を決めます。</li>
+</ul>
+<p>画像ファイルをHTMLファイルと同じ階層にコピーして、画像ファイルの名前を指定することで画像を表示しましょう。</p>
+<img src="img\03_folder1.png" alt="フォルダ1" title="フォルダ1" width="150px">
+<blockquote>
+<p>例</p>
+</blockquote>
+<pre><code class="language-html"><span>&lt;<span class="vs-blue">img</span> <span class="vs-skyblue">src</span>=<span class="vs-red">"cat.jpg"</span> <span class="vs-skyblue">alt</span>=<span class="vs-red">"ネコ"</span>&gt;</span>
+</code></pre>
+<blockquote>
+<p>実行結果1</p>
+</blockquote>
+<p><img src="img\cat.jpg" alt="ネコ" title="ネコ"></p>
+<blockquote>
+<p>実行結果2</p>
+</blockquote>
+<p><img src="img\meow.jpg" alt="ネコ" title="ネコ"><br>
+ファイル名が間違っていた場合などは、このようにかわりのテキスト(alt属性に書いた文字)が表示されます。</p>
+<hr>
+<h2 id="画像を表示しよう">画像を相対パスで表示しよう</h2>
+<p>
+    先程は画像ファイルの名前を用いて表示しましたが、次は<strong>相対パス</strong>を用いて表示します。
+    <br><strong>相対パス</strong>とは、現在編集しているファイルからみた、引用したいファイルまでのリンクのようなものです。
+    <br>同じように、階層の一番上からみた引用したいファイルまでのリンクである<strong>（絶対）パス</strong>もありますが、
+    <br>短く簡潔にコードを書くために<strong>相対パス</strong>を使用します。
+    <br>imgフォルダを作り、その中に画像ファイル入れて、相対パスを指定することで画像を表示します。
+</p>
+<img src="img\03_folder2.png" alt="フォルダ1" title="フォルダ1" width="350px">
+<blockquote>
+<p>例</p>
+</blockquote>
+<pre><code class="language-html"><span>&lt;<span class="vs-blue">img</span> <span class="vs-skyblue">src</span>=<span class="vs-red">"./img/cat.jpg"</span> <span class="vs-skyblue">alt</span>=<span class="vs-red">"ネコ"</span>&gt;</span>
+</code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<p><img src=".\img\cat.jpg" alt="ネコ" title="ネコ"></p>
+<p>
+    相対パスの先頭の<strong class="vs-red">"./"</strong>は省略して書くことも出来ますが、<strong class="vs-red">"./"</strong>をつけると、相対パスであることが明確になります。
+    <br>基本的にはつけてコードを書くようにしましょう。
+    <br>
+    <br>相対パスを使うと、画像を同じ階層にコピーしなくても、別のフォルダからそのまま引用できるのでとても便利です。
+    <br>必ず覚えておきましょう！
+</p>
+<hr>
+<h2 id="scratchの作品を表示しよう">Scratchの作品を表示しよう</h2>
+<p>Scratchの作品を表示するための手順を説明します。</p>
+<!-- <p>そして紹介したい作品を選びます。</p> -->
+<!-- <blockquote>
+<p>videoタグの使い方</p>
+</blockquote> -->
+<h4 id="1-まずはスクラッチの作品を選ぼう">(1) まずはスクラッチの作品を選ぼう</h4>
+<p>Scratchの作品を表示させるために、まず<a href="https://scratch.mit.edu/" target="_blank">Scratchのサイト</a>を開きます。<br>
+そして紹介したい作品を選びましょう。</p>
+<h4 id="2-埋め込みコードをコピーしよう">(2) 埋め込みコードをコピーしよう</h4>
+<p>まず、紹介したい作品の<strong>リンクをコピー</strong>をクリックします。</p>
+<img src="img\03_scratch_1.png" width="600px">
+<br>
+<p>すると、リンクと埋め込みコードが表示されます。<br>
+埋め込みコードをコピーしましょう！</p>
+<img src="img\03_scratch_2.png" width="600px">
+<h4 id="3-htmlファイルに貼り付けよう">(3) HTMLファイルに貼り付けよう</h4>
+<p>コピーした埋め込みコードをhtmlファイルに貼り付けましょう。</p>
+<blockquote>
+<p>例</p>
+</blockquote>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://scratch.mit.edu/projects/661212606/embed&quot;</span> <span class="hljs-attr">allowtransparency</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;485&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;402&quot;</span> <span class="hljs-attr">frameborder</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">scrolling</span>=<span class="hljs-string">&quot;no&quot;</span> <span class="hljs-attr">allowfullscreen</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span>
+</code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<iframe src="https://scratch.mit.edu/projects/661212606/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+<p>これで、Scratchの作品を表示することができました！</p>
+<hr>
+<h2 id="練習問題">練習問題</h2>
+<p>
+    imgタグを使って画像を表示させてみよう！(画像は何でもOKです)
+    <br>また、Scratchで自分が作った作品を表示させてみよう！
+    <br>（見本は<a href="お手本（メンターのみ共有するもの）\00_03. お手本.html" target="_blank">こちら</a>）
+</p>
+<hr>
+<h2>解説動画</h2>
+    <p>カリキュラム解説</p>
+    <iframe width="1000" height="600" src="https://www.youtube.com/embed/mYScCPzir4M?si=gSUP5hd3JT6vWo26" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p>練習問題解説</p>
+    <iframe width="1000" height="600" src="https://www.youtube.com/embed/r3SyYMSjD64?si=MlQdrVlOkyQTV2G3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</body>
+    </html>

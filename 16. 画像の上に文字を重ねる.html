@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>16. 画像の上に文字を重ねる</title>
+    <link rel="stylesheet" href="00. カリキュラム用style.css">
+</head>
+<body class="vscode-body vscode-light">
+<h1 id="テーブル">画像の上に文字を重ねる</h1>
+<p>
+    このように画像の上に文字を重ねたい場合、positionプロパティとz-indexプロパティを使います。
+</p>
+<img src="img\16_practice.png" alt="practice" width="500px">
+<h2>positionプロパティ</h2>
+<p>
+    positionプロパティは、配置する方法を指定します。
+    <br>配置の指定方法は「relative（相対位置）」と「absolute（絶対位置）」の2種類があります。
+    <br>positionプロパティを使用したら、加えてtop、left、right、およびbottomなどのプロパティで
+    <br>配置する距離の長さを指定します。
+    <br>まずは画像と文字を準備しましょう。
+</p>
+<blockquote>
+<p>index.html</p>
+</blockquote>
+<pre><code><div><span>&lt;<span class="vs-blue">body</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">div</span> <span class="vs-skyblue">class</span>=<span class="vs-red">"box"</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">div</span> <span class="vs-skyblue">class</span>=<span class="vs-red">"image"</span>&gt;</span>
+            <span>&lt;<span class="vs-blue">img</span> <span class="vs-skyblue">src</span>=<span class="vs-red">"cat.jpg"</span> <span class="vs-skyblue">alt</span>=<span class="vs-red">"cat"</span>&gt;</span>
+        <span>&lt;/<span class="vs-blue">div</span>&gt;</span>
+
+        <span>&lt;<span class="vs-blue">div</span> <span class="vs-skyblue">class</span>=<span class="vs-red">"text"</span>&gt;</span>
+            <span>&lt;<span class="vs-blue">p</span>&gt;</span>ここにテキストを記入します。<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+        <span>&lt;/<span class="vs-blue">div</span>&gt;</span>
+    <span>&lt;/<span class="vs-blue">div</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">body</span>&gt;</span></div></code></pre>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre><code><div><span class="vs-orange">.text {</span></span>
+    <span class="vs-skyblue">width</span>: <span class="vs-green">250px</span>;</span>
+    <span class="vs-skyblue">height</span>: <span class="vs-green">50px</span>;</span>
+    <span class="vs-skyblue">border</span>: <span class="vs-red">solid <span class="vs-green">2px</span> red</span>;</span>
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\16_normal.png" alt="通常の位置" border="1" width="300px">
+<p>
+    続いて画像と文字をまとめて移動させましょう。
+    <br>このとき、親要素であるboxクラスの位置をrelative（相対位置）で指定します。
+    <br>boxクラスに関して、以下のコードを新たに書き加えます。
+</p>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre><code><div><span class="vs-orange">.box {</span></span>
+    <span class="vs-skyblue">position</span>: <span class="vs-red">relative</span>;</span>
+    <span class="vs-skyblue">top</span>: <span class="vs-green">50px</span>;</span>
+    <span class="vs-skyblue">left</span>: <span class="vs-green">100px</span>;</span>
+    <span class="vs-skyblue">width</span>: <span class="vs-green">520px</span>;</span>
+<span class="vs-orange">}</span>
+<span class="vs-orange">img {</span></span>
+    <span class="vs-skyblue">width</span>: <span class="vs-green">100%</span>;</span>
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\16_relative.png" alt="relativeを適用した位置" border="1" width="300px">
+<p>
+    画像の位置を指定することができました！
+    <br>この場合『本来表示される箇所を基準として、上から50px、左から100px離れた位置』と指定しています。
+    <br>次は親要素であるboxクラスの中で、子要素である文字の位置をabsolute（絶対位置）で指定します。
+    <br>textクラスに関して、以下のコードに書き換えます。
+</p>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre><code><div><span class="vs-orange">.text {</span></span>
+    <span class="vs-skyblue">width</span>: <span class="vs-green">250px</span>;</span>
+    <span class="vs-skyblue">height</span>: <span class="vs-green">50px</span>;</span>
+    <span class="vs-skyblue">border</span>: <span class="vs-red">solid <span class="vs-green">2px</span> red</span>;</span>
+    <span class="vs-skyblue">position</span>: <span class="vs-red">absolute</span>;</span>
+    <span class="vs-skyblue">top</span>: <span class="vs-green">150px</span>;</span>
+    <span class="vs-skyblue">left</span>: <span class="vs-green">50px</span>;</span>
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\16_absolute.png" alt="absoluteを適用した位置" border="1" width="300px">
+<p>
+    文字の位置を指定することができました！
+    <br>この場合『親要素（今回だとbox）の左上を基準として、上から150px、左から50px離れた位置』と指定しています。
+    <br>親要素の右や下を基準にすることもできます。
+</p>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre><code><div><span class="vs-orange">.text {</span></span>
+    <span class="vs-skyblue">width</span>: <span class="vs-green">250px</span>;</span>
+    <span class="vs-skyblue">height</span>: <span class="vs-green">50px</span>;</span>
+    <span class="vs-skyblue">border</span>: <span class="vs-red">solid <span class="vs-green">2px</span> red</span>;</span>
+    <span class="vs-skyblue">position</span>: <span class="vs-red">absolute</span>;</span>
+    <span class="vs-skyblue">bottom</span>: <span class="vs-green">20px</span>;</span>
+    <span class="vs-skyblue">right</span>: <span class="vs-green">0px</span>;</span>
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\16_absolute2.png" alt="absoluteを適用した位置" border="1" width="300px">
+<p>
+    この場合『親要素の右下を基準として、下から20px、右から0px離れた位置』と指定しています。
+</p>
+<hr>
+<h2>z-indexプロパティ</h2>
+<p>
+z-indexプロパティは重なり方を指定します。
+<br>値は正の整数または負の整数で指定することができ、数値が大きいものをより手前に表示します。
+<br>まずは下記のように3つのボックスをabsolute（絶対配置）で重ねてみます。
+<blockquote>
+<p>index.html</p>
+</blockquote>
+<pre><code><div><span>&lt;<span class="vs-blue">body</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">div</span> <span class="vs-skyblue">class</span>=<span class="vs-red">"box1"</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">p</span>&gt;</span>ボックス1<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+    <span>&lt;/<span class="vs-blue">div</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">div</span> <span class="vs-skyblue">class</span>=<span class="vs-red">"box2"</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">p</span>&gt;</span>ボックス2<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+    <span>&lt;/<span class="vs-blue">div</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">div</span> <span class="vs-skyblue">class</span>=<span class="vs-red">"box3"</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">p</span>&gt;</span>ボックス3<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+    <span>&lt;/<span class="vs-blue">div</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">body</span>&gt;</span></div></code></pre>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre><code><div><span class="vs-orange">.box1 {</span></span>
+    <span class="vs-skyblue">background-color</span>: <span class="vs-red">#faa3a3</span>;</span>
+    <span class="vs-skyblue">width</span>: <span class="vs-green">200px</span>;</span>
+    <span class="vs-skyblue">height</span>: <span class="vs-green">200px</span>;</span>
+    <span class="vs-skyblue">position</span>: <span class="vs-red">absolute</span>;</span>
+<span class="vs-orange">}</span>
+<span class="vs-orange">.box2 {</span></span>
+    <span class="vs-skyblue">background-color</span>: <span class="vs-red">#afc9f1</span>;</span>
+    <span class="vs-skyblue">width</span>: <span class="vs-green">200px</span>;</span>
+    <span class="vs-skyblue">height</span>: <span class="vs-green">200px</span>;</span>
+    <span class="vs-skyblue">position</span>: <span class="vs-red">absolute</span>;</span>
+    <span class="vs-skyblue">top</span>: <span class="vs-green">50px</span>;</span>
+    <span class="vs-skyblue">left</span>: <span class="vs-green">50px</span>;</span>
+<span class="vs-orange">}</span>
+<span class="vs-orange">.box3 {</span></span>
+    <span class="vs-skyblue">background-color</span>: <span class="vs-red">#bcf3b1</span>;</span>
+    <span class="vs-skyblue">width</span>: <span class="vs-green">200px</span>;</span>
+    <span class="vs-skyblue">height</span>: <span class="vs-green">200px</span>;</span>
+    <span class="vs-skyblue">position</span>: <span class="vs-red">absolute</span>;</span>
+    <span class="vs-skyblue">top</span>: <span class="vs-green">100px</span>;</span>
+    <span class="vs-skyblue">left</span>: <span class="vs-green">100px</span>;</span>
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\16_z-indexA.png" alt="z-index変更前" width="200px">
+<p>
+    次に重なり順を変更してみます。
+    <br>先程は緑のboxが一番上、青のboxが真ん中、赤のboxが一番下にありましたが、その重なり順をz-indexを使って逆にしてみます。
+    <br>それぞれのクラスに以下のコードを追加しましょう。
+</p>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre><code><div><span class="vs-orange">.box1 {</span></span>
+    <span class="vs-skyblue">z-index</span>: <span class="vs-green">3</span>;</span>
+<span class="vs-orange">}</span>
+<span class="vs-orange">.box2 {</span></span>
+    <span class="vs-skyblue">z-index</span>: <span class="vs-green">2</span>;</span>
+<span class="vs-orange">}</span>
+<span class="vs-orange">.box3 {</span></span>
+    <span class="vs-skyblue">z-index</span>: <span class="vs-green">1</span>;</span>
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\16_z-indexB.png" alt="z-index変更前" width="200px">
+<p>
+    このようにz-indexを上手く使うことで、要素の重なり順を変更することが出来ます！
+</p>
+<hr>
+<h2>背景画像の差し込み</h2>
+<p>
+    画像を入れる方法として、htmlファイルから読み込む方法とcssファイルから読み込む方法があります。
+    <br>今まではHTMLファイルに<b>img</b>タグで画像を指定していましたが、今度はCSSファイルにURLで指定します。
+    <br>今回はcssフォルダとimgフォルダを作成し、相対パスを用いて指定しましょう。
+    <br>まずは以下のように、2つのフォルダにそれぞれcssファイルと画像を入れます。
+</p>
+<img src="img\16_folder.png" alt="フォルダ" width="300px">
+<p>
+    次に、HTMLファイルとcssファイルのコードを以下のように書き換えましょう。
+    <br>cssファイルではbackground-imageプロパティでURLを指定しています。
+    <br>今回のURL指定では、imgフォルダを指定する前に「カリキュラム16のフォルダに戻る」作業をします。
+    <br>つまり<strong class="vs-skyblue">階層を1つ上に移動する</strong>ため、URLの先頭に<strong class="vs-skyblue">"../"</strong>が付きます。
+</p>
+<blockquote>
+<p>index.html</p>
+</blockquote>
+<pre><code><div><span>&lt;<span class="vs-blue">head</span>&gt;</span>
+    <span class="vs-gray">---省略---</span>
+    <span>&lt;<span class="vs-blue">link</span> <span class="vs-skyblue">rel</span>=<span class="vs-red">"stylesheet"</span> <span class="vs-skyblue">href</span>=<span class="vs-red">"css/style.css"</span>&gt;</span></span> 
+<span>&lt;/<span class="vs-blue">head</span>&gt;</span>
+<span>&lt;<span class="vs-blue">body</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">p</span>&gt;</span>ここにテキストを記入します。<span>&lt;<span class="vs-blue">p</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">body</span>&gt;</span>
+</div></code></pre>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre class="hljs"><code><div><span class="vs-orange">body {</span>
+    <span class="vs-skyblue">background-image</span>:<span class="vs-green"> url</span><span class="vs-pink">(<span class="vs-skyblue">../img/cat.jpg</span>)</span>;
+<span class="vs-orange">}</span>
+<span class="vs-orange">p {</span>
+    <span class="vs-skyblue">color</span>:<span class="vs-red"> red</span>;
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行例</p>
+</blockquote>
+<img src="img\16_back.png" alt="back" width="500px">
+<p>
+    背景画像が文章の裏側に表示されました！
+    <br>初期状態では、背景画像が範囲いっぱいに繰り返し表示されるようになっています。
+    <br>次は、繰り返し画像が表示されないようにするため，background-repeatプロパティを追加します。
+</p>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre class="hljs"><code><div><span class="vs-orange">body {</span>
+    <span class="vs-skyblue">background-image</span>:<span class="vs-green"> url</span><span class="vs-pink">(<span class="vs-skyblue">../img/cat.jpg</span>)</span>;
+    <span class="vs-skyblue">background-repeat</span>:<span class="vs-red"> no-repeat</span>;
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行例</p>
+</blockquote>
+<img src="img\16_back_no.png" alt="back_no" border="1" width="500px">
+<p>
+    背景画像が1枚のみになりました！
+    <br>背景画像の繰り返しは、このほかに以下のような指定方法があります。
+</p>
+<table border="1" style="text-align:center">
+    <tr>
+        <th>値の種類<br><code><span class="vs-gray"><span class="vs-skyblue">background-repeat</span>:<span class="vs-red">〇〇</span>;</span></code></th>
+        <th>効果</th>
+        <th>例</th>
+    </tr>
+    <tr>
+        <td><code><span class="vs-red">repeat</span></code></td>
+        <td><p>繰り返し表示</p></td>
+        <td><img src="img\16_back.png" alt="16_back" width="200px" style="display: block;"></td>
+    </tr>
+    <tr>
+        <td><code><span class="vs-red">no-repeat</span></code></td>
+        <td><p>繰り返さずに表示</p></td>
+        <td><img src="img\16_back_no.png" alt="16_back_no" width="200px" style="display: block;"></td>
+    </tr>
+    <tr>
+        <td><code><span class="vs-red">repeat-x</span></code></td>
+        <td><p>x方向のみ繰り返し表示</p></td>
+        <td><img src="img\16_back_x.png" alt="16_back_x" width="200px" style="display: block;"></td>
+    </tr>
+    <tr>
+        <td><code><span class="vs-red">repeat-y</span></code></td>
+        <td><p>y方向のみ繰り返し表示</p></td>
+        <td><img src="img\16_back_y.png" alt="16_back_y" width="200px" style="display: block;"></td>
+    </tr>
+</table>
+<p>
+    次に、背景画像の位置を指定するため，background-positionプロパティを追加します。
+    <br>「background-position: 水平方向 垂直方向」を指定します。
+</p>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre class="hljs"><code><div><span class="vs-orange">body {</span>
+    <span class="vs-skyblue">background-image</span>:<span class="vs-green"> url</span><span class="vs-pink">(<span class="vs-skyblue">../img/cat.jpg</span>)</span>;
+    <span class="vs-skyblue">background-repeat</span>:<span class="vs-red"> no-repeat</span>;
+    <span class="vs-skyblue">background-position</span>:<span class="vs-red"> right top</span>;
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行例</p>
+</blockquote>
+<img src="img\16_back_right.png" alt="back_right" border="1" width="500px">
+<p>
+    背景画像が右端かつ上端に配置されました！
+    <br>背景画像の位置は、このほかに以下のような指定方法があります。
+</p>
+<table border="1" style="text-align:center">
+    <tr>
+        <th colspan="5">値の種類<br><code><span class="vs-gray"><span class="vs-skyblue">background-position</span>:<span class="vs-red">水平 垂直</span>;</span></code></th>
+    </tr>
+    <tr>
+        <th><code><span class="vs-red">水平</span></code></th>
+        <th>効果</th>
+        <th rowspan="8" width="10px"></th>
+        <th><code><span class="vs-red">垂直</span></code></th>
+        <th>効果</th>
+    </tr>
+    <tr>
+        <td><code><span class="vs-red">left</span></code></td>
+        <td><p>左端</p></td>
+        <td><code><span class="vs-red">top</span></code></td>
+        <td><p>上端</p></td>
+    </tr>
+    <tr>
+        <td><code><span class="vs-red">center</span></code></td>
+        <td><p>中央</p></td>
+        <td><code><span class="vs-red">middle</span></code></td>
+        <td><p>中央</p></td>
+    </tr>
+    <tr>
+        <td><code><span class="vs-red">right</span></code></td>
+        <td><p>右端</p></td>
+        <td><code><span class="vs-red">bottom</span></code></td>
+        <td><p>下端</p></td>
+    </tr>
+    <tr>
+        <td>
+            <code>
+                <span class="vs-red">left&emsp;&emsp;&emsp;</span><br>
+                <span class="vs-red">center </span><span class="vs-green">10px</span><br>
+                <span class="vs-red">right&emsp;&emsp;&emsp;&emsp;</span>
+            </code>
+        </td>
+        <td>
+            <p>左端から&emsp;&emsp;&emsp;<br>中央から&ensp;10px<br>右端から&emsp;&emsp;&emsp;</p>
+        </td>
+        <td>
+            <code>
+                <span class="vs-red">top&emsp;&emsp;&emsp;</span><br>
+                <span class="vs-red">center </span><span class="vs-green">10px</span><br>
+                <span class="vs-red">bottom&emsp;&emsp;&emsp;&emsp;</span>
+            </code>
+        </td>
+        <td>
+            <p>上端から&emsp;&emsp;&emsp;<br>中央から&ensp;10px<br>下端から&emsp;&emsp;&emsp;</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <code>
+                <span class="vs-red">left&emsp;&emsp;&emsp;</span><br>
+                <span class="vs-red">center </span><span class="vs-green">10%</span><br>
+                <span class="vs-red">right&emsp;&emsp;&emsp;&emsp;</span>
+            </code>
+        </td>
+        <td style="text-align: left;">
+            <p>左端から<br>中央から&ensp;画面全体に対して10%<br>右端から</p>
+        </td>
+        <td>
+            <code>
+                <span class="vs-red">top&emsp;&emsp;&emsp;</span><br>
+                <span class="vs-red">center </span><span class="vs-green">10%</span><br>
+                <span class="vs-red">bottom&emsp;&emsp;&emsp;&emsp;</span>
+            </code>
+        </td>
+        <td style="text-align: left;">
+            <p>上端から<br>中央から&ensp;画面全体に対して10%<br>下端から</p>
+        </td>
+    </tr>
+</table>
+<hr>
+<h2>練習問題</h2>
+<p>
+    以下の画像と同じようなページを作ってみましょう。
+    <br>（見本は<a href="お手本（メンターのみ共有するもの）\00_16. お手本.html" target="_blank">こちら</a>）
+    <br>見出しはh1タグで、上から10px、左から10pxの位置にしてください。
+    <br>文章はpタグで幅480pxにし、下から10px、左から30pxの位置にしてください。
+    <br>また、<a href="14. hover.html" target="_blank">カリキュラム14. hover</a>の復習もかねて、画像に<span style="text-decoration: underline;">マウスをかざしたら</span>画像が半透明になるようにしてください。
+    <br>（すべての画像や文章を含むクラスを作成し、そのクラスに対して透明度を0.5にして下さい。）
+    <br><img src="img\16_practice.png" alt="practice" border="1" width="400px">
+</p>
+<hr>
+<h2>解説動画</h2>
+    <p>カリキュラム解説</p>
+    <iframe width="1000" height="600" src="https://www.youtube.com/embed/Tt7h0vaBFf4?si=w7EptQtqdXT17D8e" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p>練習問題解説</p>
+    <iframe width="1000" height="600" src="https://www.youtube.com/embed/hLCjEWTBBoU?si=55UEMAsI-z2Fc-pJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</body>
+</html>

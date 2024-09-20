@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>10. ボタン</title>
+    <link rel="stylesheet" href="00. カリキュラム用style.css">
+</head>
+<body class="vscode-body vscode-light">
+<h1 id="テーブル">ボタン</h1>
+<p>
+    ボタンは、ウェブページ上でユーザーがクリックできる要素で、様々なアクションを実行するために使われます。
+    <br>早速ボタンの作成を行いましょう！
+</p>
+<h2>基本的なボタンの作成</h2>
+<p>
+    まずは文字を含まないボタンを作ってみましょう。
+    <br>ボタンを作るには、フォームと同じように <strong class="vs-blue">input</strong>（インプット）タグを使用します。
+    <!-- <br>入力形式は <strong>type</strong>（タイプ）属性で、枠の横幅は <strong>size</strong>（サイズ）属性で指定します。 -->
+</p>
+<blockquote>
+<p>例）</p>
+</blockquote>
+<pre><code><div><span>&lt;<span class="vs-blue">input</span> <span class="vs-skyblue">type</span>=<span class="vs-red">"button"</span>&gt;</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<input type="button">  
+<p>
+    試しにクリックしてみましょう！ボタンの色が変化すれば正解です。
+    <br>次に、ボタンの中に文字を入れてみましょう。
+</p>
+<blockquote>
+<p>例）</p>
+</blockquote>
+<pre><code><div><span>&lt;<span class="vs-blue">input</span> <span class="vs-skyblue">type</span>=<span class="vs-red">"button"</span> <span class="vs-skyblue">value</span>=<span class="vs-red">"ボタン"</span>&gt;</span></div></code></pre>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<input type="button" value="ボタン">  
+<p>
+    ボタンに文字を入れることが出来ました！
+    <br>実は<strong class="vs-blue">button</strong>タグでも同じことが出来ます
+</p>
+<blockquote>
+<p>例）</p>
+</blockquote>
+<pre><code><div><span>&lt;<span class="vs-blue">button</span>&gt;</span>ボタン<span>&lt;/<span class="vs-blue">button</span>&gt;</span></div></code></pre>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<button>ボタン</button>  
+<p>
+    この<strong class="vs-blue">button</strong>タグは<strong class="vs-blue">input</strong>タグの上位互換です。
+    <br>ボタンを作るときは、基本的には<strong class="vs-blue">button</strong>タグを使用するので、こちらで覚えましょう。
+    <!-- https://zenn.dev/luvmini511/articles/58c1a66a42207b -->
+</p>
+<hr>
+<!-- <h2>画像ボタンの作成</h2>
+<p>
+    ボタンに画像を埋め込んで、ボタンの表示を変えてみましょう。
+    <br>画像については<a href="03. 画像と埋め込み.html" target="_blank">カリキュラム3</a>を復習しましょう。
+</p>
+<blockquote>
+<p>例）</p>
+</blockquote>
+<pre><code><div><span>&lt;<span class="vs-blue">input</span> <span class="vs-skyblue">type</span>=<span class="vs-red">"image"</span> <span class="vs-skyblue">src</span>=<span class="vs-red">"img\cat.jpg"</span> <span class="vs-skyblue">width</span>=<span class="vs-red">"100px"</span> <span class="vs-skyblue">alt</span>=<span class="vs-red">"ボタン"</span>&gt;</span></div></code></pre>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<input type="image" src="img\cat.jpg" width=100px alt="ボタン">
+<p>
+    試しにクリックしてみましょう！
+    画像の枠が黒色に変わったら、ボタンとして反応できています。の色が変化すれば正解です。
+</p>
+<hr> -->
+<h2>ボタンの種類</h2>
+<p>
+    <strong class="vs-blue">button</strong>タグや<strong class="vs-blue">input</strong>タグに<strong class="vs-skyblue">type</strong>（タイプ）属性を加えることで、様々なボタンをつくることができます。
+</p>
+<table border="1" style="text-align:center;">
+    <tr>
+        <th><strong>type</strong>属性の値<br><code><span class="vs-gray">&lt;<span class="vs-blue">input</span> <span class="vs-skyblue">type</span>=<span class="vs-red">"〇〇"</span>&gt;</span></code></th>
+        <th>内容</th>
+        <th>表示例</th>
+    </tr>
+    <tr>
+        <td><code><span class="vs-red">"submit"</span></code></td>
+        <th>提出（送信）</th>
+        <td>
+            <button type="submit">送信ボタン</button>
+        </td>
+    </tr>
+    <tr>
+        <td><code><span class="vs-red">"reset"</span></code></td>
+        <th>入力内容の消去</th>
+        <td>
+            <form>
+                <input type="text" size="10"> 
+                <button type="reset">リセット</button>
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <td><code><span class="vs-red">"file"</span></code></td>
+        <th>ファイルのアップロード</th>
+        <td>
+            <input type="file" value="ファイル選択">
+        </td>
+    </tr>
+</table>
+
+<p>
+    リセットボタンは、<strong class="vs-blue">input</strong>タグと<strong class="vs-blue">button</strong>タグをまとめて<strong class="vs-blue">form</strong>タグで囲むことで有効にします。
+</p>
+<blockquote>
+<p>例）</p>
+</blockquote>
+<pre><code><div><span>&lt;<span class="vs-blue">form</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">input</span> <span class="vs-skyblue">type</span>=<span class="vs-red">"text"</span> <span class="vs-skyblue">size</span>=<span class="vs-red">"20"</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">button</span> <span class="vs-skyblue">type</span>=<span class="vs-red">"reset"</span>&gt;リセット<span>&lt;/<span class="vs-blue">button</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">form</span>&gt;</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<form>
+    <input type="text" size="20"> 
+    <button type="reset">リセット</button>
+</form>
+<!-- <p>
+    ボタンに文字を入れることが出来ました！
+    <br>実は<strong class="vs-blue">button</strong>タグでも同じことが出来ます
+</p> -->
+<!-- 図形を中に入れる -->
+<!-- https://developer.mozilla.org/ja/docs/Web/HTML/Element/button -->
+<!-- https://www.sejuku.net/blog/82466 -->
+<!-- <p><input type="image" src="button.gif" alt="送信ボタン"></p> -->
+
+<hr>
+<h2>練習問題</h2>
+<p>
+    <a href="09. フォーム.html" target="_blank">カリキュラム09. フォーム</a>の復習もかねて、以下のファイル送信フォームを作ってみましょう。
+    <br>（見本は<a href="お手本（メンターのみ共有するもの）\00_10. お手本.html" target="_blank">こちら</a>）
+    <br>文字は15pxにしてください。
+    <br>ログインIDとパスワードはリセットボタンを押すと消去できるようにしてください。
+    <br>パスワードは黒丸で表示されるようにしてください。
+    <br><img src="img\10_practice.png" alt="practice" border="1">
+</p>
+<hr>
+<h2>解説動画</h2>
+    <p>カリキュラム解説</p>
+    <iframe width="1000" height="600" src="https://www.youtube.com/embed/W2jElTNXKzY?si=qL5cYgwH_HocFiqq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p>練習問題解説</p>
+    <iframe width="1000" height="600" src="https://www.youtube.com/embed/4qnB6PYdlBs?si=1Pp7SzDA1-TFzcw5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>14. hover</title>
+    <link rel="stylesheet" href="00. カリキュラム用style.css">
+</head>
+<body class="vscode-body vscode-light">
+<h1 id="テーブル">hover</h1>
+<p>
+    <code><b class="vs-orange">hover</b></code>は「マウスをかざしたとき」を指定する疑似クラスの一つです。
+    <br>疑似クラスと似たもので疑似要素というものもあります。
+</p>
+<h2>"疑似（ぎじ）"とは？</h2>
+<p>
+    ここでいう疑似とは「実際のHTMLコードには存在しない仮想的なもの」という意味合いで使われます。
+    <br>疑似クラス：マウスをかざしたときやクリックしたときなど、特定の動作が行われている状態のみ適用するセレクタ
+    <br>疑似要素  ：HTMLコードで指定していない範囲を変更したり、存在していない要素を挿入したりするセレクタ
+</p>
+<hr>
+<h2>疑似クラス：hover</h2>
+<p>
+    <code><b class="vs-orange">hover</b></code>は「マウスをかざしたとき」に表示方法を変化させる疑似クラスです。
+    <br>まずは以下のコードを用意してください。
+</p>
+<blockquote>
+<p>index.html</p>
+</blockquote>
+<pre><code><div><span>&lt;<span class="vs-blue">h1</span>&gt;</span>四季<span>&lt;/<span class="vs-blue">h1</span>&gt;</span>
+<span>&lt;<span class="vs-blue">p</span>&gt;</span>
+<span>    春・夏・秋・冬で構成される4つの季節を四季といいます。</span>
+<span>    &lt;<span class="vs-blue">br</span>&gt;</span>日本をはじめとする、多くの国々で存在している自然現象です。</span>
+<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+<span>&lt;<span class="vs-blue">div <span class="vs-skyblue">class</span>=<span class="vs-red">"content"</span>&gt;</span>
+<span>  &lt;<span class="vs-blue">h2</span>&gt;</span>春<span>&lt;/<span class="vs-blue">h2</span>&gt;</span>
+<span>  &lt;<span class="vs-blue">p</span>&gt;</span>
+<span>      日本では3~5月頃の暖かい時期を指します。</span>
+<span>      &lt;<span class="vs-blue">br</span>&gt;</span>桜の開花は春の象徴です。</span>
+<span>  &lt;/<span class="vs-blue">p</span>&gt;</span>
+<span>  &lt;<span class="vs-blue">h2</span>&gt;</span>夏<span>&lt;/<span class="vs-blue">h2</span>&gt;</span>
+<span>  &lt;<span class="vs-blue">p</span>&gt;</span>
+<span>      日本では6~8月頃の暑い時期を指します。</span>
+<span>      &lt;<span class="vs-blue">br</span>&gt;</span>梅雨が明けるとプール日和が続きます。</span>
+<span>  &lt;/<span class="vs-blue">p</span>&gt;</span>
+<span>  &lt;<span class="vs-blue">h2</span>&gt;</span>秋<span>&lt;/<span class="vs-blue">h2</span>&gt;</span>
+<span>  &lt;<span class="vs-blue">p</span>&gt;</span>
+<span>      日本では9~11月頃の涼しい時期を指します。</span>
+<span>      &lt;<span class="vs-blue">br</span>&gt;</span><span>&lt;<span class="vs-blue">a</span> <span class="vs-skyblue">href</span>=<span class="vs-red">"https://www.pref.hiroshima.lg.jp/"</span> <span class="vs-skyblue">target</span>=<span class="vs-red">"new"</span>&gt;</span>広島県<span>&lt;/<span class="vs-blue">a</span>&gt;</span>でも紅葉狩りが楽しめます。</span>
+<span>  &lt;/<span class="vs-blue">p</span>&gt;</span>
+<span>  &lt;<span class="vs-blue">h2</span>&gt;</span>冬<span>&lt;/<span class="vs-blue">h2</span>&gt;</span>
+<span>  &lt;<span class="vs-blue">p</span>&gt;</span>
+<span>      日本では12~2月頃の寒い時期を指します。</span>
+<span>      &lt;<span class="vs-blue">br</span>&gt;</span><span>&lt;<span class="vs-blue">a</span> <span class="vs-skyblue">href</span>=<span class="vs-red">"https://en.wikipedia.org/wiki/Christmas"</span> <span class="vs-skyblue">target</span>=<span class="vs-red">"new"</span>&gt;</span>クリスマス<span>&lt;/<span class="vs-blue">a</span>&gt;</span>や年末年始で街がにぎわいます。</span>
+<span>  &lt;<span class="vs-blue">p</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">div</span>&gt;</span></div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\14_normal.png" alt="14_class" border="1" width="300px">
+<p>
+    ここで「四季」という文字にマウスをかざしたら、文字の色が薄くなるようにしましょう。
+    <br>cssファイルで以下のコードを書いてください。
+</p>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre><code><div><span class="vs-orange">h1 {</span></span>
+    <span class="vs-skyblue">padding</span>: <span class="vs-green">5px</span>;</span>
+<span class="vs-orange">}</span>
+<span class="vs-orange">h1:hover {</span></span>
+    <span class="vs-skyblue">opacity</span>: <span class="vs-green">0.5</span>;</span>
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\14_hover.png" alt="14_class" border="1" width="300px">
+<p>
+    マウスをかざすと文字の色が薄くなりました！
+    <br><b class="vs-skyblue">opacity</b>は「透明度」を表すプロパティであり、
+    <br><a href="13. 文字の配置（text-align：centerなど）.html" target="_blank">カリキュラム13. 文字の配置（text-align：centerなど）</a>で復習できます。
+</p>
+<hr>
+<h2>疑似クラス</h2>
+<p>
+    cssファイルでは「<code><b class="vs-orange">.クラス名:疑似クラス名{}</b></code>」で指定します。
+    <br>疑似クラスの値は、以下が挙げられます。
+</p>
+<table border="1" style="text-align:center;">
+    <tr>
+        <th>疑似クラス名<br><code><b class="vs-orange">.クラス名:〇〇{}</b></code></th>
+        <th>効果が適用される要素</th>
+    </tr>
+    <tr>
+        <td><code><b class="vs-orange">hover</b></code></td>
+        <td>マウスがホバーしたとき</td>
+    </tr>
+    <tr>
+        <td><code><b class="vs-orange">link</b></code></td>
+        <td>未訪問のリンク</td>
+    </tr>
+    <tr>
+        <td><code><b class="vs-orange">visited</b></code></td>
+        <td>訪問済のリンク</td>
+    </tr>
+    <tr>
+        <td><code><b class="vs-orange">active</b></code></td>
+        <td>アクティブ状態になったとき</td>
+    </tr>
+    <tr>
+        <td><code><b class="vs-orange">nth-child(n)</b></code></td>
+        <td>親要素内のn番目</td>
+    </tr>
+    <tr>
+        <td><code><b class="vs-orange">nth-of-type(n)</b></code></td>
+        <td>親要素内の同じ種類の要素の中のn番目</td>
+    </tr>
+    <tr>
+        <td><code><b class="vs-orange">not(B)</b></code></td>
+        <td>B以外の要素</td>
+    </tr>
+</table>
+<p>
+    これらを利用して表示を変化させます。
+    <br>先ほどのcssファイルに以下のコードを追加してみましょう。
+</p>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre><code><div></div><span class="vs-orange">h2 {</span></span>
+    <span class="vs-skyblue">width</span>: <span class="vs-green">80px</span>;</span>
+<span class="vs-orange">}</span>
+<span class="vs-orange">.content p {</span></span>
+    <span class="vs-skyblue">width</span>: <span class="vs-green">350px</span>;</span>
+<span class="vs-orange">}</span>
+<span class="vs-orange">:nth-child(6) {</span></span>
+    <span class="vs-skyblue">background-color</span>: <span class="vs-red">orange</span>;</span>
+<span class="vs-orange">}</span>
+<span class="vs-orange">h2:nth-of-type(4) {</span></span>
+    <span class="vs-skyblue">color</span>: <span class="vs-red">white</span>;</span>
+    <span class="vs-skyblue">background-color</span>: <span class="vs-red">black</span>;</span>
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\14_class.png" alt="14_class" border="1" width="300px">
+<p>
+    すべての要素の中で上から6つ目の背景色がオレンジ色になりました！
+    <br>さらにh2タグの4番目の背景色が黒色になりました！
+</p>
+<hr>
+<h2>疑似要素</h2>
+<p>
+    cssファイルでは「<code><b class="vs-orange">.クラス名::疑似要素名{}</b></code>」で指定します。
+    <br>疑似クラスと違い、コロンが2つ必要です。
+    <br>さらに細かいポイントのみ効果を付けることができます。
+    <br>疑似要素の値は、以下が挙げられます。
+</p>
+<table border="1" style="text-align:center;">
+    <tr>
+        <th>疑似要素名<br><code><b class="vs-orange">.クラス名::〇〇{}</b></code></th>
+        <th>効果が適用される要素</th>
+    </tr>
+    <tr>
+        <td><code><b class="vs-orange">first-letter</b></code></td>
+        <td>要素の一文字目</td>
+    </tr>
+    <tr>
+        <td><code><b class="vs-orange">first-line</b></code></td>
+        <td>要素の一行目</td>
+    </tr>
+    <tr>
+        <td><code><b class="vs-orange">before</b></code></td>
+        <td>要素の直前にコンテンツを追加</td>
+    </tr>
+    <tr>
+        <td><code><b class="vs-orange">after</b></code></td>
+        <td>要素の直後にコンテンツを追加</td>
+    </tr>
+    <tr>
+        <td><code><b class="vs-orange">backdrop</b></code></td>
+        <td>全画面表示の余白部分</td>
+    </tr>
+    <tr>
+        <td><code><b class="vs-orange">marker</b></code></td>
+        <td>箇条書きの点や数字</td>
+    </tr>
+    <tr>
+        <td><code><b class="vs-orange">placeholder</b></code></td>
+        <td>inputやtextareaのプレイスホルダー</td>
+    </tr>
+    <tr>
+        <td><code><b class="vs-orange">selection</b></code></td>
+        <td>選択した文書の一部</td>
+    </tr>
+</table>
+<p>先ほどのcssファイルに以下のコードを追加してみましょう。</p>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre><code><div><span class="vs-orange">p::first-letter {</span></span>
+    <span class="vs-skyblue">color</span>: <span class="vs-red">red</span>;</span>
+<span class="vs-orange">}</span>
+<span class="vs-orange">h2::before {</span></span>
+    <span class="vs-skyblue">content</span>: <span class="vs-red">"★"</span>;</span>
+    <span class="vs-skyblue">color</span>: <span class="vs-red">orange</span>;</span>
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\14_element.png" alt="14_element" border="1" width="300px">
+<p>
+    pタグの最初の文字が赤くなりました！
+    <br>さらにh2タグの最初に★マークが付きました！
+</p>
+<hr>
+<h2>練習問題</h2>
+<p>
+    <a href="13. 文字の配置（text-align：centerなど）.html" target="_blank">カリキュラム13. 文字の配置（text-align：centerなど）</a>の復習もかねて、先ほどのコードに以下の3つの効果を加えましょう。
+    <br>（見本は<a href="お手本（メンターのみ共有するもの）\00_14. お手本.html" target="_blank">こちら</a>）
+</p>
+<ol>
+    <li>
+        【復習】春夏秋冬の内容（pタグで囲まれている部分）を全て中央揃えにする。
+    </li>
+    <li>
+        上から7行目の「夏」という文字にマウスを乗せると（ホバーすると）文字が赤色に変化する。
+        <br>お手本：<b class="practice14A">夏</b>
+    </li>
+    <li>
+        下から4行目の「広島県」のリンクをクリックした後、文字が緑色に変化する。
+        <br>お手本：<a href="https://en.wikipedia.org/wiki/Christmas" target="_blank" class="practice14B">クリスマス</a>
+    </li>
+</ol>
+<hr>
+<h2>解説動画</h2>
+    <p>カリキュラム解説</p>
+    <iframe width="1000" height="600" src="https://www.youtube.com/embed/Ub-wAWGbO4o?si=Z7W1APGI2wOmIR0z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p>練習問題解説</p>
+    <iframe width="1000" height="600" src="https://www.youtube.com/embed/YsFU291LU6c?si=ZekhdYeaw_XwVX9e" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</body>
+</html>

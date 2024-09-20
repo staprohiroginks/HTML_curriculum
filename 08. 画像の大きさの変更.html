@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>08. 画像の大きさの変更</title>
+    <link rel="stylesheet" href="00. カリキュラム用style.css">
+</head>
+<body class="vscode-body vscode-light">
+<h1 id="テーブル">画像の大きさの変更</h1>
+<p>
+    <a href="07. 色と大きさの変更.html" target="_blank">前回</a>に引き続き、CSSファイルを活用して画像の大きさを変更しましょう！
+</p>
+<h2>【復習】画像の表示</h2>
+<p>
+    まずは<a href="03. 画像と埋め込み.html" target="_blank">03. 画像と埋め込み</a>を復習しながら、ネコの画像を表示しましょう！
+</p>
+<blockquote>
+<p>index.html</p>
+</blockquote>
+<pre><code><div><span>&lt;<span class="vs-blue">body&gt;</span>
+    <span>&lt;<span class="vs-blue">img</span> <span class="vs-skyblue">src</span>=<span class="vs-red">"cat.jpg"</span> <span class="vs-skyblue">alt</span>=<span class="vs-red">"cat"</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">body</span>&gt;</span>
+</div></code></pre>
+<blockquote>
+<p>実行例</p>
+</blockquote>
+<img src="img\08_normal.png" alt="normal">
+<hr>
+<h2>横幅の指定方法</h2>
+<p>
+    画像の横幅の大きさを指定しましょう。
+    <br><strong class="vs-orange">セレクタ</strong>は「<span class="vs-orange"><b>img</b></span>」を指定します。
+    <br><strong class="vs-skyblue">プロパティ</strong>は「幅」の英語である「<span class="vs-skyblue"><b>width(ウィズ)</b></span>」が入ります。
+</p>
+<blockquote>
+    <p>style.css</p>
+</blockquote>
+<pre class="hljs"><code><div><span class="vs-orange">img {</span>
+    <span class="vs-skyblue">width</span>:<span class="vs-green"> 300px</span>;
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+    <p>実行例</p>
+</blockquote>
+<img src="img\08_w_px.png" alt="w_px">
+<hr>
+<h2>高さの指定方法</h2>
+<p>
+    次は画像の高さを指定しましょう。
+    <br><strong class="vs-skyblue">プロパティ</strong>は「高さ」の英語である「<span class="vs-skyblue"><b>height(ハイト)</b></span>」が入ります。
+</p>
+<blockquote>
+    <p>style.css</p>
+</blockquote>
+<pre class="hljs"><code><div><span class="vs-orange">img {</span>
+    <span class="vs-skyblue">width</span>:<span class="vs-green"> 300px</span>;
+    <span class="vs-skyblue">height</span>:<span class="vs-green"> 300px</span>;
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+    <p>実行例</p>
+</blockquote>
+<img src="img\08_wh_px.png" alt="wh_px">
+<p>
+    このように、横幅と高さを両方とも指定すると、画像の比率が変化します。
+</p>
+<hr>
+<h2>タブの大きさに合わせた指定方法</h2>
+<p>
+    今までは画像の横幅や高さをピクセル（px）で設定してきました。
+    <br>もしタブの大きさに合わせて画像の大きさを変化させたいなら、パーセント（%）で値を指定します。
+    <br>試しにタブの横幅いっぱいに画像を表示しましょう。
+</p>
+<blockquote>
+    <p>style.css</p>
+</blockquote>
+<pre class="hljs"><code><div><span class="vs-orange">img {</span>
+    <span class="vs-skyblue">width</span>:<span class="vs-green"> 100%</span>;
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+    <p>実行例</p>
+</blockquote>
+<img src="img\08_w__.png" alt="w_%">
+<p>
+    これで、タブの大きさを変更したら、画像の大きさも変化するようになりました！
+</p>
+<hr>
+<h2>練習問題</h2>
+<p>
+    <a href="07. 色と大きさの変更.html" target="_blank">前回</a>の復習もかねて、以下の画像と同じようなページを作ってみましょう。
+    <br>（見本は<a href="お手本（メンターのみ共有するもの）\00_08. お手本.html" target="_blank">こちら</a>）
+    <br>背景色はblack、文字色はwhiteにしてください。
+    <br>文字は25pxにしてください。
+    <br>画像の横幅は160px、高さは140pxにしてください。
+    <br><img src="img\08_practice.png" alt="practice">
+</p>
+<hr>
+<h2>解説動画</h2>
+    <p>カリキュラム解説</p>
+    <iframe width="1000" height="600" src="https://www.youtube.com/embed/c4CpTMjGxEc?si=eDv8IcpLDlszpHp3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p>練習問題解説</p>
+    <iframe width="1000" height="600" src="https://www.youtube.com/embed/yQ9vGsmnMKA?si=U9pER-l-bhhrAPQD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</body>
+</html>

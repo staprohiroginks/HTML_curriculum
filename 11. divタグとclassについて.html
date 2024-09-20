@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>11. divタグとclassについて</title>
+    <link rel="stylesheet" href="00. カリキュラム用style.css">
+</head>
+<body class="vscode-body vscode-light">
+<h1 id="テーブル">divタグとclassについて</h1>
+<p>
+    ページの構成を整理するとき、divタグを使います。
+    <br>divはdivision（分割）という単語の略です。
+    <br>このタグにclassやidを指定することで、cssの効果を付けやすくなります。
+</p>
+<h2>divタグ</h2>
+<p>
+    divタグは、ページを構成する要素を分割したり、要素を1つのまとまりとしてグループ化したりするタグです。
+    <br>このタグは編集側の目印（マークアップ）のようなものであり、直接Webページに変化を及ぼしません。
+    <br>まずは<a href="05. リスト.html" target="_blank">リスト</a>の復習をしながら、以下のコードを書いてみましょう。
+</p>
+<blockquote>
+<p>index.html</p>
+</blockquote>
+<pre><code><div>
+<span>&lt;<span class="vs-blue">div</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">h1</span>&gt;scratch<span>&lt;/<span class="vs-blue">h1</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">p</span>&gt;マサチューセッツ工科大学で開発されたプログラミング学習ソフトです。<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">div</span>&gt;</span>
+<span>&lt;<span class="vs-blue">div</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">h1</span>&gt;Minecraft<span>&lt;/<span class="vs-blue">h1</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">p</span>&gt;有名なゲームですが、プログラミングを学ぶこともできます。<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">div</span>&gt;</span>
+<span>&lt;<span class="vs-blue">div</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">h1</span>&gt;HTML<span>&lt;/<span class="vs-blue">h1</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">p</span>&gt;Webページを作成するためのプログラミング言語です。<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">div</span>&gt;</span>
+<span>&lt;<span class="vs-blue">div</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">h1</span>&gt;</span>その他<span>&lt;/<span class="vs-blue">h1</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">ul</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">li</span>&gt;</span>C言語<span>&lt;/<span class="vs-blue">li</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">li</span>&gt;</span>C#<span>&lt;/<span class="vs-blue">li</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">li</span>&gt;</span>C++<span>&lt;/<span class="vs-blue">li</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">li</span>&gt;</span>JavaScript<span>&lt;/<span class="vs-blue">li</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">li</span>&gt;</span>python<span>&lt;/<span class="vs-blue">li</span>&gt;</span>
+    <span>&lt;\<span class="vs-blue">ul</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">div</span>&gt;</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\11_div.png" width=500px alt="11_div" border="1">
+
+<hr>
+<h2>class</h2>
+<p>
+    classはタグに追加して、該当部分に自由にcssの効果を付けるものです。
+    <br>基本的にdivタグでclassを指定します。
+    <br>cssファイルでは「.クラス名{}」で指定します。
+    <br>同じクラスは1ページに何回でも使用できます。
+    <br>そのため、同じカテゴリ内で書式をそろえたいときにおすすめです。
+    <br>
+    <br>すべてのdivにクラス名を付けて、一部のカテゴリのみスタイルを変えてみましょう。
+</p>
+
+<blockquote>
+<p>index.html</p>
+</blockquote>
+<pre><code><div>
+<span>&lt;<span class="vs-blue">div </span><span class="vs-skyblue">class</span>=<span class="vs-red">"scratch"</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">h1</span>&gt;scratch<span>&lt;/<span class="vs-blue">h1</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">p</span>&gt;マサチューセッツ工科大学で開発されたプログラミング学習ソフトです。<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">div</span>&gt;</span>
+<span>&lt;<span class="vs-blue">div </span><span class="vs-skyblue">class</span>=<span class="vs-red">"minecraft"</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">h1</span>&gt;Minecraft<span>&lt;/<span class="vs-blue">h1</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">p</span>&gt;有名なゲームですが、プログラミングを学ぶこともできます。<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">div</span>&gt;</span>
+<span>&lt;<span class="vs-blue">div </span><span class="vs-skyblue">class</span>=<span class="vs-red">"html"</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">h1</span>&gt;HTML<span>&lt;/<span class="vs-blue">h1</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">p</span>&gt;Webページを作成するためのプログラミング言語です。<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">div</span>&gt;</span>
+<span>&lt;<span class="vs-blue">div </span><span class="vs-skyblue">class</span>=<span class="vs-red">"others"</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">h1</span>&gt;</span>その他<span>&lt;/<span class="vs-blue">h1</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">ul</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">li</span>&gt;</span>C言語<span>&lt;/<span class="vs-blue">li</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">li</span>&gt;</span>C#<span>&lt;/<span class="vs-blue">li</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">li</span>&gt;</span>C++<span>&lt;/<span class="vs-blue">li</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">li</span>&gt;</span>JavaScript<span>&lt;/<span class="vs-blue">li</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">li</span>&gt;</span>python<span>&lt;/<span class="vs-blue">li</span>&gt;</span>
+    <span>&lt;/<span class="vs-blue">ul</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">div</span>&gt;</span>
+</div></code></pre>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre><code><div><span class="vs-orange">.scratch {</span>
+    <span class="vs-skyblue">color</span>:<span class="vs-red"> white</span>;
+    <span class="vs-skyblue">background-color</span>:<span class="vs-red"> red</span>;
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\11_class1.png" width=500px alt="11_class1" border="1">
+
+<p>
+    同じカテゴリ内で特定のタグのみスタイルを変えたいときは「.クラス名 タグ名{}」で指定します。
+</p>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre><code><div>
+<span class="vs-orange">.minecraft p {</span>
+    <span class="vs-skyblue">color</span>:<span class="vs-red"> blue</span>;
+<span class="vs-orange">}</span>
+<span class="vs-orange">.html h1 {</span>
+    <span class="vs-skyblue">background-color</span>:<span class="vs-red"> orange</span>;
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\11_class2.png" width=500px alt="11_class2" border="1">
+<p>
+    同じカテゴリ内で特定のタグ、さらにその中で〇列目のみスタイルを変えたいときは
+    <br>「.クラス名 タグ名:nth-child(〇){}」で指定します。
+</p>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre><code><div>
+<span class="vs-orange">.others li:nth-child(2) {</span>
+    <span class="vs-skyblue">color</span>:<span class="vs-red"> green</span>;
+<span class="vs-orange">}</span>
+<span class="vs-orange">.others li:nth-child(4) {</span>
+    <span class="vs-skyblue">color</span>:<span class="vs-red"> purple</span>;
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\11_class3.png" width=500px alt="11_class3" border="1">
+<hr>
+<h2>id</h2>
+<p>
+    id とは、Minecraftのタートルに名前を付けたように、一般的に個体を認識するためのマークです。
+    <br>idもclassと同様に、一部にcssの効果を付けることができます。
+    <br>cssファイルでは「#id名{}」で指定します。
+    <br>classと異なる点は、同じidを1ページにつき一回しか使用できないことです。
+    <br>その代わり、classの中にidがある場合は、idの効果が優先されます。
+    <br>優先して読み込ませたい時に使用したり、今後学習するJavaScriptで活用する際にidをよく使います。
+</p>
+<blockquote>
+<p>index.html</p>
+</blockquote>
+<pre><code><div>
+<span>&lt;<span class="vs-blue">div </span><span class="vs-skyblue">class</span>=<span class="vs-red">"scratch"</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">h1</span>&gt;</span>scratch<span>&lt;/<span class="vs-blue">h1</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">p</span>&gt;</span>マサチューセッツ工科大学で開発されたプログラミング学習ソフトです。<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">div</span>&gt;</span>
+
+<span>&lt;<span class="vs-blue">div </span><span class="vs-skyblue">class</span>=<span class="vs-red">"minecraft"</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">h1</span>&gt;</span>Minecraft<span>&lt;/<span class="vs-blue">h1</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">p</span>&gt;</span>有名なゲームですが、プログラミングを学ぶこともできます。<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">div</span>&gt;</span>
+
+<span>&lt;<span class="vs-blue">div </span><span class="vs-skyblue">class</span>=<span class="vs-red">"html"</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">h1</span>&gt;</span>HTML<span>&lt;/<span class="vs-blue">h1</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">p</span>&gt;</span>Webページを作成するためのプログラミング言語です。<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">div</span>&gt;</span>
+
+<span>&lt;<span class="vs-blue">div </span><span class="vs-skyblue">class</span>=<span class="vs-red">"others"</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">h1</span>&gt;</span>その他<span>&lt;/<span class="vs-blue">h1</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">ul</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">li</span>&gt;</span>C言語<span>&lt;/<span class="vs-blue">li</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">li</span>&gt;</span>C#<span>&lt;/<span class="vs-blue">li</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">li</span> <span class="vs-skyblue">id</span>=<span class="vs-red">"others_text_c"</span>&gt;</span>C++<span>&lt;/<span class="vs-blue">li</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">li</span> <span class="vs-skyblue">id</span>=<span class="vs-red">"others_text_javascript"</span>&gt;</span>JavaScript<span>&lt;/<span class="vs-blue">li</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">li</span>&gt;</span>python<span>&lt;/<span class="vs-blue">li</span>&gt;</span> 
+    <span>&lt;<span class="vs-blue">ul</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">div</span>&gt;</span>
+</div></code></pre>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre><code><div>
+<span class="vs-orange">#others_text_c {</span>
+    <span class="vs-skyblue">color</span>:<span class="vs-red"> darkred</span>;
+<span class="vs-orange">}</span>
+<span class="vs-orange">#others_text_javascript {</span>
+    <span class="vs-skyblue">color</span>:<span class="vs-red"> darkblue</span>;
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\11_id.png" width=500px alt="11_id" border="1">
+<p>下から2行目について、色を変える命令を入れたclassではなくidが優先されたのが分かります。</p>
+<hr>
+<h2>練習問題</h2>
+<p>
+    以下の画像と同じようなページを作ってみましょう。
+    <br>（見本は<a href="お手本（メンターのみ共有するもの）\00_11. お手本.html" target="_blank">こちら</a>）
+    <br>今回は色を変える時にはclassを使用して指定してください。
+    <br>見出しはh1タグ、文章はpタグで書いてください。
+    <br>全体の背景色はlightyellow、下側の背景色はlightgrayにしてください。
+    <br>第1章の見出しの文字色はorange、「論理的思考力」の文字色はredにしてください。
+    <br><img src="img\11_practice.png" width=500px alt="practice">
+</p>
+<hr>
+<h2>解説動画</h2>
+    <p>カリキュラム解説</p>
+    <iframe width="1000" height="600" src="https://www.youtube.com/embed/-wJkQbNjqE0?si=5ePz-vYpITKNp0ux" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p>練習問題解説</p>
+    <iframe width="1000" height="600" src="https://www.youtube.com/embed/d0i-pau2xJ8?si=Wi7lnOxoNn7-dGow" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>05.リスト</title>
+    <link rel="stylesheet" href="00. カリキュラム用style.css">
+</head>
+<body class="vscode-body vscode-light">
+    <h1 id="リスト">リスト</h1>
+    <!-- <h2 id="ねらい">ねらい</h2> -->
+    <p>ランキングや箇条書きに使えるリストを表示しましょう！</p>
+    <h2>リストの種類</h2>
+    <div class="box">
+    <div class="item">
+    <p>リストには<b class="red">順序があるリスト</b>と<b class="blue">順序がないリスト</b>があります。<br>
+        それぞれ英語で<span class="red">ordered list</span>と<span class="blue">unordered list</span>といいます。<br>
+        そしてリストの中の<b class="green">項目</b>は<span class="green">list item</span>訳せます。<br>
+        今回覚えてもらうタグは<code><b class="red"><span class="vs-gray">&lt;</span>ol<span class="vs-gray">&gt;</span></b></b></code>、<code><b class="blue"><span class="vs-gray">&lt;</span>ul<span class="vs-gray">&gt;</span></b></code>、そして<code><b class="green"><span class="vs-gray">&lt;</span>li<span class="vs-gray">&gt;</span></b></code>です。<br>
+    </p>
+    </div>
+    <div class="item">
+    <img src="img\05_list.png" alt="リストの種類" width="400px">
+    </div>
+    </div>
+    <hr>
+    <h2>順序があるリスト</h2>
+    <p>まずは<b class="red">順序があるリスト</b>を書いてみましょう。<br>
+        デフォルトでは1、2、3、、、と続くリストになります。</p><!-- https://prtimes.jp/main/html/rd/p/000000041.000076895.html -->
+
+    <blockquote>
+    <p>例</p>
+    </blockquote>
+
+    <pre class="ex"><code><span><span class="vs-gray">&lt;</span><span class="vs-blue">p</span><span class="vs-gray">&gt;</span></span>好きな果物ランキング<span><span class="vs-gray">&lt;</span>/<span class="vs-blue">p</span><span class="vs-gray">&gt;</span></span>
+    <span><span class="vs-gray">&lt;</span><span class="vs-blue">ol</span><span class="vs-gray">&gt;</span></span>
+        <span><span class="vs-gray">&lt;</span><span class="vs-blue">li</span><span class="vs-gray">&gt;</span></span>いちご<span><span class="vs-gray">&lt;</span><span class="vs-blue">/li</span><span class="vs-gray">&gt;</span></span>
+        <span><span class="vs-gray">&lt;</span><span class="vs-blue">li</span><span class="vs-gray">&gt;</span></span>ぶどう<span><span class="vs-gray">&lt;</span><span class="vs-blue">/li</span><span class="vs-gray">&gt;</span></span>
+        <span><span class="vs-gray">&lt;</span><span class="vs-blue">li</span><span class="vs-gray">&gt;</span></span>りんご<span><span class="vs-gray">&lt;</span><span class="vs-blue">/li</span><span class="vs-gray">&gt;</span></span>
+    <span><span class="vs-gray">&lt;</span><span class="vs-blue">/ol</span><span class="vs-gray">&gt;</span></span>
+    </code></pre>
+    <blockquote>
+    <p>実行結果</p>
+    </blockquote>
+    <p>好きな果物ランキング</p>
+    <ol>
+        <li>いちご</li>
+        <li>ぶどう</li>
+        <li>りんご</li>
+    </ol>
+    <!-- <p>※引用データは<a href="https://hugkum.sho.jp/145849/2">こちら</a></p> -->
+    <p>これで番号順に項目を並べることができました！</p>
+    <hr>
+    <h2>順序がないリスト</h2>
+    <p>次に<b class="blue">順序がないリスト</b>を書いてみましょう。<br>
+        デフォルトでは黒丸のリストになります。</p>
+    <blockquote>
+    <p>例</p>
+    </blockquote>
+    <pre><code><span><span class="vs-gray">&lt;</span><span class="vs-blue">p</span><span class="vs-gray">&gt;</span></span>お天気マークの種類<span><span class="vs-gray">&lt;</span>/<span class="vs-blue">p</span><span class="vs-gray">&gt;</span></span>
+        <span><span class="vs-gray">&lt;</span><span class="vs-blue">ul</span><span class="vs-gray">&gt;</span></span>
+        <span>   <span class="vs-gray">&lt;</span><span class="vs-blue">li</span><span class="vs-gray">&gt;</span></span>晴れ<span><span class="vs-gray">&lt;</span><span class="vs-blue">/li</span><span class="vs-gray">&gt;</span></span>
+        <span>   <span class="vs-gray">&lt;</span><span class="vs-blue">li</span><span class="vs-gray">&gt;</span></span>くもり<span><span class="vs-gray">&lt;</span><span class="vs-blue">/li</span><span class="vs-gray">&gt;</span></span>
+        <span>   <span class="vs-gray">&lt;</span><span class="vs-blue">li</span><span class="vs-gray">&gt;</span></span>雨<span><span class="vs-gray">&lt;</span><span class="vs-blue">/li</span><span class="vs-gray">&gt;</span></span>
+        <span>   <span class="vs-gray">&lt;</span><span class="vs-blue">li</span><span class="vs-gray">&gt;</span></span>雪<span><span class="vs-gray">&lt;</span><span class="vs-blue">/li</span><span class="vs-gray">&gt;</span></span>
+        <span><span class="vs-gray">&lt;</span><span class="vs-blue">/ul</span><span class="vs-gray">&gt;</span></span>
+    </code></pre>
+    <blockquote>
+    <p>実行結果</p>
+    </blockquote>
+    <p>お天気マークの種類</p>
+    <ul>
+        <li>晴れ</li>
+        <li>くもり</li>
+        <li>雨</li>
+        <li>雪</li>
+    </ul>
+    <p>これで項目を並べることができました！</p>
+    <hr>
+    <h2>予備知識</h2>
+    <p>リストに使う記号は、タグにtype属性を加えるだけでに自由に変えることができます。<br>
+    以下はその一覧です。</p>
+
+    <table border="1" width="900"><!-- https://web.skipjack.tokyo/html/html_ul/#chapter-5 -->
+        <col width="12%">
+        <col width="17.6%">
+        <col width="17.6%">
+        <col width="17.6%">
+        <col width="17.6%">
+        <col width="17.6%">
+        <tr>
+            <th><code><span><span class="vs-gray">&lt;</span><span class="vs-blue">ol</span><span class="vs-gray">&gt;</span></span></code></th>
+            <th><code><span><span class="vs-gray">&lt;</span><span class="vs-blue">ol</span> <span class="vs-skyblue">type</span><span class="vs-gray">=</span><span class="vs-red">"1"</span><span class="vs-gray">&gt;</span></span></code></th>
+            <th><code><span><span class="vs-gray">&lt;</span><span class="vs-blue">ol</span> <span class="vs-skyblue">type</span><span class="vs-gray">=</span><span class="vs-red">"A"</span><span class="vs-gray">&gt;</span></span></code></th>
+            <th><code><span><span class="vs-gray">&lt;</span><span class="vs-blue">ol</span> <span class="vs-skyblue">type</span><span class="vs-gray">=</span><span class="vs-red">"a"</span><span class="vs-gray">&gt;</span></span></code></th>
+            <th><code><span><span class="vs-gray">&lt;</span><span class="vs-blue">ol</span> <span class="vs-skyblue">type</span><span class="vs-gray">=</span><span class="vs-red">"I"</span><span class="vs-gray">&gt;</span></span></code></th>
+            <th><code><span><span class="vs-gray">&lt;</span><span class="vs-blue">ol</span> <span class="vs-skyblue">type</span><span class="vs-gray">=</span><span class="vs-red">"i"</span><span class="vs-gray">&gt;</span></span></code></th>
+        </tr>
+        <tr>
+            <td>
+                <ol>
+                    <li>いぬ</li>
+                    <li>ねこ</li>
+                </ol>
+            </td>
+            <td>
+                <ol type="1">
+                    <li>いぬ</li>
+                    <li>ねこ</li>
+                </ol>
+            </td>
+            <td>
+                <ol type="A">
+                    <li>いぬ</li>
+                    <li>ねこ</li>
+                </ol>
+            </td>
+            <td>
+                <ol type="a">
+                    <li>いぬ</li>
+                    <li>ねこ</li>
+                </ol>
+            </td>
+            <td>
+                <ol type="I">
+                    <li>いぬ</li>
+                    <li>ねこ</li>
+                </ol>
+            </td>
+            <td>
+                <ol type="i">
+                    <li>いぬ</li>
+                    <li>ねこ</li>
+                </ol>
+            </td>
+        </tr>
+    </table>
+    <table border="1" width="900">
+        <col width="12%">
+        <col width="22%">
+        <col width="22%">
+        <col width="22%">
+        <col width="22%">
+        <tr>
+            <th><code><span><span class="vs-gray">&lt;</span><span class="vs-blue">ul</span><span class="vs-gray">&gt;</span></span></code></th>
+            <th><code><span><span class="vs-gray">&lt;</span><span class="vs-blue">ul</span> <span class="vs-skyblue">type</span><span class="vs-gray">=</span><span class="vs-red">"disc"</span><span class="vs-gray">&gt;</span></span></code></th>
+            <th><code><span><span class="vs-gray">&lt;</span><span class="vs-blue">ul</span> <span class="vs-skyblue">type</span><span class="vs-gray">=</span><span class="vs-red">"circle"</span><span class="vs-gray">&gt;</span></span></code></th>
+            <th><code><span><span class="vs-gray">&lt;</span><span class="vs-blue">ul</span> <span class="vs-skyblue">type</span><span class="vs-gray">=</span><span class="vs-red">"square"</span><span class="vs-gray">&gt;</span></span></code></th>
+            <th><code><span><span class="vs-gray">&lt;</span><span class="vs-blue">ul</span> <span class="vs-skyblue">type</span><span class="vs-gray">=</span><span class="vs-red">"none"</span><span class="vs-gray">&gt;</span></span></code></th>
+        </tr>
+        <tr>
+            <td>
+                <ul>
+                    <li>いぬ</li>
+                    <li>ねこ</li>
+                </ul>
+            </td>
+            <td>
+                <ul type="disc">
+                    <li>いぬ</li>
+                    <li>ねこ</li>
+                </ul>
+            </td>
+            <td>
+                <ul type="circle">
+                    <li>いぬ</li>
+                    <li>ねこ</li>
+                </ul>
+            </td>
+            <td>
+                <ul type="square">
+                    <li>いぬ</li>
+                    <li>ねこ</li>
+                </ul>
+            </td>
+            <td>
+                <ul type="none">
+                    <li>いぬ</li>
+                    <li>ねこ</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <p>※一列目と二列目は同じ記号です。<br><br>
+        さらに、順序があるリストでは、指定の値から始めたり逆順にしたりできます。</p>
+    <table border="1" width="600" >
+        <col width="16%">
+        <col width="27%">
+        <col width="27%">
+        <tr>
+            <th><code><span><span class="vs-gray">&lt;</span><span class="vs-blue">ol</span> <span class="vs-skyblue">type</span><span class="vs-gray">=</span><span class="vs-red">"1"</span><span class="vs-gray">&gt;</span></span></code></th>
+            <th><code><span><span class="vs-gray">&lt;</span><span class="vs-blue">ol</span> <span class="vs-skyblue">type</span><span class="vs-gray">=</span><span class="vs-red">"1" start="5"</span><span class="vs-gray">&gt;</span></span></code></th>
+            <th><code><span><span class="vs-gray">&lt;</span><span class="vs-blue">ol</span> <span class="vs-skyblue">type</span><span class="vs-gray">=</span><span class="vs-red">"1" reversed</span><span class="vs-gray">&gt;</span></span></code></th>
+        </tr>
+        <tr>
+            <td>
+                <ol type="1">
+                    <li>いぬ</li>
+                    <li>ねこ</li>
+                </ol>
+            </td>
+            <td>
+                <ol type="1" start="5">
+                    <li>いぬ</li>
+                    <li>ねこ</li>
+                </ol>
+            </td>
+            <td>
+                <ol type="1" reversed>
+                    <li>いぬ</li>
+                    <li>ねこ</li>
+                </ol>
+            </td>
+        </tr>
+    </table>
+    <p>これらは必ず覚えないといけないものではありません。<br>
+        このような機能があることは知っておきましょう！</p>
+    <hr>
+    <h2>練習問題</h2>
+    <p>
+        <a href="04. リンク.html" target="_blank">カリキュラム04. リンク</a>の復習もかねて、以下のリストを作ってみましょう。
+        <br>（見本は<a href="お手本（メンターのみ共有するもの）\00_05. お手本.html" target="_blank">こちら</a>）
+        <br>ランキングという文字をクリックすると、新しいタブで<a href="https://naki-blog.com/study/survey-report-11" target="_blank">こちら</a>のサイトに飛ぶように設定してください。
+        <br>周りの黒い線は見えやすくするために付けていますが、まだ習っていないので付けなくて大丈夫です。
+        <br><img src="img\05_practice.png" alt="practice" border="1">
+    </p>
+    <hr>
+<h2>解説動画</h2>
+    <p>カリキュラム解説</p>
+    <iframe width="1000" height="600" src="https://www.youtube.com/embed/M_WWW9nuefQ?si=CTb990o71j2jYIca" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p>練習問題解説</p>
+    <iframe width="1000" height="600" src="https://www.youtube.com/embed/2WYT0lQ-9EU?si=wGOg5bDOkE-R8L_p" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</body>
+</html>

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>06.テーブル</title>
+    <link rel="stylesheet" href="00. カリキュラム用style.css">
+</head>
+<body class="vscode-body vscode-light">
+<h1 id="テーブル">テーブル</h1>
+<p>データを見やすく整理するための表を作成しましょう！</p>
+<h2>表の構成</h2>
+<div class="box">
+<div class="item">
+<p>
+    表のことを<b class="red">テーブル（table）</b>といいます。
+    <!-- <br>また、表の名前は<b>キャプション（caption）</b>といいます。 -->
+    右図はHTMLで表を作るときの構造です。
+    <br>
+    <br>表を作るときは<b class="blue">行ごとに</b>内容を書いていきます。
+    <br>表の中のひとつひとつのマスを<b>セル</b>と言い、項目の名前を<b class="orange">見出しセル</b>、項目ごとのデータが入るセルを<b class="green">データセル</b>と言います。
+    <br>それぞれの英訳とタグは以下のとおりです。
+    <br>
+    <br>テーブルの行　　 → table row　　&ensp;→ <code><b class="blue">&lt;tr&gt;</b></b></code>
+    <br>テーブルの見出し → table header　→ <code><b class="orange">&lt;th&gt;</b></b></code>
+    <br>テーブルのデータ → table data　　→ <code><b class="green">&lt;td&gt;</b></b></code>
+    <br>
+    <br>今回使用するタグは<code><b class="red">&lt;table&gt;</b></b></code>、
+    <code><b class="purple">&lt;caption&gt;</b></b></code>、
+    <code><b class="orange">&lt;th&gt;</b></b></code>、
+    <!-- <code><b class="red">&lt;rowspan&gt;</b></b></code>、 -->
+    <!-- <code><b class="red">&lt;colspan&gt;</b></b></code>、 -->
+    <code><b class="blue">&lt;tr&gt;</b></code>、
+    そして<code><b class="green">&lt;td&gt;</b></code>です。<br>
+</p>
+</div>
+<div class="item">
+    <img src="img\06_structure2.png" alt="リストの種類" width="400px">
+
+</div>
+</div>
+<hr>
+<h2>データセルの表示</h2>
+<p>
+    まずは<code><b class="red">&lt;table&gt;</b></b></code>、
+    <code><b class="blue">&lt;tr&gt;</b></code>、
+    そして<code><b class="green">&lt;td&gt;</b></code>を使って、<b　class="green">データセル</b>だけを表示してみましょう。
+    <!-- 表の中のひとつひとつのマスを<b>セル</b>と言います。
+    <br>特にデータが入るセルを<b>データセル</b>と言います。
+    <br>テーブルのデータは英語で<b>table data</b>と言います。 -->
+</p>
+<blockquote>
+<p>例</p>
+</blockquote>
+<pre><code><div><span>&lt;<span class="vs-blue">table</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">tr</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">td</span>&gt;</span>りんご<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">td</span>&gt;</span>200円<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+    <span>&lt;/<span class="vs-blue">tr</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">tr</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">td</span>&gt;</span>ぶどう<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">td</span>&gt;</span>150円<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+    <span>&lt;/<span class="vs-blue">tr</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">tr</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">td</span>&gt;</span>みかん<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">td</span>&gt;</span>50円<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+    <span>&lt;/<span class="vs-blue">tr</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">table</span>&gt;</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<table>
+    <tr>
+        <td>りんご</td>
+        <td>200円</td>
+    </tr>
+    <tr>
+        <td>ぶどう</td>
+        <td>150円</td>
+    </tr>
+    <tr>
+        <td>みかん</td>
+        <td>50円</td>
+    </tr>
+</table>
+<p>
+    このままだと線が表示されません。
+    <br>線を表示するために<code><span class="red">border</span>=<span  class="vs-red">"1"</span></code>を追加しましょう。
+    <br><code><span class="red">border</span></code>（ボーダー）は英語で線という意味です。
+    <br><code><span class="red">border</span>=<span  class="vs-red">"1"</span></code>は1本線、
+    <code><span class="red">border</span>=<span  class="vs-red">"2"</span></code>は2本線となり、
+    <code><span class="red">border</span>=<span  class="vs-red">"0"</span></code>の場合は線を表示しないことになります。
+<blockquote>
+<p>例</p>
+</blockquote>
+<pre><code><div><span>&lt;<span class="vs-blue">table</span> <span class="red">border</span>=<span  class="vs-red">"1"</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">tr</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">td</span>&gt;</span>りんご<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">td</span>&gt;</span>200円<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+    <span>&lt;/<span class="vs-blue">tr</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">tr</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">td</span>&gt;</span>ぶどう<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">td</span>&gt;</span>150円<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+    <span>&lt;/<span class="vs-blue">tr</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">tr</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">td</span>&gt;</span>みかん<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">td</span>&gt;</span>50円<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+    <span>&lt;/<span class="vs-blue">tr</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">table</span>&gt;</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<table border="1" style="border-collapse: separate;">
+    <tr>
+        <td>りんご</td>
+        <td>200円</td>
+    </tr>
+    <tr>
+        <td>ぶどう</td>
+        <td>150円</td>
+    </tr>
+    <tr>
+        <td>みかん</td>
+        <td>50円</td>
+    </tr>
+</table>
+<p>
+    1本線にするつもりが2本線になってしまいました。
+    この原因は、今は「一つ一つの枠を1本線で囲む」という状態になっており、隣り合う線を打ち消しあっていないからです。<br>
+    (テーブル要素の初期設定で<code><span class="vs-skyblue">style</span>=<span  class="vs-red">"border-collapse: separate;"</span></code>という命令が入っており、これはセルの境界線が個別に表示されるという意味になっています)
+    <br>
+    <br>そのため、線を打ち消しあうために<code><span class="vs-skyblue">style</span>=<span  class="vs-red">"border-collapse: collapse;"</span></code>を追加しましょう。
+    <br>この命令を入れることで、セルの境界線が一つにまとまり、隣接するセル間で境界線が共有されます。
+<blockquote>
+<p>例</p>
+</blockquote>
+<pre><code><div><span>&lt;<span class="vs-blue">table</span> <span class="red">border</span>=<span  class="vs-red">"1"</span> <span class="vs-skyblue">style</span>=<span  class="vs-red">"border-collapse: collapse;"</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">tr</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">td</span>&gt;</span>りんご<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">td</span>&gt;</span>200円<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+    <span>&lt;/<span class="vs-blue">tr</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">tr</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">td</span>&gt;</span>ぶどう<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">td</span>&gt;</span>150円<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+    <span>&lt;/<span class="vs-blue">tr</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">tr</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">td</span>&gt;</span>みかん<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">td</span>&gt;</span>50円<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+    <span>&lt;/<span class="vs-blue">tr</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">table</span>&gt;</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<table border="1">
+    <tr>
+        <td>りんご</td>
+        <td>200円</td>
+    </tr>
+    <tr>
+        <td>ぶどう</td>
+        <td>150円</td>
+    </tr>
+    <tr>
+        <td>みかん</td>
+        <td>50円</td>
+    </tr>
+</table>
+<hr>
+<h2>タイトルと見出しセル</h2>
+<p>
+    次にタイトルと見出しセルを追加しましょう。
+    <br>表のタイトルは<b class="purple">キャプション</b>と言い、タグは<code><b class="purple">&lt;caption&gt;</b></b></code>を使います。
+    <br>テーブルの<b class="orange">見出し</b>のタグは<code><b class="orange">&lt;th&gt;</b></b></code>です。見出しは文字が太文字になります。
+</p>
+<blockquote>
+<p>例</p>
+</blockquote>
+<pre><code><div><span>&lt;<span class="vs-blue">table</span> <span class="red">border</span>=<span  class="vs-red">"1"</span> <span class="vs-skyblue">style</span>=<span  class="vs-red">"border-collapse: collapse;"</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">caption</span>&gt;</span>買い物リスト<span>&lt;/<span class="vs-blue">caption</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">tr</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">th</span>&gt;</span>果物<span>&lt;/<span class="vs-blue">th</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">th</span>&gt;</span>値段<span>&lt;/<span class="vs-blue">th</span>&gt;</span>
+    <span>&lt;/<span class="vs-blue">tr</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">tr</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">td</span>&gt;</span>りんご<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">td</span>&gt;</span>200円<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+    <span>&lt;/<span class="vs-blue">tr</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">tr</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">td</span>&gt;</span>ぶどう<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">td</span>&gt;</span>150円<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+    <span>&lt;/<span class="vs-blue">tr</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">tr</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">td</span>&gt;</span>みかん<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">td</span>&gt;</span>50円<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+    <span>&lt;/<span class="vs-blue">tr</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">table</span>&gt;</span>
+</div></code></pre>
+<blockquote>
+<p>実行例</p>
+</blockquote>
+<table border="1">
+    <caption>買い物リスト</caption>
+    <tr>
+        <th>果物</th>
+        <th>値段</th>
+    </tr>
+    <tr>
+        <td>りんご</td>
+        <td>200円</td>
+    </tr>
+    <tr>
+        <td>ぶどう</td>
+        <td>150円</td>
+    </tr>
+    <tr>
+        <td>みかん</td>
+        <td>50円</td>
+    </tr>
+</table>
+<hr>
+<h2>セルの結合</h2>
+<p>
+    先ほどのテーブルにセルを追加して、さらにセル同士を結合してみましょう。
+    <br>例えば、縦2つ分のセルを結合したいときは、一番上のセルのタグ<code><span>&lt;td&gt;</span></code>を<code><b><span>&lt;td rowspan="2"&gt;</span></b></code>に変更します。
+    <br>また、横2つ分のセルを結合したいときは、一番左のセルのタグ<code><span>&lt;td&gt;</span></code>を<code><b><span>&lt;td colspan="2"&gt;</span></b></code>に変更します。
+</p>
+<blockquote>
+    <p>例</p>
+    </blockquote>
+    <pre><code><div><span>&lt;<span class="vs-blue">table</span> <span class="red">border</span>=<span  class="vs-red">"1"</span> <span class="vs-skyblue">style</span>=<span  class="vs-red">"border-collapse: collapse;"</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">caption</span>&gt;</span>買い物リスト<span>&lt;/<span class="vs-blue">caption</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">tr</span>&gt;</span>
+            <span>&lt;<span class="vs-blue">th</span>&gt;</span>果物<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+            <span>&lt;<span class="vs-blue">th</span>&gt;</span>値段<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+        <span>&lt;/<span class="vs-blue">tr</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">tr</span>&gt;</span>
+            <span>&lt;<span class="vs-blue">td</span>&gt;</span>りんご<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+            <span>&lt;<span class="vs-blue">td</span>&gt;</span>200円<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+        <span>&lt;/<span class="vs-blue">tr</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">tr</span>&gt;</span>
+            <span>&lt;<span class="vs-blue">td</span>&gt;</span>ぶどう<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+            <span>&lt;<span class="vs-blue">td</span>&gt;</span>150円<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+        <span>&lt;/<span class="vs-blue">tr</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">tr</span>&gt;</span>
+            <span>&lt;<span class="vs-blue">td</span> <span class="vs-skyblue">rowspan</span>=<span  class="vs-red">"2"</span>&gt;</span>みかん<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+            <span>&lt;<span class="vs-blue">td</span>&gt;</span>50円<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+        <span>&lt;/<span class="vs-blue">tr</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">tr</span>&gt;</span>
+            <span>&lt;<span class="vs-blue">td</span>&gt;</span>100円<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+        <span>&lt;/<span class="vs-blue">tr</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">tr</span>&gt;</span>
+            <span>&lt;<span class="vs-blue">td</span> <span class="vs-skyblue">colspan</span>=<span  class="vs-red">"2"</span>&gt;</span>※みかんは2種類買う予定<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+        <span>&lt;/<span class="vs-blue">tr</span>&gt;</span>
+    <span>&lt;/<span class="vs-blue">table</span>&gt;</span>
+    </div></code></pre>
+    <blockquote>
+    <p>実行例</p>
+    </blockquote>
+<table border="1">
+    <caption>買い物リスト</caption>
+    <tr>
+        <th>果物</th>
+        <th>値段</th>
+    </tr>
+    <tr>
+        <td>りんご</td>
+        <td>200円</td>
+    </tr>
+    <tr>
+        <td>ぶどう</td>
+        <td>150円</td>
+    </tr>
+        <td rowspan="2">みかん</td>
+        <td>50円</td>
+    </tr>
+    </tr>
+        <td>100円</td>
+    </tr>
+    <tr>
+        <td colspan="2">※みかんは2種類買う予定</td>
+    </tr>
+</table>
+<hr>
+<!-- <h2>幅均等に</h2>
+https://allabout.co.jp/gm/gc/24011/
+<p>
+    先ほどのグラフにセルを追加して、さらにセル同士を結合してみましょう。
+    <br>例えば、縦3つ分のセルを結合したいときは、一番上のセルのタグ<code>&lt;<span class="vs-blue">td</span>&gt;</code>を<code>&lt;<b><span class="vs-blue">td rowspan="3"</span></b>&gt;</code>に変更します。
+    <br>また、横4つ分のセルを結合したいときは、一番左のセルのタグ<code>&lt;<span class="vs-blue">td</span>&gt;</code>を<code>&lt;<b><span class="vs-blue">td colspan="4"</span></b>&gt;</code>に変更します。
+</p>
+<blockquote>
+    <p>例</p>
+    </blockquote>
+    <pre><code><div><span>&lt;<span class="vs-blue">table</span> <span class="red">border</span>=<span  class="vs-red">"1"</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">caption</span>&gt;</span>買い物リスト<span>&lt;/<span class="vs-blue">caption</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">tr</span>&gt;</span>
+            <span>&lt;<span class="vs-blue">th</span>&gt;</span>果物<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+            <span>&lt;<span class="vs-blue">th</span>&gt;</span>値段<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+        <span>&lt;/<span class="vs-blue">tr</span>&gt;</span>
+            <span>&lt;<span class="vs-blue">td</span>&gt;</span>りんご<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+            <span>&lt;<span class="vs-blue">td</span>&gt;</span>200円<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">tr</span>&gt;</span>
+        <span>&lt;/<span class="vs-blue">tr</span>&gt;</span>
+            <span>&lt;<span class="vs-blue">td</span>&gt;</span>ぶどう<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+            <span>&lt;<span class="vs-blue">td</span>&gt;</span>150円<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">tr</span>&gt;</span>
+            <span>&lt;<span class="vs-blue">td rowspan="2"</span>&gt;</span>みかん<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+            <span>&lt;<span class="vs-blue">td</span>&gt;</span>50円<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+        <span>&lt;/<span class="vs-blue">tr</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">tr</span>&gt;</span>
+            <span>&lt;<span class="vs-blue">td</span>&gt;</span>100円<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+        <span>&lt;/<span class="vs-blue">tr</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">tr</span>&gt;</span>
+            <span>&lt;<span class="vs-blue">td colspan="2"</span>&gt;</span>※みかんは2種類買う予定<span>&lt;/<span class="vs-blue">td</span>&gt;</span>
+        <span>&lt;/<span class="vs-blue">tr</span>&gt;</span>
+    <span>&lt;/<span class="vs-blue">table</span>&gt;</span>
+    </div></code></pre>
+    <blockquote>
+    <p>実行例</p>
+    </blockquote>
+<table border="1"width="400px">
+    <caption>買い物リスト</caption>
+    <tr>
+        <th>買うもの</th>
+        <th>値段</th>
+        <th>買う数</th>
+    </tr>
+    <tr>
+        <td>りんご</td>
+        <td>150円</td>
+        <td>2個</td>
+    </tr>
+    <tr>
+        <td>ぶどう</td>
+        <td>100円</td>
+        <td>3本</td>
+    </tr>
+    <tr>
+        <td rowspan="2">みかん</td>
+        <td>50円</td>
+        <td>6個</td>
+    </tr>
+    <tr>
+        <td>100円</td>
+        <td>4個</td>
+    </tr>
+    <tr>
+        <td colspan="3">みかんは2種類買う予定です。</td>
+    </tr>
+</table>
+<hr> -->
+<!-- <h2>セルの境界</h2>
+https://developer.mozilla.org/ja/docs/Web/css/border-collapse
+<table border="1" table-layout="auto" width="300px">
+
+    <caption>買い物リスト</caption>
+    <tr>
+        <th>買うもの</th>
+        <th>値段</th>
+        <th>買う数</th>
+    </tr>
+    <tr>
+        <td>りんご</td>
+        <td>150円</td>
+        <td>2個</td>
+    </tr>
+    <tr>
+        <td>ぶどう</td>
+        <td>100円</td>
+        <td>3本</td>
+    </tr>
+    <tr>
+        <td rowspan="2">みかん</td>
+        <td>50円</td>
+        <td>6個</td>
+    </tr>
+    <tr>
+        <td>100円</td>
+        <td>4個</td>
+    </tr>
+    <tr>
+        <td colspan="3">みかんは2種類買う予定です。</td>
+    </tr>
+</table>
+<hr> -->
+<h2>予備知識</h2>
+<h3>見出しの位置（scope）</h3>
+<!-- http://html5.cyberlab.info/elements/table/th-scope.html -->
+<p> 
+    この属性は、th要素に対して使用され、そのヘッダーセルがどの範囲にデータセルを関連付けているかを指定します。
+    <br>見た目は変わりませんが、データセルが見出しセルに紐づけられている印になります。
+    <br>例えば、同じ行（水平方向）のデータセルを紐づけるときは、タグ<code><span class="vs-darkred">&lt;th&gt;</span></code>を<code><b><span class="vs-darkred">&lt;th scope="row"&gt;</span></b></code>に変更します。
+    <br>また、同じ列（垂直方向）のデータセルを紐づけるときは、タグ<code><span class="vs-darkred">&lt;th&gt;</span></code>を<code><b><span class="vs-darkred">&lt;th scope="col"&gt;</span></b></code>に変更します。
+</p>
+
+<hr>
+<h2>練習問題</h2>
+<p>
+    <a href="05. リスト.html" target="_blank">カリキュラム05. リスト</a>の復習もかねて、以下のテーブルを作ってみましょう。
+    <br>（見本は<a href="お手本（メンターのみ共有するもの）\00_06. お手本.html" target="_blank">こちら</a>）
+</p>
+
+<table border="1">
+    <caption>筆箱に入れる文房具リスト</caption>
+    <tr>
+        <th rowspan="2">名前</th>
+        <th colspan="2">個数</th>
+        <th rowspan="2">メモ</th>
+    </tr>
+    <tr>
+        <th>持っている数</th>
+        <th>新しく買い足す数</th>
+    </tr>
+    <tr>
+        <td>シャープペンシル</td>
+        <td>2本</td>
+        <td>0本</td>
+        <td rowspan="4"><ul>
+            <li>ボールペンは赤色を買い足す</li>
+            <li>時間があったら付箋も買う</li>
+        </ul></td>
+    </tr>
+    </tr>
+        <td>カラーボールペン</td>
+        <td>3本</td>
+        <td>1本</td>
+    </tr>
+    <tr>
+        <td>消しゴム</td>
+        <td >1個</td>
+        <td>1個</td>
+    </tr>
+</table>
+<hr>
+<h2>解説動画</h2>
+    <p>カリキュラム解説</p>
+    <iframe width="1000" height="600" src="https://www.youtube.com/embed/OQQ0XLuOntM?si=3t0ITehTmmVIHspN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p>練習問題解説</p>
+    <iframe width="1000" height="600" src="https://www.youtube.com/embed/FvllvLc_a5g?si=8HDFZJEE8hQoJULi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>01. はじめてのHTML</title>
+    <link rel="stylesheet" href="00. カリキュラム用style.css">
+</head>
+<body class="vscode-body vscode-light">
+<h1 id="テーブル">はじめてのHTML</h1>
+<p>
+    このカリキュラムでは、HTMLというプログラミング言語で簡単なホームページを作っていきます。
+    HTMLの知識を増やし、最終的には自己紹介のホームページを作成し、検定に挑戦してもらいます！
+</p>
+<h2>HTMLの準備</h2>
+<p>まずはHTMLを学ぶ環境を整えましょう。
+    <ol>
+        <li><a href="https://sites.google.com/view/staprokyozai/htmlcss%E5%89%8D%E5%8D%8A%E3%82%B3%E3%83%BC%E3%82%B9" target="_blank">教材ダウンロードページ</a>からHTML前半コースの教材をダウンロードします。<br>
+        （個人のパソコンを持っている生徒はダウンロードした教材をデスクトップに張り付けることをおすすめします。）</li>
+        <li>Visual Studio Codeを開いて、右上の「ファイル(file)」→「フォルダを開く(open folder)」でダウンロードした教材を選択します。</li>
+        <li>フォルダを開いたら、右上の「ファイル(file)」→「新規ファイル(new file)」で新しいファイルを作ります。</li>
+        <li>ファイル名を"index.html"にして、ファイルを保存（Command + S または Ctrl + S）します。</li>
+    </ol>
+</p>
+<hr>
+<h2>コードのテンプレート</h2>
+<p>
+    HTMLでコードを書いていくためには、最初におまじないのようなコードを書く必要があります。
+    <br>コードの全ての意味を深く覚える必要はないですが、おまじないのコードを出す方法は覚えましょう！
+    　　　　　　　　　　　　　　　　　　　　↓
+    <br>HTMLファイルを作ったら、小文字で「html」と入力します。 
+    <br>すると、予測変換で「html:5」というのが出てくるので、それをクリックしましょう。
+    <br>そうすると、HTMLを書いていくために必要なコードが出てきます。
+</p>
+    <video src="img/first.mp4" controls width="1000px"></video>
+<hr>
+<h2>Webページの表示</h2>
+<p>
+    簡単な文字をWebページに表示してみましょう！
+    <br>まずはVisual Studio Codeに文字を打ち込みます。
+</p>
+<blockquote>
+<p>例</p>
+</blockquote>
+<pre><code><div><span>&lt;<span class="vs-blue">body</span>&gt;</span>
+    Hello World!
+<span>&lt;/<span class="vs-blue">body</span>&gt;</span>
+</div></code></pre>
+<p>
+    次にこのindex.htmlファイルをGoogle Chrome（グーグルクローム）で開きます。
+    先ほど打ち込んだ文字がWebページに表示されます。
+</p>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+Hello World!
+<hr>
+<h2>用語とショートカットの解説</h2>
+<p>以下はHTMLを学ぶにあたりよく出てくる用語です。
+    <ul>
+        <li>ブラウザ：ホームページを見るもの</li>
+        <li>エディタ：プログラムをタイピングしていくメモ帳</li>
+        <li>ソースコード：プログラミングした文章のこと</li>
+        <li>拡張子：ファイルを判断する名前（ &quot;.(ドット)&quot;の後ろ部分 ）</li>
+        <li>HTMLソース：HTML言語で書かれたソースコード（.html）</li>
+        <li>CSSソース：CSS言語で書かれたソースコード（.css）</li>
+    </ul>
+今回はブラウザをGoogle Chrome、エディタをVisual Stdio Codeとしています。
+<br>また、以下はキーボードの便利なショートカットです。覚えておきましょう！
+    <ul>
+        <li>保存　　　　　： (Mac)Command + S 　　(Windows) Ctrl + S</li>
+        <li>コピー　　　　： (Mac)Command + C 　　(Windows) Ctrl + C</li>
+        <li>切り取り　　　： (Mac)Command + X 　　(Windows) Ctrl + X</li>
+        <li>貼り付け　　　： (Mac)Command + V 　　(Windows) Ctrl + V</li>
+        <li>コメントアウト： (Mac)Command + / 　　(Windows) Ctrl + /</li>
+        <li>ページ更新　　： (Mac)Command + R 　　(Windows) Ctrl + R</li>
+    </ul>
+</p>
+</ul>
+</body>
+</html>

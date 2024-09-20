@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>09. フォーム</title>
+    <link rel="stylesheet" href="00. カリキュラム用style.css">
+</head>
+<body class="vscode-body vscode-light">
+<h1 id="テーブル">フォーム</h1>
+<p>
+    フォームは、ログインページやお問い合わせページのように、ユーザーから何かを入力できるようにする機能です。
+    <br>HTMLファイルとCSSファイルを使って、フォームの作成を行いましょう！
+</p>
+<h2>文字を入力する枠（フォーム）の作成</h2>
+<p>
+    まずは一般的な入力枠（フォーム）を作ってみましょう。
+    <br>フォームを作るには <strong class="vs-blue">input</strong>（インプット）タグを使用します。
+    <br>入力形式は <strong class="vs-skyblue">type</strong>（タイプ）属性で、枠の横幅は <strong class="vs-skyblue">size</strong>（サイズ）属性で指定します。
+</p>
+<blockquote>
+<p>例）</p>
+</blockquote>
+<pre><code><div><span>&lt;<span class="vs-blue">input</span> <span class="vs-skyblue">type</span>=<span class="vs-red">"text"</span> <span class="vs-skyblue">size</span>=<span class="vs-red">"50"</span>&gt;</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<input type="text" size="50">  
+<p>
+    試しに「スタートプログラミング」と打ってみましょう！
+    文字が入力できれば正解です。
+</p>
+<hr>
+<h2>枠と入力文字の種類</h2><!-- https://webliker.info/html/39533/ -->
+<p>
+    文字の入力枠は、特定の仕様に合わせて<strong class="vs-skyblue">type</strong>（タイプ）属性の値を変えます。
+</p>
+<table border="1" style="text-align:center;">
+    <tr>
+        <th><strong>type</strong>属性の値<br><code><span class="vs-gray">&lt;<span class="vs-blue">input</span> <span class="vs-skyblue">type</span>=<span class="vs-red">"〇〇"</span>&gt;</span></code></th>
+        <th>内容</th>
+        <th>表示例</th>
+    </tr>
+    <tr>
+        <td><code><span class="vs-red">"text"</span></code></td>
+        <th>1行のテキスト入力</th>
+        <td><input type="text" size="20"></td>
+    </tr>
+    <tr>
+        <td><code><span class="vs-red">"number"</span></code></td>
+        <th>半角数字のみ</th>
+        <td><input type="number" size="20"></td>
+    </tr>
+    <tr>
+        <td><code><span class="vs-red">"email"</span></code></td>
+        <th>メールアドレス</th>
+        <td><input type="email" size="20" placeholder="201220taro@stapro.net"></td>
+    </tr>
+    <tr>
+        <td><code><span class="vs-red">"password"</span></code></td>
+        <th>パスワード</th>
+        <td><input type="password" size="20"></td>
+    </tr>
+    <tr>
+        <td><code><span class="vs-red">"search"</span></code></td>
+        <th>検索ボックス</th>
+        <td><input type="search" size="20"></td>
+    </tr>
+</table>
+<blockquote>
+<p>例）</p>
+</blockquote>
+<pre><code><div>
+<span>&lt;<span class="vs-blue">label</span> <span class="vs-skyblue">for</span>=<span class="vs-red">"id"</span>&gt;</span>メールアドレス：<span>&lt;<span class="vs-blue">input</span> <span class="vs-skyblue">type</span>=<span class="vs-red">"mail"</span> <span class="vs-skyblue">size</span>=<span class="vs-red">"20"</span> <span class="vs-skyblue">placeholder</span>=<span class="vs-red">"201220taro@stapro.net"</span>&gt;</span><span>&lt;/<span class="vs-blue">label</span>&gt;</span>
+<span>&lt;<span class="vs-blue">label</span> <span class="vs-skyblue">for</span>=<span class="vs-red">"id"</span>&gt;</span>パスワード：<span>&lt;<span class="vs-blue">input</span> <span class="vs-skyblue">type</span>=<span class="vs-red">"password"</span> <span class="vs-skyblue">size</span>=<span class="vs-red">"20"</span>&gt;</span><span>&lt;/<span class="vs-blue">label</span>&gt;</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<!-- <form> -->
+    <label for="id">メールアドレス：<input type="mail" size="20" placeholder="201220taro@stapro.net"></label>
+    <label for="id">パスワード：<input type="password" size="20"></label>
+    <!-- <input type="reset" value="リセットする"> -->
+  <!-- </form> -->
+<!-- <input type="submit" value="送信する"> -->
+<!-- <p>※emailは自動的に@が含まれているか判定してくれるので、空白以外の場合、メール形式が正しくない状態で送信を押すとエラーが表示されます。</p> -->
+
+<hr>
+<h2>選択肢の種類</h2>
+<p>
+    <strong class="vs-skyblue">type</strong>（タイプ）属性の値を変えることで、選択肢もつくることができます。
+</p>
+<table border="1" style="text-align:center;">
+    <tr>
+        <th><strong>type</strong>属性の値<br><code><span class="vs-gray">&lt;<span class="vs-blue">input</span> <span class="vs-skyblue">type</span>=<span class="vs-red">"〇〇"</span>&gt;</span></code></th>
+        <th>内容</th>
+        <th>表示例</th>
+    </tr>
+    <tr>
+
+        <td><code><span class="vs-red">"radio"</span></code></td>
+        <td>ラジオボタン（単一選択）</td>
+        <td>
+            <label><input type="radio"name="radio">A</label>
+            <label><input type="radio"name="radio">B</label>
+            <!-- 改善点：name新しくでてくるの書く、nameないと単一にならない -->
+        </td>
+    </tr>
+    <tr>
+        <td><code><span class="vs-red">"checkbox"</span></code></td>
+        <td>チェックボックス</td>
+        <td>
+            <label><input type="checkbox">A</label>
+            <label><input type="checkbox">B</label>
+        </td>
+    </tr>
+</table>
+
+<blockquote>
+<p>例）</p>
+</blockquote>
+<pre><code><div>
+<span>&lt;<span class="vs-blue">p</span>&gt;</span>出身地：</span>
+    <span>&lt;<span class="vs-blue">label</span>&gt;</span><span>&lt;<span class="vs-blue">input</span> <span class="vs-skyblue">type</span>=<span class="vs-red">"radio"</span> <span class="vs-skyblue">name</span>=<span class="vs-red">"radio"</span>&gt;</span>広島市内<span>&lt;/<span class="vs-blue">label</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">label</span>&gt;</span><span>&lt;<span class="vs-blue">input</span> <span class="vs-skyblue">type</span>=<span class="vs-red">"radio"</span> <span class="vs-skyblue">name</span>=<span class="vs-red">"radio"</span>&gt;</span>広島県内（広島市を除く）<span>&lt;/<span class="vs-blue">label</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">label</span>&gt;</span><span>&lt;<span class="vs-blue">input</span> <span class="vs-skyblue">type</span>=<span class="vs-red">"radio"</span> <span class="vs-skyblue">name</span>=<span class="vs-red">"radio"</span>&gt;</span>広島県外<span>&lt;/<span class="vs-blue">label</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<p>
+    出身地：
+    <label><input type="radio"name="radio">広島市内</label>
+    <label><input type="radio"name="radio">広島県内（広島市を除く）</label>
+    <label><input type="radio"name="radio">広島県外</label>
+</p>
+  
+
+<hr>
+<h2>セレクトボックス</h2>
+<p>
+    選択肢が多い場合、セレクトボックスでひとまとめにしておくと見た目がすっきりします。
+    <br>新たに<strong class="vs-blue">select</strong>タグと<strong class="vs-blue">option</strong>タグを使います。
+</p>
+<blockquote>
+<p>例）</p>
+</blockquote>
+<pre><code><div><span>&lt;<span class="vs-blue">select</span> <span class="vs-skyblue">name</span>=<span class="vs-red">"address"</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">option</span> <span class="vs-skyblue">value</span>=<span class="vs-red">"tokyo"</span>&gt;</span>東京<span>&lt;/<span class="vs-blue">option</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">option</span> <span class="vs-skyblue">value</span>=<span class="vs-red">"yokohama"</span>&gt;</span>横浜<span>&lt;/<span class="vs-blue">option</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">option</span> <span class="vs-skyblue">value</span>=<span class="vs-red">"nagoya"</span>&gt;</span>名古屋<span>&lt;/<span class="vs-blue">option</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">option</span> <span class="vs-skyblue">value</span>=<span class="vs-red">"kyoto"</span>&gt;</span>京都<span>&lt;/<span class="vs-blue">option</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">option</span> <span class="vs-skyblue">value</span>=<span class="vs-red">"osaka"</span>&gt;</span>大阪<span>&lt;/<span class="vs-blue">option</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">option</span> <span class="vs-skyblue">value</span>=<span class="vs-red">"hiroshima"</span>&gt;</span>広島<span>&lt;/<span class="vs-blue">option</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">option</span> <span class="vs-skyblue">value</span>=<span class="vs-red">"fukuoka"</span>&gt;</span>福岡<span>&lt;/<span class="vs-blue">option</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">select</span>&gt;</span></div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<select name="address">
+    <option value="tokyo">東京</option>
+    <option value="yokohama">横浜</option>
+    <option value="nagoya">名古屋</option>
+    <option value="kyoto">京都</option>
+    <option value="osaka">大阪</option>
+    <option value="hiroshima">広島</option>
+    <option value="osaka">福岡</option>
+</select>
+<hr>
+<h2>長文用のフォーム</h2>
+<p>
+    長い文章を入力する場合は <strong class="vs-blue">textarea</strong>タグを使用します。
+    <br><strong class="vs-skyblue">row</strong>属性は高さ（単位は行数）、<strong class="vs-skyblue">cols</strong>属性は幅（単位は半角の字数）、
+    <br><strong class="vs-skyblue">placeholder</strong>属性は入力のヒントとなるテキストを指定します。
+</p>
+<blockquote>
+<p>例）</p>
+</blockquote>
+<pre><code><div><span>&lt;<span class="vs-blue">p</span>&gt;</span>お問い合わせ内容<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+<span>&lt;<span class="vs-blue">textarea</span> <span class="vs-skyblue">rows</span>=<span class="vs-red">"5"</span> <span class="vs-skyblue">cols</span>=<span class="vs-red">"100"</span> <span class="vs-skyblue">placeholder</span>=<span class="vs-red">"ご意見・ご感想をお聞かせください"</span>&gt;</span><span>&lt;/<span class="vs-blue">textarea</span>&gt;</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<p>お問い合わせ内容</p>
+<textarea rows="5" cols="100" placeholder="ご意見・ご感想をお聞かせください"></textarea>
+<hr>
+<h2>練習問題</h2>
+<p>
+    以下のようなアンケートを作ってみましょう。
+    <br>（見本は<a href="お手本（メンターのみ共有するもの）\00_09. お手本.html" target="_blank">こちら</a>）
+    <br>文字は15px、お名前のテキストボックスの横幅は30にしてください。
+    <br>学校の選択肢は「小学校」「中学校」「高校」の3つです。
+    <br>相談内容の入力欄の高さは5行分で、幅は40字分にしてください。
+    <br><img src="img\09_practice.png" alt="practice" border="1">
+</p>
+<hr>
+<h2>解説動画</h2>
+    <p>カリキュラム解説</p>
+    <iframe width="1000" height="600" src="https://www.youtube.com/embed/GvfDp6OUS-A?si=i_SwKafcXQCUCHxI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p>練習問題解説</p>
+    <iframe width="1000" height="600" src="https://www.youtube.com/embed/nhe-IjDfB5Y?si=FN88PA6AUXr2Apum" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</body>
+</html>

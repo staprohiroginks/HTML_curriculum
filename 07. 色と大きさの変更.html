@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>07. 色と大きさの変更</title>
+    <link rel="stylesheet" href="00. カリキュラム用style.css">
+</head>
+<body class="vscode-body vscode-light">
+<h1 id="テーブル">色と大きさの変更</h1>
+<p>
+    今回から新しくCSS（シーエスエス）ファイルを使います。
+    <br>CSSファイルを活用して、背景色、文字の色、そして文字の大きさを変更しましょう！
+</p>
+<h2>CSSとは？</h2>
+<p>
+    CSSとは "Cascading Style Sheets" の略で、主にホームページの見た目についてプログラミングする言語です。
+    <br>「Webページ = HTML（構造的な文書）+ CSS（見た目）」と理解しておきましょう。
+    <br>見た目を変更したいときは、以下の書式に従う必要があります。
+</p>
+<pre><code><div><span class="vs-orange"><b>セレクタ</b> {</span>
+    <span class="vs-skyblue"><b>プロパティ</b></span>: <span class="vs-green"><b>値</b></span>;
+<span class="vs-orange">}</span></div></code></pre>
+<p>
+    <ul>
+        <li><p><strong class="vs-orange">セレクタ</strong>：スタイルを適用する対象を指定します。
+            <code><span class="vs-darkred">&lt;body&gt;</span></code>に適用したいなら「<span class="vs-orange"><b>body</b></span>」、<code><span>&lt;p&gt;</span></code>に適用したいなら「<span class="vs-orange"><b>p</b></span>」が入ります。</p></li>
+        <li><p><strong class="vs-skyblue">プロパティ</strong>：どんな装飾をするかを指定します。
+            色を変更したいなら「<span class="vs-skyblue"><b>color</b></span>」、文字の大きさを変更したいなら「<span class="vs-skyblue"><b>font-size</b></span>」が入ります。</p></li>
+        <li><p><strong class="vs-green">値</strong>：プロパティに対する値を指定します。色の名前や、文字の大きさを表す数値（px）が入ります。</p></li>
+    </ul>
+</p>
+<hr>
+<h2>CSSファイルの作成・読み込み</h2>
+<p>
+    まずは新しくCSSファイルを作りましょう。作る場所は、今コードを書いているindex.htmlと必ず同じ場所（同じ階層）にしてください。
+    <br>Visual Studio Codeの<img src="img\07_plus.png" alt="+">マークを押して、「style.css」という名前を付けます。
+    <br>この拡張子「.css」がCSSファイルの目印です。<br>
+    <br>次に、HTMLファイルの中でCSSファイルを読み込みます。
+    <br>HTMLファイルを開き、ヘッダータグ<code><span class="vs-darkred">&lt;header&gt;</span></code>の中に以下の一文を書きます。
+</p>
+<pre><code><div><span>&lt;!<span class="vs-blue">DOCTYPE</span> <span class="vs-skyblue">html</span>&gt;</span>
+<span>&lt;<span class="vs-blue">html</span> <span class="vs-skyblue">lang</span>=<span class="vs-red">"ja"</span>&gt;</span>
+<span>&lt;<span class="vs-blue">head</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">meta</span> <span class="vs-skyblue">charset</span>=<span class="vs-red">"utf8"</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">meta</span> <span class="vs-skyblue">name</span>=<span class="vs-red">"description"</span> <span class="vs-skyblue">content</span>=<span class="vs-red">"初めてHTMLを勉強するサイトです。"</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">link</span> <span class="vs-skyblue">rel</span>=<span class="vs-red">"stylesheet"</span> <span class="vs-skyblue">href</span>=<span class="vs-red">"style.css"</span>&gt;</span> <span class="vs-darkgreen">&lt;!-- CSSファイルの読み込み --&gt</span> 
+    <span>&lt;<span class="vs-blue">title</span>&gt;</span>プログラミングの勉強<span>&lt;/<span class="vs-blue">title</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">head</span>&gt;</span>
+</div></code></pre>
+<p>
+    これでCSSファイルをHTMLファイルとつなげることができました！
+    <br>なお、&lt;!--  --&gtでコンテンツを囲むことをコメントアウトといいます。
+    <br>囲んだ部分は非表示にすることができるため、一時的に消去したりコードの内容の補足を書いたりする場合に使えます。
+    <br>Macでは Cmd + / キー、Windowsでは Ctrl + / キーで選択部分をコメントアウトできます。
+</p>
+<hr>
+<h2>色の変更</h2>
+<p>
+    背景と文字の色を変更しましょう！
+    <br>背景色は<code><span class="vs-darkred">&lt;body&gt;</span></code>を指定し、文字の色は<code><span class="vs-darkred">&lt;p&gt;</span></code>を指定して変更します。
+    <br>また、背景は英語で「background」と訳されます。
+    <br>例として背景色を黄色に、文字の色を赤色にしてみましょう。
+</p>
+<blockquote>
+    <p>HTMLファイル</p>
+</blockquote>
+<pre><code><span>&lt;<span class="vs-blue">body</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">p</span>&gt;</span>こんにちは！<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">body</span>&gt;</span>
+</div></code></pre>
+<blockquote>
+    <p>style.css</p>
+</blockquote>
+<pre><code><div><span class="vs-orange">body {</span>
+    <span class="vs-skyblue">background-color</span>:<span class="vs-red"> yellow</span>;
+<span class="vs-orange">}</span>
+<span class="vs-orange">p {</span>
+    <span class="vs-skyblue">color</span>:<span class="vs-red"> red</span>;
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+    <p>実行例</p>
+</blockquote>
+<img src="img\07_Hello1.png" alt="Hello1">
+<hr>
+<h2>文字の大きさの変更</h2>
+<p>
+    色と同じように、文字の大きさも変更しましょう！<br>
+    pタグはデフォルトで16pxになっています。
+    <br>先ほどのCSSファイルに1行追加します。
+</p>
+<blockquote>
+    <p>HTMLファイル</p>
+</blockquote>
+<pre><span>&lt;<span class="vs-blue">body</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">p</span>&gt;</span>こんにちは！<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">body</span>&gt;</span>
+</div></code></pre>
+<blockquote>
+    <p>style.css</p>
+</blockquote>
+<pre><code><div><span class="vs-orange">body {</span>
+    <span class="vs-skyblue">background-color</span>:<span class="vs-red"> yellow</span>;
+<span class="vs-orange">}</span>
+<span class="vs-orange">p {</span>
+    <span class="vs-skyblue">color</span>:<span class="vs-red"> red</span>;
+    <span class="vs-skyblue">font-size</span>:<span class="vs-green"> 30px</span>;
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+    <p>実行例</p>
+</blockquote>
+<img src="img\07_Hello2.png" alt="Hello2">
+<hr>
+<h2>予備知識</h2>
+<h3>色の指定方法</h3>
+<p>
+    色のプロパティ「<code><span class="vs-gray"><span class="vs-skyblue">color</span>:<span class="vs-green"> 〇〇</span>;</span></code>」に入る値は、合わせて4通りの指定方法があります。
+    <br>状況に応じて使い分けるのがおすすめです。
+</p>
+<table border="1">
+    <tr>
+        <th>指定形式</th>
+        <th>値の指定例</th>
+        <th>概要</th>
+    </tr>
+    <tr>
+        <td>キーワード</td>
+        <td>「<code><span class="vs-red">red</span></code>」「<code><span class="vs-red">blue</span></code>」「<code><span class="vs-red">green</span></code>」</td>
+        <td>
+            <ul>
+                <li>17種類の色の名前で指定</li>
+                <li>すべてのブラウザが対応している上に分かりやすい</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>16進数カラーコード</td>
+        <td>「<code><span class="vs-red">#ffcc00</span></code>」「<code><span class="vs-red">#c00</span></code>」</td>
+        <td>
+            <ul>
+                <li>「# + カラーコード」で指定</li>
+                <li>デザイン制作では主流の指定方法</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>RGB</td>
+        <td>「<code><span class="vs-green">rgb( 255, 42, 53)</span></code>」</td>
+        <td>
+            <ul>
+                <li>光の3原色であるRed、Green、Blueのカラーコードを指定</li>
+                <li>透過度A(Alpha)も指定するなら「rgba( 255, 0, 0, 0.5)」と表記</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>HSL</td>
+        <td>「<code><span class="vs-green">hsl( 0, 100%, 100%)</span></code>」</td>
+        <td>
+            <ul>
+                <li>Hue(色相)、Saturation(彩度)、Lightness(輝度)の3つを指定</li>
+                <li>透過度A(Alpha)も指定するなら「hsla( 207, 100%, 86%, 0.5);」と表記</li>
+            </ul>
+        </td>
+    </tr>
+</table>
+
+<h3>文字の見た目</h3>
+<p>
+    文字の見た目は、色や大きさ以外にも様々な変更を加えることができます。
+    <br>以下はその一覧です。
+</p>
+<table border="1"><!-- https://saruwakakun.com/html-css/basic/text-setting -->
+    <tr>
+        <th>プロパティ</th>
+        <th>値の指定例</th>
+        <th>変更する部分</th>
+    </tr>
+    <tr>
+        <td><code><span class="vs-skyblue">font-size</span></code></td>
+        <td>「<code><span class="vs-green">10px</span></code>」「<code><span class="vs-green">2.0em</span></code>」</td>
+        <td>大きさ（emは初期設定値に対する倍率）</td>
+    </tr>
+    <tr>
+        <td><code><span class="vs-skyblue">color</span></code></td>
+        <td>「<code><span class="vs-red">red</span></code>」「<code><span class="vs-red">#ffcc00</span></code>」</td>
+        <td>色</td>
+    </tr>
+    <tr>
+        <td><code><span class="vs-skyblue">font-weight</span></code></td>
+        <td>「<code><span class="vs-red">bold</span></code>」「<code><span class="vs-red">normal</span></code>」「<code><span class="vs-red">lighter</span></code>」</td>
+        <td>太さ</td>
+    </tr>
+    <tr>
+        <td><code><span class="vs-skyblue">font-size</span></code></td>
+        <td>「<code><span class="vs-red">normal</span></code>」「<code><span class="vs-red">italic</span></code>」「<code><span class="vs-red">oblique</span></code>」</td>
+        <td>傾き（italic：筆記体、oblique：斜体）</td>
+    </tr>
+    <tr>
+        <td><code><span class="vs-skyblue">text-decoration</span></code></td>
+        <td>「<code><span class="vs-red">underline</span></code>」「<code><span class="vs-red">line-through</span></code>」</td>
+        <td>下線、取り消し線</td>
+    </tr>
+    <tr>
+        <td><code><span class="vs-skyblue">text-align</span></code></td>
+        <td>「<code><span class="vs-red">left</span></code>」「<code><span class="vs-red">center</span></code>」「<code><span class="vs-red">right</span></code>」</td>
+        <td>位置（初期値はleft）</td>
+    </tr>
+</table>
+<p>これらのプロパティはかなり頻繁に使用するため、しっかり覚えましょう！</p>
+<hr>
+<h2>練習問題</h2>
+<p>
+    以下の画像と同じようなページを作ってみましょう。
+    <br>（見本は<a href="お手本（メンターのみ共有するもの）\00_07. お手本.html" target="_blank">こちら</a>）
+    <br>背景色はgreen、文字色はblueにしてください。
+    <br>文字は20pxにしてください。
+    <br><img src="img\07_practice.png" alt="practice">
+</p>
+<hr>
+<h2>解説動画</h2>
+    <p>カリキュラム解説</p>
+    <iframe width="1000" height="600" src="https://www.youtube.com/embed/8PbESMhhzq4?si=VC-N_3AoRsApiOXR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p>練習問題解説</p>
+    <iframe width="1000" height="600" src="https://www.youtube.com/embed/oH3zX3kuWTU?si=ULm3_7mlYdd4vcqU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</body>
+</html>

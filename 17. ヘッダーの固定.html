@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>17. ヘッダーの固定</title>
+    <link rel="stylesheet" href="00. カリキュラム用style.css">
+</head>
+<body class="vscode-body vscode-light">
+<h1 id="テーブル">ヘッダーの固定</h1>
+<p>
+    <a href="15. header、main、footerについて.html" target="_blank">15. header、main、footerについて.html</a>で学習したheaderを固定して、ヘッダーが常に表示されるようにしましょう。
+</p>
+<h2>ヘッダーの固定によるタイトル表示</h2>
+<p>
+    まずは以下のコードを用意しましょう。
+</p>
+<blockquote>
+<p>index.html</p>
+</blockquote>
+<pre><code><div><span>&lt;<span class="vs-blue">header</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">h1</span>&gt;</span>ゲーム紹介ページ<span>&lt;/<span class="vs-blue">h1</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">nav</span>&gt;</span>
+        <span>-ホーム</span>
+        <span>-家庭用ゲーム機</span>
+        <span>-スマートフォン</span>
+        <span>-PC</span>
+        <span>-その他</span>
+    <span>&lt;<span class="vs-blue">nav</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">header</span>&gt;</span>
+
+<span>&lt;<span class="vs-blue">main</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">p</span>&gt;</span>テキスト1<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">p</span>&gt;</span>テキスト2<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">p</span>&gt;</span>テキスト3<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">p</span>&gt;</span>テキスト4<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">p</span>&gt;</span>テキスト5<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">p</span>&gt;</span>テキスト6<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">p</span>&gt;</span>テキスト7<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">p</span>&gt;</span>テキスト8<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">p</span>&gt;</span>テキスト9<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">p</span>&gt;</span>テキスト10<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">p</span>&gt;</span>テキスト12<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">p</span>&gt;</span>テキスト13<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">p</span>&gt;</span>テキスト14<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">p</span>&gt;</span>テキスト15<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">p</span>&gt;</span>テキスト16<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">p</span>&gt;</span>テキスト17<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">p</span>&gt;</span>テキスト18<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">p</span>&gt;</span>テキスト19<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">p</span>&gt;</span>テキスト20<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">main</span>&gt;</span>
+
+<span>&lt;<span class="vs-blue">footer</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">p</span>&gt;</span>Copyright <span class="vs-blue">&amp;copy;</span>2024 StartProgramming All Rights Reserved.&lt;/<span class="vs-blue">p</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">footer</span>&gt;</span></div></code></pre>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre><code><div><span class="vs-orange">body {</span></span>
+    <span class="vs-skyblue">font-size</span>: <span class="vs-green">200%</span>;</span>
+<span class="vs-orange">}</span>
+<span class="vs-orange">header {</span></span>
+    <span class="vs-skyblue">background-color</span>: <span class="vs-red">skyblue</span>;</span>
+    <span class="vs-skyblue">text-align</span>: <span class="vs-red">center</span>;</span>
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\17_normal.png" alt="17_normal" width="700px">
+<p>
+    このままではヘッダーが固定されず、見切れてしまいます。
+    <br>固定するためには、positionプロパティでfixedを指定します。
+    <br>なお、fixは英語で「固定する」という意味です。
+    <br>cssファイルのh1を以下のように書き換えましょう。
+</p>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre><code><div><span class="vs-orange">header {</span></span>
+    <span class="vs-skyblue">background-color</span>: <span class="vs-red">skyblue</span>;</span>
+    <span class="vs-skyblue">text-align</span>: <span class="vs-red">center</span>;</span>
+    <span class="vs-skyblue">position</span>: <span class="vs-red">fixed</span>;</span>
+    <span class="vs-skyblue">width</span>: <span class="vs-green">100%</span>;</span>
+    <span class="vs-skyblue">top</span>: <span class="vs-green">0px</span>;</span>
+    <span class="vs-skyblue">left</span>: <span class="vs-green">0px</span>;</span>
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\17_fixed.png" alt="17_fixed" width="700px">
+<p>
+    これでヘッダーが固定されるようになりました。
+    <br>しかし、このままではテキスト1~3がヘッダーに被ってしまっています。    
+    <br>そこで、<a href="12. margin、padding、border.html" target="_blank">カリキュラム12. margin、padding、border</a>を復習しながら、
+    <br>ページ内容全体の上に、ヘッダーの高さと同じ長さの余白を入れましょう。
+    <br>cssファイルに以下のコードを追加します。
+</p>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre><code><div><span class="vs-orange">main {</span></span>
+    <span class="vs-skyblue">margin-top</span>: <span class="vs-green">250px</span>;</span>
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\17_modified.png" alt="17_modified" width="700px">
+<p>
+    ヘッダーと画像の重なりが解消され、正しく表示されるようになりました！
+</p>
+<hr>
+<h2>ページ上部への復帰</h2>
+<p>
+    次は画面がスクロールしても常にトップへ戻れるようにしてみましょう。
+    <br>画面右下に「トップへ戻る」ボタンを配置し、常に表示されるように固定します。
+    <br>
+    <br>headerやmain、footerとは独立した要素に、ページトップへ戻るリンク<strong class="vs-red">"#"</strong>を設定します。
+    <br>リンクでhref属性に<strong class="vs-red">"#"</strong>を設定する場合を以下に示します。
+</p>
+<ul>
+    <li>ページのトップに戻るため。</li>
+    <li>リンクを仮設定し、後から別のリンクに書き換えるため。</li>
+    <li>同じページ内で、id属性を設定した特定の場所にジャンプさせるため。</li>
+</ul>
+<p>
+    htmlファイルのfooterの直下とcssファイルに、以下のコードを追加しましょう。
+</p>
+<blockquote>
+<p>index.html</p>
+</blockquote>
+<pre><code><div><span><span>&lt;<span class="vs-blue">div</span> <span class="vs-skyblue">class</span>=<span class="vs-red">"top"</span>&gt;</span>
+<span>  &lt;<span class="vs-blue">a</span> <span class="vs-skyblue">href</span>=<span class="vs-red">"#"</span>&gt;</span>トップへ戻る<span>&lt;/<span class="vs-blue">a</span>&gt;</span></span>
+<span>&lt;<span class="vs-blue">div</span>&gt;</span></div></code></pre>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre><code><div><span class="vs-orange">.top {</span></span>
+    <span class="vs-skyblue">position</span>: <span class="vs-red">fixed</span>;</span>
+    <span class="vs-skyblue">bottom</span>: <span class="vs-green">10px</span>;</span>
+    <span class="vs-skyblue">right</span>: <span class="vs-green">20px</span>;</span>
+    <span class="vs-skyblue">width</span>: <span class="vs-green">200px</span>;</span>
+    <span class="vs-skyblue">height</span>: <span class="vs-green">50px</span>;</span>
+    <span class="vs-skyblue">background-color</span>: <span class="vs-red">skyblue</span>;</span>
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\17_top.png" alt="17_top" width="700px">
+<p>
+    ボタンを押して、ページ上部に復帰出来るようになりました！
+</p>
+<hr>
+<h2>練習問題</h2>
+<p>
+    これまでの復習をかねて、以下の画像と同じようなページを作ってみましょう。
+    <br>（見本は<a href="お手本（メンターのみ共有するもの）\00_17. お手本.html" target="_blank">こちら</a>）
+    <br>画像に重なるh2タグの見出しとpタグの文章は、上から0px、左から50pxの位置にしてください。
+    <br>ヘッダーは固定してください。
+    <br>矢印は「↑」をテキストで書いて出力してください。
+    <br><img src="img\17_practice.png" alt="practice" width="1400px">
+</p>
+<hr>
+<h2>解説動画</h2>
+    <p>カリキュラム解説</p>
+    <iframe width="1000" height="600" src="https://www.youtube.com/embed/LwMLeaRS3A0?si=1cHWC4HE88ttaQjL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p>練習問題解説</p>
+    <iframe width="1000" height="600" src="https://www.youtube.com/embed/jNZWd-u38IY?si=93L88m9MO42ejwV3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</body>
+</html>

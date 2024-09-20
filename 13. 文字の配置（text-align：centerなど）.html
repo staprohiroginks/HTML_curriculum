@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>13. 文字の配置（text-align：centerなど）</title>
+    <link rel="stylesheet" href="00. カリキュラム用style.css">
+</head>
+<body class="vscode-body vscode-light">
+<h1 id="テーブル">文字の配置（text-align：centerなど）</h1>
+<p>
+    CSSファイルで、文字の位置や表示方法について変更することが出来ます。
+</p>
+<h2>文字のプロパティ一覧</h2>
+<p>
+   文字のプロパティは、一例として以下が挙げられます。
+</p>
+<pre><code><div><span class="vs-orange">p {</span></span>
+    <span class="hljs-comment">// フォントサイズ（サイズ14ピクセル）</span>
+    <span class="vs-skyblue">font-size</span>: <span class="vs-green">14px</span>;
+    <span class="hljs-comment">// フォントの太さ（太字）</span>
+    <span class="vs-skyblue">font-weight</span>: <span class="vs-red">bold</span>;
+    <span class="hljs-comment">// フォントカラー（青）</span>
+    <span class="vs-skyblue">color</span>: <span class="vs-red">blue</span>;
+    <span class="hljs-comment">// フォントの透明度</span>
+    <span class="vs-skyblue">opacity</span>: <span class="vs-green">0.5</span>;
+    <span class="hljs-comment">// フォントのスタイル（斜体）</span>
+    <span class="vs-skyblue">font-style</span>: <span class="vs-red">italic</span>;
+    <span class="hljs-comment">// 文字を揃える方向（中央）</span>
+    <span class="vs-skyblue">text-align</span>: <span class="vs-red">center</span>;
+    <span class="hljs-comment">// 文字の装飾（下線）</span>
+    <span class="vs-skyblue">text-decoration</span>: <span class="vs-red">underline</span>;
+    <span class="hljs-comment">// 文字の行間（サイズ10ピクセル）</span>
+    <span class="vs-skyblue">line-height</span>: <span class="vs-green">10px</span>;
+<span class="vs-orange">}</span>
+</div></code></pre>
+<p>
+    フォントサイズと文字の行間は数値で、フォントカラーは<a href="07. 色と大きさの変更.html" target="_blank">カリキュラム7</a>で学んだ方法で指定します。
+    <br>それ以外のプロパティは以下で説明します。
+</p>
+<hr>
+<h2>フォントの太さ</h2>
+<p>
+   フォントの太さを指定するプロパティ<strong  class="vs-skyblue">font-weight</strong>の値は、以下が挙げられます。
+</p>
+<table border="1" style="text-align:center;">
+    <tr>
+        <th>プロパティの値<br><code><span class="vs-skyblue">font-weight</span>:<span class="vs-red">〇〇</span>;</code></th>
+        <th>効果</th>
+        <th>表示例</th>
+    </tr>
+    <tr>
+        <td><code><span class="hljs-tag">normal</span></code></td>
+        <td>普通</td>
+        <td>
+            <p style="font-weight:normal; font-size:20px;">フォントの太さ</p>
+        </td>
+    </tr>
+    <tr>
+        <td><code><span class="hljs-tag">lighter</span></code></td>
+        <td>やや細い</td>
+        <td>
+            <p style="font-weight:lighter; font-size:20px;">フォントの太さ</p>
+        </td>
+    </tr>
+    <tr>
+        <td><code><span class="hljs-tag">bolder</span></code></td>
+        <td>やや太い</td>
+        <td>
+            <p style="font-weight:bolder; font-size:20px;">フォントの太さ</p>
+        </td>
+    </tr>
+    <tr>
+        <td><code><span class="hljs-tag">bold</span></code></td>
+        <td>太い</td>
+        <td>
+            <p style="font-weight:bold; font-size:20px;">フォントの太さ</p>
+        </td>
+    </tr>
+    <tr>
+        <td><code><span class="hljs-tag">100</span></code></td>
+        <td>カスタム</td>
+        <td>
+            <p style="font-weight:100; font-size:20px;">フォントの太さ</p>
+        </td>
+    </tr>
+</table>
+<p>
+    現在表示しているフォントではあまり変化がありません。
+    <br>フォントの種類によって大きく変化が現れるものもあります。
+</p>
+<blockquote>
+<p>index.html</p>
+</blockquote>
+<pre><code><div><span>&lt;<span class="vs-blue">p</span> <span class="vs-skyblue">class</span>=<span class="vs-red">"before"</span>&gt;</span>css変更前<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+<span>&lt;<span class="vs-blue">p</span> <span class="vs-skyblue">class</span>=<span class="vs-red">"after"</span>&gt;</span>css変更後<span>&lt;/<span class="vs-blue">p</span>&gt;</span></div></code></pre>
+</div></code></pre>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre><code><div><span class="vs-orange">body {</span></span>
+    <span class="vs-skyblue">font-size</span>: <span class="vs-green">30px</span>;</span>
+<span class="vs-orange">}</span>
+<span class="vs-orange">.after {</span></span>
+    <span class="vs-skyblue">font-weight</span>: <span class="vs-red">bold</span>;</span>
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\13_weight.png" alt="13_weight" border="1">
+<hr>
+<h2>フォントの透明度</h2>
+<p>
+   フォントの透明度を指定するプロパティ<strong  class="vs-skyblue">opacity</strong>の値は0~1の数値です。
+   <br>例として以下が挙げられます。
+</p>
+<table border="1" style="text-align:center;">
+    <tr>
+        <th>プロパティの値<br><code><span class="vs-skyblue">opacity</span>:<span class="vs-red">〇〇</span>;</code></th>
+        <th>効果</th>
+        <th>表示例</th>
+    </tr>
+    <tr>
+        <td><code><span class="hljs-tag">0</span></code></td>
+        <td>透明</td>
+        <td>
+            <p style="opacity: 0; font-size:20px;">フォントの透明度</p>
+        </td>
+    </tr>
+    <tr>
+        <td><code><span class="hljs-tag">0.3</span></code></td>
+        <td>半透明（薄め）</td>
+        <td>
+            <p style="opacity: 0.3; font-size:20px;">フォントの透明度</p>
+        </td>
+    </tr>
+    <tr>
+        <td><code><span class="hljs-tag">0.7</span></code></td>
+        <td>半透明（濃いめ）</td>
+        <td>
+            <p style="opacity: 0.7; font-size:20px;">フォントの透明度</p>
+        </td>
+    </tr>
+    <tr>
+        <td><code><span class="hljs-tag">1</span></code></td>
+        <td>不透明</td>
+        <td>
+            <p style="opacity: 1; font-size:20px;">フォントの透明度</p>
+        </td>
+    </tr>
+</table>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre><code><div><span class="vs-orange">.after {</span></span>
+    <span class="vs-skyblue">opacity</span>: <span class="vs-green">0.5</span>;</span>
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\13_opacity.png" alt="13_opacity" border="1">
+<hr>
+<h2>フォントのスタイル</h2>
+<p>
+    フォントのスタイルを指定するプロパティ<strong  class="vs-skyblue">font-style</strong>の値は、以下が挙げられます。
+</p>
+<table border="1" style="text-align:center;">
+    <tr>
+        <th>プロパティの値<br><code><span class="vs-skyblue">font-style</span>:<span class="vs-red">〇〇</span>;</code></th>
+        <th>効果</th>
+        <th>表示例</th>
+    </tr>
+    <tr>
+        <td><code><span class="hljs-tag">normal</span></code></td>
+        <td>普通</td>
+        <td>
+            <p style="font-style:normal; font-size:20px;">フォントのstyle</p>
+        </td>
+    </tr>
+    <tr>
+        <td><code><span class="hljs-tag">italic</span></code></td>
+        <td>斜体</td>
+        <td>
+            <p style="font-style:italic; font-size:20px;">フォントのstyle</p>
+        </td>
+    </tr>
+    <tr>
+        <td><code><span class="hljs-tag">oblique</span></code></td>
+        <td>斜体 ※italicが使えない場合</td>
+        <td>
+            <p style="font-style:oblique; font-size:20px;">フォントのstyle</p>
+        </td>
+    </tr>
+</table>
+<p>日本語または英語で効果が異なるので注意が必要です。</p>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre><code><div><span class="vs-orange">.after {</span></span>
+    <span class="vs-skyblue">font-style</span>: <span class="vs-red">italic</span>;</span>
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\13_style.png" alt="13_style" border="1">
+<hr>
+<h2>文字を揃える方向</h2>
+<p>
+    文字を揃える方向を指定するプロパティ<strong  class="vs-skyblue">text-align</strong>の値は、以下が挙げられます。
+</p>
+<table border="1" style="text-align:center;">
+    <tr>
+        <th>プロパティの値<br><code><span class="vs-skyblue">text-align</span>:<span class="vs-red">〇〇</span>;</code></th>
+        <th>効果</th>
+        <th style="width: 200px;">表示例</th>
+    </tr>
+    <tr>
+        <td><code><span class="hljs-tag">left</span></code></td>
+        <td>左寄せ</td>
+        <td>
+            <p style="text-align:left;">文字を揃える方向</p>
+        </td>
+    </tr>
+    <tr>
+        <td><code><span class="hljs-tag">right</span></code></td>
+        <td>右寄せ</td>
+        <td>
+            <p style="text-align:right;">文字を揃える方向</p>
+        </td>
+    </tr>
+    <tr>
+        <td><code><span class="hljs-tag">start</span></code></td>
+        <td>開始方向寄せ<br>※日本語・英語は<br>leftと同義</td>
+        <td>
+            <p style="text-align:start;">文字を揃える方向</p>
+        </td>
+    </tr>
+    <tr>
+        <td><code><span class="hljs-tag">end</span></code></td>
+        <td>終了方向寄せ<br>※日本語・英語は<br>rightと同義</td>
+        <td>
+            <p style="text-align:end;">文字を揃える方向</p>
+        </td>
+    </tr>
+    <tr>
+        <td><code><span class="hljs-tag">center</span></code></td>
+        <td>中央寄せ</td>
+        <td>
+            <p style="text-align:center;">文字を揃える方向</p>
+        </td>
+    </tr>
+    <tr>
+        <td><code><span class="hljs-tag">justify</span></code></td>
+        <td>最終行除く両端揃え</td>
+        <td>
+            <p style="text-align:justify;">文字を揃える方向はtext-alignで指定します。</p>
+        </td>
+    </tr>
+    <tr>
+        <td><code><span class="hljs-tag">justify-all</span></code></td>
+        <td>最終行含む両端揃え</td>
+        <td>
+            <p style="text-align:justify-all;">文字を揃える方向はtext-alignで指定します。</p>
+        </td>
+    </tr>
+</table>
+
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre><code><div><span class="vs-orange">.after {</span></span>
+    <span class="vs-skyblue">text-align</span>: <span class="vs-red">center</span>;</span>
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\13_align.png" alt="13_align" border="1">
+<hr>
+<h2>文字の装飾</h2>
+<p>
+    文字の装飾を指定するプロパティ<strong  class="vs-skyblue">text-decoration</strong>の値は、以下が挙げられます。
+</p>
+<table border="1" style="text-align:center;">
+    <tr>
+        <th>プロパティの値<br><code><span class="vs-skyblue">text-decoration</span>:<span class="vs-red">〇〇</span>;</code></th>
+        <th>効果</th>
+        <th>表示例</th>
+    </tr>
+    <tr>
+        <td><code><span class="hljs-tag">none</span></code></td>
+        <td>線の表示なし</td>
+        <td>
+            <p style="text-decoration:none; font-size:20px;">文字の装飾</p>
+        </td>
+    </tr>
+    <tr>
+        <td><code><span class="hljs-tag">underline</span></code></td>
+        <td>下線</td>
+        <td>
+            <p style="text-decoration:underline; font-size:20px;">文字の装飾</p>
+        </td>
+    </tr>
+    <tr>
+        <td><code><span class="hljs-tag">overline</span></code></td>
+        <td>上線</td>
+        <td>
+            <p style="text-decoration:overline; font-size:20px;">文字の装飾</p>
+        </td>
+    </tr>
+</table>
+
+<p>
+    <strong  class="vs-skyblue">underline</strong>と<strong  class="vs-skyblue">overline</strong>は同時に指定することができます。
+    <br>また、文字の装飾は「<strong><span class="vs-skyblue">プロパティ</span> : <span  class="vs-red">線のスタイル 線の色 値</span> ;</strong>」と指定することもできます。
+</p>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre><code><div><span class="vs-orange">.after {</span></span>
+    <span class="vs-skyblue">text-decoration</span>: <span class="vs-red">dashed red underline</span>;</span>
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\13_decoration.png" alt="13_decoration" border="1">
+<hr>
+<h2>練習問題</h2>
+<p>
+    <a href="12. margin、padding、border.html" target="_blank">カリキュラム12. margin、padding、border</a>、<a href="11. divタグとclassについて.html" target="_blank">カリキュラム11. divタグとclassについて</a>、および
+    <br><a href="05. リスト.html" target="_blank">カリキュラム05. リスト</a>の復習もかねて、以下の画像と同じようなページを作ってみましょう。<br>
+    <br>（見本は<a href="お手本（メンターのみ共有するもの）\00_13. お手本.html" target="_blank">こちら</a>）
+    <br>「校外学習のお知らせ」はh1タグ、その他はpタグで書いてください。
+    <br>ピンクのエリアは背景色をpink、幅を300px，高さを400px、内側の空白を20pxにしてください。
+    <br>また、ピンクのエリアの位置は上から20px，左から20pxにしてください。
+    <br>「校外学習のお知らせ」と「持ち物リスト」は中央寄せにしてください。
+    <br>内側の白色のエリアは背景色をwhite、幅を300px，高さを200pxにしてください。
+    <br>ピンクのエリアと内側の白色のエリアは2pxの線で囲ってください。
+    <br>「歩きやすい靴」を太字にしてください。
+    <br><img src="img\13_practice.png" alt="practice" border="1">
+</p>
+<hr>
+<h2>解説動画</h2>
+    <p>カリキュラム解説</p>
+    <iframe width="1000" height="600" src="https://www.youtube.com/embed/FWgf8KTUd8E?si=_5E-FJxFY8qwcq5G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p>練習問題解説</p>
+    <iframe width="1000" height="600" src="https://www.youtube.com/embed/xq5GAZEAk3M?si=FUTTAhbwjdQ6xMS_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</body>
+</html>

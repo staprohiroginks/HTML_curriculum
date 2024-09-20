@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>12. margin、padding、border</title>
+    <link rel="stylesheet" href="00. カリキュラム用style.css">
+</head>
+<body class="vscode-body vscode-light">
+<h1 id="テーブル">margin、padding、border</h1>
+<p>
+    <strong class="vs-skyblue">margin</strong>（マージン）と<strong class="vs-skyblue">padding</strong>（パディング）は、直訳するとそれぞれ「空白」と「詰め物」という意味です。
+    <br>HTMLではそれぞれ「外側の空白」と「内側の空白」に該当します。
+    <br>また、これらを区切る線を<strong class="vs-skyblue">border</strong>（ボーダー）で定義できます。
+</p>
+<h2>外側の空白：margin</h2>
+<p>
+    まずは以下のコードを用意しましょう。
+</p>
+<blockquote>
+<p>index.html</p>
+</blockquote>
+<pre><code><div><span>&lt;<span class="vs-blue">div</span> <span class="vs-skyblue">class</span>=<span class="vs-red">"stapro1"</span>&gt;
+    <span>&lt;<span class="vs-blue">p</span>&gt;</span>スタートプログラミング1<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+&lt;/<span class="vs-blue">div</span>&gt;</span>
+<span>&lt;<span class="vs-blue">div</span> <span class="vs-skyblue">class</span>=<span class="vs-red">"stapro2"</span>&gt;
+    <span>&lt;<span class="vs-blue">p</span>&gt;</span>スタートプログラミング2<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+&lt;/<span class="vs-blue">div</span>&gt;</span></div></code></pre>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre><code><div><span class="vs-orange">body {</span></span>
+    <span class="vs-skyblue">background-color</span>: <span class="vs-red">skyblue</span>;</span>
+<span class="vs-orange">}</span>
+<span class="vs-orange">.stapro1,.stapro2 {</span></span>
+    <span class="vs-skyblue">background-color</span>: <span class="vs-red">pink</span>;</span>
+    <span class="vs-skyblue">width</span>: <span class="vs-green">250px</span>;</span>
+    <span class="vs-skyblue">height</span>: <span class="vs-green">50px</span>;</span>
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\12_normal.png" width=200px alt="12_normal">
+<p>
+    続いて、cssファイルに対して<strong class="vs-skyblue">margin</strong>に関する1文加えてみましょう。
+</p>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre><code><div><span class="vs-orange">body {</span></span>
+    <span class="vs-skyblue">background-color</span>: <span class="vs-red">skyblue</span>;</span>
+<span class="vs-orange">}</span>
+<span class="vs-orange">.stapro1,.stapro2 {</span></span>
+    <span class="vs-skyblue">background-color</span>: <span class="vs-red">pink</span>;</span>
+    <span class="vs-skyblue">width</span>: <span class="vs-green">250px</span>;</span>
+    <span class="vs-skyblue">height</span>: <span class="vs-green">50px</span>;</span>
+    <span class="vs-skyblue">margin</span>: <span class="vs-green">30px</span>;</span>
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\12_margin.png" width=200px alt="12_margin">
+<p>
+    それぞれのピンク色のエリアの周り（上下左右）に水色の部分が増えました！
+    <br>2つのエリアの間隔も広くなったのが分かります。
+    <br>このように、<strong class="vs-skyblue">margin</strong>は枠の外側に対して空白を作ることができます。
+    <br>なお値を「<strong class="vs-green">-30px</strong>」とすることで、空白を狭くすることができます。
+
+</p>
+<hr>
+<h2>内側の空白：padding</h2>
+<p>
+    次は、内側に空白を作ります。
+    <br>先ほどのcssファイルに対して、<strong class="vs-skyblue">padding</strong>に関する1文加えてみましょう。
+</p>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre><code><div><span class="vs-orange">body {</span></span>
+    <span class="vs-skyblue">background-color</span>: <span class="vs-red">skyblue</span>;</span>
+<span class="vs-orange">}</span>
+<span class="vs-orange">.stapro1,.stapro2 {</span></span>
+    <span class="vs-skyblue">background-color</span>: <span class="vs-red">pink</span>;</span>
+    <span class="vs-skyblue">width</span>: <span class="vs-green">250px</span>;</span>
+    <span class="vs-skyblue">height</span>: <span class="vs-green">50px</span>;</span>
+    <span class="vs-skyblue">margin</span>: <span class="vs-green">30px</span>;</span>
+    <span class="vs-skyblue">padding</span>: <span class="vs-green">10px</span>;</span>
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\12_padding.png" width=200px alt="12_padding">
+<p>
+    ピンク色のエリアが上下左右に広がりました！
+    <br>このように、<strong class="vs-skyblue">padding</strong>は枠の内側に対して空白を作ることができます。
+</p>
+<hr>
+<h2>空白の設定方法の種類</h2>
+<p>
+    空白のプロパティである<strong class="vs-skyblue">margin</strong>と<strong class="vs-skyblue">padding</strong>は、今まで上下左右すべて一括で指定してきました。
+    <br>他にも様々な指定方法があります。
+</p>
+<table border="1" style="text-align:center;">
+    <tr>
+        <th><strong class="vs-skyblue">margin</strong>と値の種類</th>
+        <th><strong class="vs-skyblue">padding</strong>と値の種類</th>
+        <th>意味</th>
+    </tr>
+    <tr>
+        <td><code><span class="vs-skyblue">margin</span>:<span class="vs-green">10px</span>;</code></td>
+        <td><code><span class="vs-skyblue">padding</span>:<span class="vs-green">10px</span>;</code></td>
+        <td><p>上下左右すべてに10px</p></td>
+    </tr>
+    <tr>
+        <td><code><span class="vs-skyblue">margin</span>:<span class="vs-green">10px 20px</span>;</code></td>
+        <td><code><span class="vs-skyblue">padding</span>:<span class="vs-green">10px 20px</span>;</code></td>
+        <td><p>上下に10px、左右に20px</p></td>
+    </tr>
+    <tr>
+        <td><code><span class="vs-skyblue">margin</span>:<span class="vs-green">10px 20px 30px</span>;</code></td>
+        <td><code><span class="vs-skyblue">padding</span>:<span class="vs-green">10px 20px 30px</span>;</code></td>
+        <td><p>上に10px、左右に20px、下に30px</p></td>
+    </tr>
+    <tr>
+        <td><code><span class="vs-skyblue">margin</span>:<span class="vs-green">10px 20px 30px 40px</span>;</code></td>
+        <td><code><span class="vs-skyblue">padding</span>:<span class="vs-green">10px 20px 30px 40px</span>;</code></td>
+        <td><p>上に10px、右に20px、下に30px、左に40px</p></td>
+    </tr>
+    <tr>
+        <td><code><span class="vs-skyblue">margin-top</span>:<span class="vs-green">10px</span>;</code></td>
+        <td><code><span class="vs-skyblue">padding-top</span>:<span class="vs-green">10px</span>;</code></td>
+        <td><p>上のみ10px</p></td>
+    </tr>
+    <tr>
+        <td><code><span class="vs-skyblue">margin-bottom</span>:<span class="vs-green">10px</span>;</code></td>
+        <td><code><span class="vs-skyblue">padding-bottom</span>:<span class="vs-green">10px</span>;</code></td>
+        <td><p>下のみ10px</p></td>
+    </tr>
+    <tr>
+        <td><code><span class="vs-skyblue">margin-left</span>:<span class="vs-green">10px</span>;</code></td>
+        <td><code><span class="vs-skyblue">padding-left</span>:<span class="vs-green">10px</span>;</code></td>
+        <td><p>左のみ10px</p></td>
+    </tr>
+    <tr>
+        <td><code><span class="vs-skyblue">margin-right</span>:<span class="vs-green">10px</span>;</code></td>
+        <td><code><span class="vs-skyblue">padding-right</span>:<span class="vs-green">10px</span>;</code></td>
+        <td><p>右のみ10px</p></td>
+    </tr>
+    <tr>
+        <td><code><span class="vs-skyblue">margin</span>:<span class="vs-red"><span class="vs-green">0</span> auto</span>;</code></td>
+        <td>---</td>
+        <td><p>空白無しで自動中央揃え</p></td>
+    </tr>
+</table>
+<p>
+    最下行の自動中央揃えは<strong class="vs-skyblue">margin</strong>のみの指定方法です。
+</p>
+<hr>
+<h2>線：border</h2>
+<p>
+    次は、枠に線を加えます。
+    <br>線のプロパティである<strong class="vs-skyblue">border</strong>は、cssファイルで以下のように指定します。
+</p>
+<pre><code><div><span class="vs-orange">セレクタ</span>{
+    <span class="vs-skyblue">border</span>: <span class="vs-red">線のスタイル <span class="vs-green">線の太さ</span> 線の色</span>;
+}
+</div></code></pre>
+<p>
+    では先ほどのcssファイルに対して、borderに関する1文を加えてみましょう。
+</p>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre><code><div><span class="vs-orange">body {</span></span>
+    <span class="vs-skyblue">background-color</span>: <span class="vs-red">skyblue</span>;</span>
+<span class="vs-orange">}</span>
+<span class="vs-orange">.stapro1,.stapro2 {</span></span>
+    <span class="vs-skyblue">background-color</span>: <span class="vs-red">pink</span>;</span>
+    <span class="vs-skyblue">width</span>: <span class="vs-green">250px</span>;</span>
+    <span class="vs-skyblue">height</span>: <span class="vs-green">50px</span>;</span>
+    <span class="vs-skyblue">margin</span>: <span class="vs-green">30px</span>;</span>
+    <span class="vs-skyblue">padding</span>: <span class="vs-green">10px</span>;</span>
+    <span class="vs-skyblue">border</span>: <span class="vs-red">solid <span class="vs-green">2px</span> black</span>;</span>
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\12_border.png" width=200px alt="12_border">
+<p>
+    枠に黒線が表れました！
+    <br>このように、borderは枠の線を指定することができます。
+    <br>特に<strong class="vs-red">solid</strong>は「実線」を指定する値であるため、<strong class="vs-red">dashed</strong>にすると「点線」を指定できます。
+</p>
+<blockquote>
+    <p>style.css</p>
+    </blockquote>
+    <pre><code><div><span class="vs-orange">body {</span></span>
+        <span class="vs-skyblue">background-color</span>: <span class="vs-red">skyblue</span>;</span>
+    <span class="vs-orange">}</span>
+    <span class="vs-orange">.stapro1,.stapro2 {</span></span>
+        <span class="vs-skyblue">background-color</span>: <span class="vs-red">pink</span>;</span>
+        <span class="vs-skyblue">width</span>: <span class="vs-green">250px</span>;</span>
+        <span class="vs-skyblue">height</span>: <span class="vs-green">50px</span>;</span>
+        <span class="vs-skyblue">margin</span>: <span class="vs-green">30px</span>;</span>
+        <span class="vs-skyblue">padding</span>: <span class="vs-green">10px</span>;</span>
+        <span class="vs-skyblue">border</span>: <span class="vs-red">dashed <span class="vs-green">2px</span> white</span>;</span>
+    <span class="vs-orange">}</span>
+    </div></code></pre>
+    <blockquote>
+    <p>実行結果</p>
+    </blockquote>
+    <img src="img\12_border2.png" width=200px alt="12_border">
+<hr>
+<h2>練習問題</h2>
+<p>
+    <a href="11. divタグとclassについて.html" target="_blank">カリキュラム11. divタグとclassについて</a>の復習もかねて、以下の画像と同じようなページを作ってみましょう。
+    <br>（見本は<a href="お手本（メンターのみ共有するもの）\00_12. お手本.html" target="_blank">こちら</a>）
+    <br>1行目の見出しはh1タグ、その他の見出しはh2タグ、文章はpタグで書いてください。
+    <br>緑のエリアは背景色をgreen、幅を400px，高さを600px、内側の空白を20pxにしてください。
+    <br>また、緑色のエリアの位置は上から50px，左から50pxにしてください。
+    <br>赤枠のエリアと青枠のエリアは幅を300px，高さを200px、内側の空白を20pxにしてください。
+    <br>また、赤枠のエリアと青枠のエリアは2pxの線で囲ってください。
+    <br>赤枠の見出しの文字色および枠線の色はredに、青枠の見出しの文字色および枠線の色はblueにしてください。
+    <br><img src="img\12_practice.png" alt="practice" border="1">
+</p>
+<hr>
+<h2>解説動画</h2>
+    <p>カリキュラム解説</p>
+    <iframe width="1000" height="600" src="https://www.youtube.com/embed/-HoyQBs4P3s?si=M55X6yshaMyBKUMm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p>練習問題解説</p>
+    <iframe width="1000" height="600" src="https://www.youtube.com/embed/im4rI4QqYI4?si=LZqcJevFT9NqlQfe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</body>
+</html>

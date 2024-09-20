@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>18. display：flex</title>
+    <link rel="stylesheet" href="00. カリキュラム用style.css">
+</head>
+<body class="vscode-body vscode-light">
+<h1 id="テーブル">display：flex</h1>
+<p>
+    このカリキュラムではWebページのレイアウトを変更するdisplayプロパティを学習します。
+</p>
+<hr>
+<h2>display: flex;（要素の横並び）</h2>
+<p>
+    <!-- displayプロパティは要素を横並びにすることができます。
+    <br>この時、値はflexを指定します。     -->
+    displayプロパティは要素の表示形式を定義するプロパティです。
+    <br>値をflexに指定することで、要素を横並びにすることができます。
+    <br>一つ一つの要素（子要素）に対して同じ名前のclassを指定し、
+    <br>さらに横並びにしたい要素全体（親要素）に別名のclassを付けます。
+    <br>flexを用いると、以下の3つのメリットがあります。
+    <ol>
+        <li>高さを自動で揃えてくれる</li>
+        <li>簡単に並び順を指定できる</li>
+        <li>簡単に余白の取り方を指定できる</li>
+    </ol>
+    <br>まずは以下のコードを書きましょう。
+</p>
+<blockquote>
+<p>index.html</p>
+</blockquote>
+<pre><code><div><span>&lt;<span class="vs-blue">div</span> <span class="vs-skyblue">class</span>=<span class="vs-red">"box"</span>&gt;</span>
+<span>  <span>&lt;<span class="vs-blue">div</span> <span class="vs-skyblue">class</span>=<span class="vs-red">"item"</span>&gt;</span>
+<span>      &lt;<span class="vs-blue">p</span>&gt;</span>HTML前半コース最後のカリキュラムです。頑張りましょう！<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+<span>  &lt;/<span class="vs-blue">div</span>&gt;</span>
+<span>  <span>&lt;<span class="vs-blue">div</span> <span class="vs-skyblue">class</span>=<span class="vs-red">"item"</span>&gt;</span>
+<span>      &lt;<span class="vs-blue">p</span>&gt;</span>HTML前半コース最後のカリキュラムです。頑張りましょう！<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+<span>  &lt;/<span class="vs-blue">div</span>&gt;</span>
+<span>  <span>&lt;<span class="vs-blue">div</span> <span class="vs-skyblue">class</span>=<span class="vs-red">"item"</span>&gt;</span>
+<span>      &lt;<span class="vs-blue">p</span>&gt;</span>HTML前半コース最後のカリキュラムです。頑張りましょう！<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+<span>  &lt;/<span class="vs-blue">div</span>&gt;</span>
+<span>  <span>&lt;<span class="vs-blue">div</span> <span class="vs-skyblue">class</span>=<span class="vs-red">"item"</span>&gt;</span>
+<span>      &lt;<span class="vs-blue">p</span>&gt;</span>HTML前半コース最後のカリキュラムです。頑張りましょう！<span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+<span>  &lt;/<span class="vs-blue">div</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">div</span>&gt;</span></div></code></pre>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre><code><div><span class="vs-orange">.box {</span></span>
+    <span class="vs-skyblue">background-color</span>: <span class="vs-red">black</span>;</span>
+    <span class="vs-skyblue">padding</span>: <span class="vs-green">10px</span>;</span>
+    <span class="vs-orange">}</span>
+<span class="vs-orange">.item {</span></span>
+    <span class="vs-skyblue">margin</span>: <span class="vs-green">10px</span>;</span>
+    <span class="vs-skyblue">padding</span>: <span class="vs-green">10px</span>;</span>
+<span class="vs-orange">}</span>
+<span class="vs-orange">.item:nth-child(1) {</span></span>
+    <span class="vs-skyblue">background-color</span>: <span class="vs-red">pink</span>;</span>
+<span class="vs-orange">}</span>
+<span class="vs-orange">.item:nth-child(2) {</span></span>
+    <span class="vs-skyblue">background-color</span>: <span class="vs-red">yellow</span>;</span>
+<span class="vs-orange">}</span>
+<span class="vs-orange">.item:nth-child(3) {</span></span>
+    <span class="vs-skyblue">background-color</span>: <span class="vs-red">skyblue</span>;</span>
+<span class="vs-orange">}</span>
+<span class="vs-orange">.item:nth-child(4) {</span></span>
+    <span class="vs-skyblue">background-color</span>: <span class="vs-red">lightgreen</span>;</span>
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\18_normal.png" alt="18_normal" width="700px">
+<p>
+    これらの要素を横並びにするために、displayプロパティでflexを指定します。
+    <br>cssファイルのboxを以下のように書き換えましょう。
+</p>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre><code><div><span class="vs-orange">.box {</span></span>
+    <span class="vs-skyblue">background-color</span>: <span class="vs-red">black</span>;</span>
+    <span class="vs-skyblue">padding</span>: <span class="vs-green">10px</span>;</span>
+    <span class="vs-skyblue">display</span>: <span class="vs-red">flex</span>;</span>
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\18_flex.png" alt="18_flex" width="700px">
+<p>
+    横並びにすることができました！
+    <br>幅を指定していないため、ウィンドウの大きさに合わせて均等に幅が変化します。
+</p>
+<hr>
+<h2>justify-contentプロパティ</h2>
+<p>
+    横並びの具体的な方法はjustify-contentプロパティで指定します。
+    <br>基本的に、displayプロパティでflexを指定したあとに使います。
+    <br>幅を指定する場合、初期状態は左寄せになっています。
+    <br>cssファイルのitemを以下のように書き換えて確かめましょう。
+</p>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre><code><div><span class="vs-orange">.item {</span></span>
+    <span class="vs-skyblue">margin</span>: <span class="vs-green">10px</span>;</span>
+    <span class="vs-skyblue">padding</span>: <span class="vs-green">10px</span>;</span>
+    <span class="vs-skyblue">width</span>: <span class="vs-green">100px</span>;</span>
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\18_left.png" alt="18_left" width="700px">
+<p>
+    初期状態が左寄せであることが分かりました。
+    <br>ここから、cssファイルのboxを以下のように書き換えて、中央寄せにしてみましょう。
+</p>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre><code><div><span class="vs-orange">.box {</span></span>
+    <span class="vs-skyblue">background-color</span>: <span class="vs-red">black</span>;</span>
+    <span class="vs-skyblue">padding</span>: <span class="vs-green">10px</span>;</span>
+    <span class="vs-skyblue">display</span>: <span class="vs-red">flex</span>;</span>
+    <span class="vs-skyblue">justify-content</span>: <span class="vs-red">center</span>;</span>
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\18_center.png" alt="18_center" width="700px">
+<p>
+    中央寄せにすることができました！
+    <br>そのほかに以下のような指定方法があります。
+</p>
+<table border="1" style="text-align:center;">
+    <tr>
+        <th>値の種類<br><code><span class="vs-gray"><span class="vs-skyblue">justify-content</span>:<span class="vs-red">〇〇</span>;</span></code></th>
+        <th>効果</th>
+        <th>例</th>
+    </tr>
+    <tr>
+        <td><code><span class="vs-red">left</span></code></td>
+        <td><p>左寄せ</p></td>
+        <td><img src="img\18_left.png" alt="18_left" width="400px"></td>
+    </tr>
+    <tr>
+        <td><code><span class="vs-red">right</span></code></td>
+        <td><p>右寄せ</p></td>
+        <td><img src="img\18_right.png" alt="18_right" width="400px"></td>
+    </tr>
+    <tr>
+        <td><code><span class="vs-red">center</span></code></td>
+        <td><p>中央寄せ</p></td>
+        <td><img src="img\18_center.png" alt="18_center" width="400px"></td>
+    </tr>
+    <tr>
+        <td><code><span class="vs-red">space-between</span></code></td>
+        <td><p>最初と最後を<br>端に配置</p></td>
+        <td><img src="img\18_space-between.png" alt="18_space-between" width="400px"></td>
+    </tr>
+    <tr>
+        <td><code><span class="vs-red">space-around</span></code></td>
+        <td><p>均等揃え</p></td>
+        <td><img src="img\18_space-around.png" alt="18_space-around" width="400px"></td>
+    </tr>
+</table>
+<hr>
+<h2>displayの値の種類</h2>
+<p>
+    displayプロパティの値はflexのほかに以下のような値があります。
+</p>
+<table border="1" style="text-align:center;">
+    <tr>
+        <th>値の種類<br><code><span class="vs-gray"><span class="vs-skyblue">display</span>:<span class="vs-red">〇〇</span>;</span></code></th>
+        <th>内容</th>
+        <th>初期設定されている<br>主なタグ</th>
+    </tr>
+    <tr style="background-color: rgba(0, 0, 139, 0.1);">
+        <td><code><span class="vs-red"><strong>block</strong></span></code></td>
+        <td><ul style="text-align:left;color: darkblue;" >
+            <li><b>インライン要素を「ブロック要素」に変化させる</b></li>
+            <li><b>外枠と同じ様に扱う</b></li>
+            <li>兄弟要素を縦に配置する</li>
+            <li>widthを指定できる（しなければ横幅いっぱいになる）</li>
+        </ul></td>
+        <td>
+            <code><div  class="vs-gray"><span>&lt;<span class="vs-blue">div</span>&gt;</span></div></code>
+            <code><div  class="vs-gray"><span>&lt;<span class="vs-blue">h1</span>&gt;</span></div></code>
+            <code><div  class="vs-gray"><span>&lt;<span class="vs-blue">ol</span>&gt;</span></div></code>
+            <code><div  class="vs-gray"><span>&lt;<span class="vs-blue">ul</span>&gt;</span></div></code>
+            <code><div  class="vs-gray"><span>&lt;<span class="vs-blue">blockquote</span>&gt;</span></div></code>
+        </td>
+    </tr>
+    <tr style="background-color: rgba(139, 0, 0, 0.1);">
+        <td><code><span class="vs-red"><strong>inline</strong></span></code></td>
+        <td><ul style="text-align:left;color: darkred;">
+            <li><b>ブロック要素を「インライン要素」に変化させる</b></li>
+            <li><b>テキストと同じ様に扱う</b></li>
+            <li>兄弟要素を横に配置する</li>
+            <li>widthを指定できない</li>
+        </ul></td>
+        <td>
+            <code><div  class="vs-gray"><span>&lt;<span class="vs-blue">a</span>&gt;</span></div></code>
+            <code><div  class="vs-gray"><span>&lt;<span class="vs-blue">b</span>&gt;</span></div></code>
+            <code><div  class="vs-gray"><span>&lt;<span class="vs-blue">br</span>&gt;</span></div></code>
+            <code><div  class="vs-gray"><span>&lt;<span class="vs-blue">img</span>&gt;</span></div></code>
+            <code><div  class="vs-gray"><span>&lt;<span class="vs-blue">input</span>&gt;</span></div></code>
+            <code><div  class="vs-gray"><span>&lt;<span class="vs-blue">small</span>&gt;</span></div></code>
+            <code><div  class="vs-gray"><span>&lt;<span class="vs-blue">strong</span>&gt;</span></div></code>
+        </td>
+    </tr>
+    <tr>
+        <td><code><span class="vs-red">inline-block</span></code></td>
+        <td><ul style="text-align:left;">
+            <li style="color: darkblue;">外枠と同じ様に扱う</li>
+            <li style="color: darkred;">兄弟要素を縦に配置する</li>
+            <li style="color: darkblue;">widthを指定できる</li>
+        </ul></td>
+    </tr>
+    <tr>
+        <td><code><span class="vs-red">flex</span></code></td>
+        <td><ul style="text-align:left;">
+            <li style="color: darkred;">兄弟要素を横に配置する</li>
+            <li>レイアウト調整に使われる</li>
+        </ul></td>
+    </tr>
+    <tr>
+        <td><code><span class="vs-red">none</span></code></td>
+        <td><ul style="text-align:left;">
+            <li>指定した部分を全て消す</li>
+        </ul></td>
+    </tr>
+</table>
+<p>
+    例として、まずはブロック要素であるh1タグを並べてみましょう。
+</p>
+<blockquote>
+<p>index.html</p>
+</blockquote>
+<pre><code><div><span>&lt;<span class="vs-blue">body</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">h1</span>&gt;</span>HTML前半コース最後のカリキュラムです。頑張りましょう！<span>&lt;/<span class="vs-blue">h1</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">h1</span>&gt;</span>HTML前半コース最後のカリキュラムです。頑張りましょう！<span>&lt;/<span class="vs-blue">h1</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">h1</span>&gt;</span>HTML前半コース最後のカリキュラムです。頑張りましょう！<span>&lt;/<span class="vs-blue">h1</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">body</span>&gt;</span></div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<br><img src="img\18_h1_block.png" alt="h1_block" border="1" width="700px">
+<p>
+    この場合、以下のようにh1タグが横いっぱいに広がっています。
+    <br><img src="img\18_h1_block_IT.png" alt="h1_block_IT" border="1" width="700px">
+    <br>これをインライン要素に置き換えてみましょう。
+</p>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre><code><div><span class="vs-orange">h1 {</span></span>
+    <span class="vs-skyblue">display</span>: <span class="vs-red">inline</span>;</span>
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\18_h1_inline.png" alt="h1_inline" border="1" width="700px">
+<p>
+    インライン要素にすることで、h1タグが以下のように切り詰められます。
+    <br><img src="img\18_h1_inline_IT.png" alt="h1_inline_IT" border="1" width="700px">
+    <br>次に、インライン要素であるimgタグの画像を並べてみましょう。
+</p>
+<blockquote>
+<p>index.html</p>
+</blockquote>
+<pre><code><div><span>&lt;<span class="vs-blue">body</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">img</span> <span class="vs-skyblue">src</span>=<span class="vs-red">"cat.jpg"</span> <span class="vs-skyblue">alt</span>=<span class="vs-red">"cat"</span> <span class="vs-skyblue">width</span>=<span class="vs-red">"100px"</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">img</span> <span class="vs-skyblue">src</span>=<span class="vs-red">"cat.jpg"</span> <span class="vs-skyblue">alt</span>=<span class="vs-red">"cat"</span> <span class="vs-skyblue">width</span>=<span class="vs-red">"100px"</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">img</span> <span class="vs-skyblue">src</span>=<span class="vs-red">"cat.jpg"</span> <span class="vs-skyblue">alt</span>=<span class="vs-red">"cat"</span> <span class="vs-skyblue">width</span>=<span class="vs-red">"100px"</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">body</span>&gt;</span></div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<br><img src="img\18_img_inline.png" alt="img_inline" border="1" width="300px">
+<p>
+    この場合、以下のようにimgタグが横並びに詰められています。
+    <!-- <br><img src="img\18_img_inline_IT.png" alt="img_inline_IT" border="1" width="300px"> -->
+    <br>これをブロック要素に置き換えてみましょう。
+</p>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre><code><div><span class="vs-orange">img {</span></span>
+    <span class="vs-skyblue">display</span>: <span class="vs-red">block</span>;</span>
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\18_img_block.png" alt="img_block" border="1" width="300px">
+<p>
+    ブロック要素にすることで、imgタグごとに改行されました。
+    <!-- <br><img src="img\18_img_block_IT.png" alt="img_block_IT" border="1" width="300px"> -->
+</p>
+
+<hr>
+<h2>float（回り込み）</h2>
+<p>
+    floatとは英語で「浮く」という意味です。
+    <br>CSSファイルにおいてプロパティfloatとは要素の回り込みを設定し、レイアウトを変更するものです。
+    <br>例えば、ニュース記事の横に画像を挟みたい場合、画像を文章の横に回り込ませることで、
+    <br>新聞のように文字を無駄なく配置することができます。
+    <br>まずは以下のコードを書きましょう。
+</p>
+<blockquote>
+<p>index.html</p>
+</blockquote>
+<pre><code><div><span>&lt;<span class="vs-blue">body</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">div </span><span class="vs-skyblue">class</span>=<span class="vs-red">"pot"</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">h1</span>&gt;</span>ねこ鍋とは<span>&lt;/<span class="vs-blue">h1</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">img</span> <span class="vs-skyblue">src</span>=<span class="vs-red">"cat.jpg"</span> <span class="vs-skyblue">alt</span>=<span class="vs-red">"cat"</span> <span class="vs-skyblue">width</span>=<span class="vs-red">"200px"</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">p</span>&gt;</span>        
+            ねこ鍋とは、猫が土鍋の中で身を丸くする現象である。
+            猫は狭い場所を好むとされ、この現象も猫の習性の一つといえる。
+            一般的には、各々が自分に合った大きさの土鍋を見つけて収まっていく。
+            既に他の子猫が寝ている土鍋に割り込んだり折り重なったり、
+            寝返りを打った際に土鍋から転げ出したりすることもある。
+            土鍋への猫の入る匹数によって、1匹入るのを「並盛り」、2匹は「大盛り」、
+            3匹は「特盛り」、4匹は「激盛り」と表現される。
+        <span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+    <span>&lt;/<span class="vs-blue">div</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">body</span>&gt;</span></div></code></pre>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre><code><div><span class="vs-orange">.pot {</span></span>
+    <span class="vs-skyblue">width</span>: <span class="vs-green">500px</span>;</span>
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<br><img src="img\18_float_none.png" alt="float_none" border="1" width="300px">
+<p>
+    次に、画像に回り込みを設定します。
+    <br>CSSファイルにおいて、以下のコードを追加しましょう。
+</p>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre><code><div><span class="vs-orange">img {</span></span>
+    <span class="vs-skyblue">float</span>: <span class="vs-green">left</span>;</span>
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<br><img src="img\18_float_left.png" alt="float_left" border="1" width="300px">
+<p>
+    文章の左側に画像を回り込ませることができました！
+    <br>これは「文章が移動して空白が詰められた」のではなく「文章の枠に画像が割り込んだ」ということです。
+    <br>同様に右側にも設定することができます。
+</p>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre><code><div><span class="vs-orange">img {</span></span>
+    <span class="vs-skyblue">float</span>: <span class="vs-green">right</span>;</span>
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<br><img src="img\18_float_right.png" alt="float_left" border="1" width="300px">
+<p>
+    文章の右側に画像を回り込ませることができました！
+    <br>なお、回り込みの設定を適用しない場合、floatプロパティの値はnoneにします。
+</p>
+<hr>
+<h2>box-sizing: border-box;</h2>
+<p>
+    box-sizingプロパティは要素の幅および高さの計算方法を設定するプロパティです。
+    <br>値をborder-boxに設定することで、paddingやborderも含めた計算ができるようになります。
+    <br>まずは先ほどのHTMLファイルおよびCSSファイルを以下のように書き換えましょう。
+</p>
+<blockquote>
+<p>index.html</p>
+</blockquote>
+<pre><code><div><span>&lt;<span class="vs-blue">body</span>&gt;</span>
+    <span>&lt;<span class="vs-blue">div </span><span class="vs-skyblue">class</span>=<span class="vs-red">"pot"</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">h1</span>&gt;</span>ねこ鍋とは<span>&lt;/<span class="vs-blue">h1</span>&gt;</span>
+        <span>&lt;<span class="vs-blue">div</span> <span class="vs-skyblue">class</span>=<span class="vs-red">"content"</span>&gt;</span>
+            <span>&lt;<span class="vs-blue">p</span>&gt;</span>        
+                ねこ鍋とは、猫が土鍋の中で身を丸くする現象である。
+                猫は狭い場所を好むとされ、この現象も猫の習性の一つといえる。
+                一般的には、各々が自分に合った大きさの土鍋を見つけて収まっていく。
+                既に他の子猫が寝ている土鍋に割り込んだり折り重なったり、
+                寝返りを打った際に土鍋から転げ出したりすることもある。
+                土鍋への猫の入る匹数によって、1匹入るのを「並盛り」、2匹は「大盛り」、
+                3匹は「特盛り」、4匹は「激盛り」と表現される。
+            <span>&lt;/<span class="vs-blue">p</span>&gt;</span>
+        <span>&lt;/<span class="vs-blue">div</span>&gt;</span>
+    <span>&lt;/<span class="vs-blue">div</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">body</span>&gt;</span></div></code></pre>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre><code><div><span class="vs-orange">.pot {</span></span>
+    <span class="vs-skyblue">width</span>: <span class="vs-green">500px</span>;</span>
+    <span class="vs-skyblue">height</span>: <span class="vs-green">500px</span>;</span>
+    <span class="vs-skyblue">border</span>: <span class="vs-red">solid <span class="vs-green">5px</span> black</span>;</span>
+    <span class="vs-orange">}</span>
+<span class="vs-orange">.content {</span></span>
+    <span class="vs-skyblue">width</span>: <span class="vs-green">100%</span>;</span>
+    <span class="vs-skyblue">height</span>: <span class="vs-green">300px</span>;</span>
+    <span class="vs-skyblue">padding</span>: <span class="vs-green">20px</span>;</span>
+    <span class="vs-skyblue">border</span>: <span class="vs-red">solid <span class="vs-green">10px</span> red</span>;</span>
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\18_sizing_normal.png" height=300px alt="18_sizing_normal">
+<p>
+    これでは枠の外に赤い枠線や文字がはみ出してしまいますね。
+    <br>では先ほどのcssファイルに対して、box-sizingに関する1文を加えてみましょう。
+</p>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<pre><code><div><span class="vs-orange">.pot {</span></span>
+    <span class="vs-skyblue">width</span>: <span class="vs-green">500px</span>;</span>
+    <span class="vs-skyblue">height</span>: <span class="vs-green">500px</span>;</span>
+    <span class="vs-skyblue">border</span>: <span class="vs-red">solid <span class="vs-green">5px</span> black</span>;</span>
+    <span class="vs-orange">}</span>
+<span class="vs-orange">.content {</span></span>
+    <span class="vs-skyblue">box-sizing</span>: <span class="vs-red">border-box</span>;</span>
+    <span class="vs-skyblue">width</span>: <span class="vs-green">100%</span>;</span>
+    <span class="vs-skyblue">height</span>: <span class="vs-green">300px</span>;</span>
+    <span class="vs-skyblue">padding</span>: <span class="vs-green">20px</span>;</span>
+    <span class="vs-skyblue">border</span>: <span class="vs-red">solid <span class="vs-green">10px</span> red</span>;</span>
+<span class="vs-orange">}</span>
+</div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\18_sizing_border.png" height=300px alt="18_sizing_border">
+<p>
+    赤枠の内容を黒枠内に収めることができました！
+    <br>高さもpaddingやborderを含めて計算されています。
+    <br>このように、box-sizingでborder-boxを設定することで、内側の空白や枠線も含めた要素のサイズ設定ができます。
+</p>
+<hr>
+<h2>練習問題</h2>
+<p>
+    今まで学んできた知識を活かして、以下の画像と同じようなページを作ってみましょう。
+    <br>（見本は<a href="お手本（メンターのみ共有するもの）\00_18. お手本.html" target="_blank">こちら</a>）
+    <ul>
+        <li>ヘッダー・メイン
+            <ul>
+                <li>ヘッダーは固定してください。</li>
+                <li>ヘッダーの高さは100pxに設定し、メインをその高さの分だけ下から開始してください。</li>
+            </ul>
+        </li>
+        <li>薄緑色のエリア
+            <ul>
+                <li>背景色をlightgreen、幅を800px、内側の空白を10pxにしてください。</li>
+                <li>1つのボックス（クラス）を中央に寄せるには、cssに「margin:0 auto;」を加えます。</li>
+                <li>今回のカリキュラムの前半を参照しながら、各月のエリアを横並べにしてください。</li>
+                <li>横並べの時に折り返すには、cssに「flex-wrap: wrap;」を加えます。</li>
+            </ul>
+        </li>
+        <li>各月のエリア
+            <ul>
+                <li>背景色をwhite、幅を200px、外側の空白を10px、内側の空白を10pxにしてください。</li>
+                <li>文章は、tableタグ（線の表示なし）を使うとよりきれいに整います。</li>
+            </ul>
+        </li>
+    </ul>
+    <!-- <br>横並べの時に折り返すには、cssに「flex-wrap: wrap;」を加えます。
+    <br>1つのボックス（クラス）を中央に寄せるには、cssに「margin:0 auto;」を加えます。
+    <br>各月の文章は、tableタグを使うとよりきれいに整います。
+    <br>ヘッダーは固定してください。 -->
+    <br><img src="img\18_practice.png" alt="practice" width="1400px">    
+</p>
+<hr>
+<h2>解説動画</h2>
+    <p>カリキュラム解説</p>
+    <iframe width="1000" height="600" src="https://www.youtube.com/embed/K8cCIXAlrhc?si=s8NEdkxUlsPpc-90" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p>練習問題解説</p>
+    <iframe width="1000" height="600" src="https://www.youtube.com/embed/F5NdfbKSmc4?si=HAxVL-4yxJgbgSbw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</body>
+</html>

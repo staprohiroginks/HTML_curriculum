@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>15. header、main、footerについて</title>
+    <link rel="stylesheet" href="00. カリキュラム用style.css">
+</head>
+<body class="vscode-body vscode-light">
+<h1 id="テーブル">header、main、footerについて</h1>
+<p>
+    Webページはheader（ヘッダー）、main（メイン）、footer（フッター）で構成されています。
+</p>
+<div class="item">
+    <img src="img\15_structure2.png" alt="Webページの構造" width="800px">
+</div>
+<hr>
+<h2>header（ヘッダー）</h2>
+<p>
+    headerはページの先頭部分です。
+    <br>タイトル、ロゴ、およびナビゲーションメニューなどを表示します。
+    <br>ページの下へ移動しても、同じヘッダーを表示することがほとんどです。
+    <br>ナビゲーションメニューはnavタグを使って編集します。
+    <br>さっそく以下のコードを書いてみましょう。
+</p>
+<blockquote>
+<p>index.html</p>
+</blockquote>
+<pre><code><div><span>&lt;<span class="vs-blue">header</span>&gt;</span>
+<span>  &lt;<span class="vs-blue">h1</span>&gt;</span>オンラインショッピングサイト<span>&lt;/<span class="vs-blue">h1</span>&gt;</span>
+<span>  &lt;<span class="vs-blue">nav</span>&gt;</span>
+<span>      -ホーム</span>
+<span>      -買い物かご</span>
+<span>      -マイページ</span>
+<span>      -お問い合わせ</span>
+<span>  &lt;<span class="vs-blue">nav</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">header</span>&gt;</span></div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\15_header.png" alt="15_header" border="1">
+<hr>
+<h2>main（メイン）</h2>
+<p>
+    mainは主要コンテンツ部分です。
+    <br>記事の本文、画像、および動画などを表示します。
+    <br>主な内容はsectionタグ、補足の内容はasideタグで囲みます。
+    <br>この2つのタグは編集側の目印（マークアップ）のようなものであり、直接Webページに変化を及ぼしません。
+    <br><a href="09. フォーム.html" target="_blank">フォーム</a>の復習もかねて、以下のコードを書いてみましょう。
+</p>
+<blockquote>
+<p>index.html</p>
+</blockquote>
+<pre><code><div><span>&lt;<span class="vs-blue">main</span>&gt;</span>
+<span>  &lt;<span class="vs-blue">section</span>&gt;</span>
+<span>      &lt;<span class="vs-blue">h1</span>&gt;</span>カテゴリから探す<span>&lt;/<span class="vs-blue">h1</span>&gt;</span>
+<span>      &lt;<span class="vs-blue">article</span>&gt;</span>
+<span>          &lt;<span class="vs-blue">h2</span>&gt;</span>食品<span>&lt;/<span class="vs-blue">h2</span>&gt;</span>
+<span>          <span class="vs-gray">&lt;</span><span class="vs-blue">ul</span><span class="vs-gray">&gt;</span></span>
+<span>              <span class="vs-gray">&lt;</span><span class="vs-blue">li</span><span class="vs-gray">&gt;</span></span>野菜・フルーツ<span><span class="vs-gray">&lt;</span><span class="vs-blue">/li</span><span class="vs-gray">&gt;</span></span>
+<span>              <span class="vs-gray">&lt;</span><span class="vs-blue">li</span><span class="vs-gray">&gt;</span></span>肉・魚・加工品<span><span class="vs-gray">&lt;</span><span class="vs-blue">/li</span><span class="vs-gray">&gt;</span></span>
+<span>              <span class="vs-gray">&lt;</span><span class="vs-blue">li</span><span class="vs-gray">&gt;</span></span>米・パン<span><span class="vs-gray">&lt;</span><span class="vs-blue">/li</span><span class="vs-gray">&gt;</span></span>
+<span>              <span class="vs-gray">&lt;</span><span class="vs-blue">li</span><span class="vs-gray">&gt;</span></span>菓子・スイーツ<span><span class="vs-gray">&lt;</span><span class="vs-blue">/li</span><span class="vs-gray">&gt;</span></span>
+<span>          <span class="vs-gray">&lt;</span><span class="vs-blue">/ul</span><span class="vs-gray">&gt;</span></span>
+<span>      &lt;/<span class="vs-blue">article</span>&gt;</span>
+
+<span>      &lt;<span class="vs-blue">article</span>&gt;</span>
+<span>          &lt;<span class="vs-blue">h2</span>&gt;</span>飲料<span>&lt;/<span class="vs-blue">h2</span>&gt;</span>
+<span>          <span class="vs-gray">&lt;</span><span class="vs-blue">ul</span><span class="vs-gray">&gt;</span></span>
+<span>              <span class="vs-gray">&lt;</span><span class="vs-blue">li</span><span class="vs-gray">&gt;</span></span>水・ソフトドリンク<span><span class="vs-gray">&lt;</span><span class="vs-blue">/li</span><span class="vs-gray">&gt;</span></span>
+<span>              <span class="vs-gray">&lt;</span><span class="vs-blue">li</span><span class="vs-gray">&gt;</span></span>酒<span><span class="vs-gray">&lt;</span><span class="vs-blue">/li</span><span class="vs-gray">&gt;</span></span>
+<span>          <span class="vs-gray">&lt;</span><span class="vs-blue">/ul</span><span class="vs-gray">&gt;</span></span>
+<span>      &lt;/<span class="vs-blue">article</span>&gt;</span>
+<span>  &lt;/<span class="vs-blue">section</span>&gt;</span>
+
+<span>  &lt;<span class="vs-blue">section</span>&gt;</span>
+<span>      &lt;<span class="vs-blue">h1</span>&gt;</span>キーワードから探す<span>&lt;/<span class="vs-blue">h1</span>&gt;</span>
+<span>      <span>&lt;<span class="vs-blue">textarea</span> <span class="vs-skyblue">rows</span>=<span class="vs-red">"5"</span> <span class="vs-skyblue">cols</span>=<span class="vs-red">"100"</span> <span class="vs-skyblue">placeholder</span>=<span class="vs-red">"キーワードを入力"</span>&gt;</span><span>&lt;/<span class="vs-blue">textarea</span>&gt;</span>
+<span>  &lt;/<span class="vs-blue">section</span>&gt;</span>
+
+<span>  &lt;<span class="vs-blue">aside</span>&gt;</span>
+<span>      &lt;<span class="vs-blue">h1</span>&gt;</span>お知らせ<span>&lt;/<span class="vs-blue">h1</span>&gt;</span>
+<span>      &lt;<span class="vs-blue">p</span>&gt;</span>週末セール開催中！この2日間を見逃すな！&lt;/<span class="vs-blue">p</span>&gt;</span>
+<span>      &lt;<span class="vs-blue">p</span>&gt;</span>アプリ会員になってもっとお得に買い物しよう！&lt;/<span class="vs-blue">p</span>&gt;</span>
+<span>  &lt;/<span class="vs-blue">aside</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">main</span>&gt;</span></div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\15_main.png" alt="15_main" border="1">
+<hr>
+<h2>footer（フッター）</h2>
+<p>
+    footerはページの終了部分です。
+    <br>著者、連絡先、および関連リンクなどを表示します。
+    <br>headerと同じように、ページを移動しても同じフッターを表示することがほとんどです。
+</p>
+<blockquote>
+<p>index.html</p>
+</blockquote>
+<pre><code><div><span>&lt;<span class="vs-blue">footer</span>&gt;</span>
+<span>  &lt;<span class="vs-blue">p</span>&gt;</span>Copyright <span class="vs-blue">&amp;copy;</span>2024 StartProgramming All Rights Reserved.&lt;<span class="vs-blue">p</span>&gt;</span>
+<span>&lt;/<span class="vs-blue">footer</span>&gt;</span></div></code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<img src="img\15_footer.png" alt="15_footer" border="1">
+<p>
+    サイト全体の様子は以下のようになります。
+</p>
+<img src="img\15_all.png" alt="15_all" border="1">
+<hr>
+<h2>練習問題</h2>
+<p>
+    なし
+</p>
+<hr>
+<h2>解説動画</h2>
+    <p>カリキュラム解説</p>
+    <iframe width="1000" height="600" src="https://www.youtube.com/embed/ZzBMtGpJVHY?si=NlY7Vy1mh4aMEp0n" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</body>
+</html>

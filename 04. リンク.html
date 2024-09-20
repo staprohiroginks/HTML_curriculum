@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>04.リンク</title>
+        <link rel="stylesheet" href="00. カリキュラム用style.css">
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="リンク">リンク</h1>
+<p>リンクの設定をしてみよう！</p>
+<h2 id="リンクをつくる">リンクをつくる</h2>
+<p>リンクを貼るためには<code>&lt;a&gt;</code>タグを使います。
+今回は、Yahooのページのリンクを作ってみます。</p>
+<p>例をお手本に<code>href</code>属性にURLを書きましょう！</p>
+<blockquote>
+<p>例</p>
+</blockquote>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://yahoo.co.jp&quot;</span>&gt;</span>yahoo<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+</code></pre>
+<ul>
+<li>URL(ユーアールエル)：ホームページの住所のようなもの。サイトごとにURLが決まっています。</li>
+</ul>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<p><a href="https://yahoo.co.jp">yahoo</a></p>
+<p>これでYahooのページに行くことができました！</p>
+<br>
+<hr>
+<h2 id="新しいタブでひらく">新しいタブでひらく</h2>
+<p>リンクを押すと、今あるページがリンク先のページに変わってしまいます。<br>
+今のページはそのままに、リンク先を新しいタブで開けるようにしましょう！</p>
+<p>URLの後ろにtarget="_blank" と入れることで新しいタブでサイトを開けるようになります。</p>
+<blockquote>
+<p>例</p>
+</blockquote>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://yahoo.co.jp&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;blank&quot;</span>&gt;</span>yahoo<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+</code></pre>
+<blockquote>
+<p>実行結果</p>
+</blockquote>
+<p><a href="https://yahoo.co.jp" target="_blank">yahoo</a></p>
+<p>これで、新しいタブで開くことができました！</p>
+<br>
+<hr>
+<h2 id="作った別のhtmlファイルに移動しよう">作った別のHTMLファイルに移動しよう</h2>
+<p>これまで<strong>index.html</strong>ファイルしか作ってきませんでしたが、複数のページを作ることもできます。</p>
+<p>今回は新しく、<strong>test.html</strong>という名前のファイルを作って、そこへリンクで飛べるようにしてみましょう。
+<br><b>※index.htmlとtest.htmlは同じ階層に作ってください</b></p>
+<p>新しく作った<strong>test.html</strong>の内容は、以下の内容にしましょう。そのままコピーして貼り付けてください。</p>
+<blockquote>
+<p>test.html</p>
+</blockquote>
+<pre><code class="language-html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;ja&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf8&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;description&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;初めてHTMLを勉強するサイトです。&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>test.html | リンクの使いかた<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+       index.htmlから、このページへ飛べたら成功！
+    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p>では、<strong>index.html</strong> の方にもどって、test.html のリンクをはってみよう！</p>
+<blockquote>
+<p>例（index.html）</p>
+</blockquote>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;test.html&quot;</span>&gt;</span>テストページ<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+</code></pre>
+<p>これで index.html から test.html へ移動することできました！</p>
+<hr>
+<h2 id="練習問題">練習問題</h2>
+<p>
+    「ここからスタプロのホームページに飛べます」というテキストに、スタプロのホームページのリンクを貼り付けてみよう！
+    <br>（見本は<a href="お手本（メンターのみ共有するもの）\00_04. お手本.html" target="_blank">こちら</a>）
+</p>
+<hr>
+<h2>解説動画</h2>
+    <p>カリキュラム解説</p>
+    <iframe width="1000" height="600" src="https://www.youtube.com/embed/KCAUY-Ql9vU?si=GHlbs40P8hX13IOi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p>練習問題解説</p>
+    <iframe width="1000" height="600" src="https://www.youtube.com/embed/JkWZvZWxXmo?si=r0P9tMup9FzmGAP7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </body>
+    </html>
