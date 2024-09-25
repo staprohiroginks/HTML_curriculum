@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>27.カリキュラム.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>27.ボタンのレスポンシブ対応</title>
+</head>
+<body>
+<h1>2つのボタンがあり、画面サイズに合わせてボタンの大きさや位置を変える方法を学習しましょう！</h1>
+<p><a href="./見本/mihon.html" target="_blank"><h2>見本はこちら</h2></a></p>
+<p>①まずはHTMLでボタンを2つ用意します。<br><br>
+ボタンを押すと詳細ページに飛ぶようにしたいので、今回は、左側のボタンを押すとスタプロの紹介ページ、<br>
+右側のボタンを押すとスタプロのコース紹介ページに飛ぶようにリンクを設定します。</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"stapro"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.start-programming.net/about/"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>スタプロとは？<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"course"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.start-programming.net/course/"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>学習コース<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+</div></code></pre>
+<hr>
+<p>②次は、cssでボタンの見た目を整えていきましょう。</p>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.button</span>{
+    <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">50px</span>;
+    <span class="hljs-attribute">display</span>: flex;
+}
+
+<span class="hljs-selector-class">.stapro</span>,<span class="hljs-selector-class">.course</span>{
+    <span class="hljs-comment">/* ↓このwidth（ボタンの横幅）を決める方法が大事です！ */</span>
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">25%</span>;
+    <span class="hljs-attribute">height</span>:<span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">rgb</span>(<span class="hljs-number">187</span>, <span class="hljs-number">189</span>, <span class="hljs-number">192</span>);
+    <span class="hljs-attribute">text-align</span>: center;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> auto;
+}
+
+<span class="hljs-selector-class">.stapro</span><span class="hljs-selector-pseudo">:hover</span>,<span class="hljs-selector-class">.course</span><span class="hljs-selector-pseudo">:hover</span>{
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">rgb</span>(<span class="hljs-number">147</span>, <span class="hljs-number">230</span>, <span class="hljs-number">147</span>);
+}
+
+<span class="hljs-selector-class">.stapro</span> <span class="hljs-selector-tag">p</span>,<span class="hljs-selector-class">.course</span> <span class="hljs-selector-tag">p</span>{
+    <span class="hljs-attribute">display</span>: flex;
+    <span class="hljs-attribute">justify-content</span>: center;
+    <span class="hljs-attribute">align-items</span>: center;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+}
+
+<span class="hljs-selector-class">.stapro</span> <span class="hljs-selector-tag">a</span>,<span class="hljs-selector-class">.course</span> <span class="hljs-selector-tag">a</span>{
+    <span class="hljs-attribute">text-decoration</span>: none;
+    <span class="hljs-attribute">color</span>: black;
+}
+
+</div></code></pre>
+<p>ここでポイントとなるのが、ボタンの横幅を指定する方法についてです。<br>
+例えば、ボタンに対して「width="200px"」ように絶対値で指定しまうと、画面サイズが変わってもずっと200pxのままになってしまいます。</p>
+<p>そのため、画面サイズに合わせてボタンのサイズが柔軟に変わるようにするために、「width=〇〇%」のように相対値で指定してあげます。<br>
+そうすることで、画面サイズを基準にボタンの大きさが変更されるようになります。<br>
+今回は「width=25%」と指定をしてあげましょう。</p>
+<hr>
+<p>③現在のプログラムだと、ボタンの横幅は画面サイズに合わせて変わりますが、文字の大きさが変わらず、スマホサイズになった際に縦並びになりません。</p>
+<iframe width="900" height="500" src="https://www.youtube.com/embed/10r38E5EKaQ?si=3R0iwZbWxoh5XxmV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<p>これを直すために、cssを設定していきましょう。<br>
+まずは、480px以上960px以下（スマホより大きい画面からタブレットの画面まで）で見た時の設定を行います。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">@media</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">min-width:</span> <span class="hljs-number">480px</span>) <span class="hljs-keyword">and</span> (<span class="hljs-attribute">max-width:</span> <span class="hljs-number">960px</span>) {
+    <span class="hljs-selector-class">.stapro</span> <span class="hljs-selector-tag">p</span>,<span class="hljs-selector-class">.course</span> <span class="hljs-selector-tag">p</span>{
+        <span class="hljs-attribute">font-size</span>: <span class="hljs-number">15px</span>;
+    }
+}
+</div></code></pre>
+<p>これは、画面サイズ480pxから960pxまで、中に書いてあるcssを適用させるという意味になります。<br>
+適用させたいcssの書き方は、普段cssで書いている記述方法と同じです。<br>
+今回は、画面サイズが小さくなると文字のサイズも小さくしたいので、font-size: 15px;というプログラムを書きます。</p>
+<hr>
+<p>④最後に、画面幅が480px以下（スマホ対応）になるとボタンが縦に並び、文字のサイズもさらに小さくなるように設定していきましょう。<br>
+まずは、480px以下になった際にボタンを縦並びにしたいので、以下のようなプログラムを記述します。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">@media</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">max-width:</span> <span class="hljs-number">480px</span>) { 
+    <span class="hljs-comment">/*　画面サイズ 480px以下に適用　*/</span>
+    <span class="hljs-selector-class">.button</span>{
+        <span class="hljs-attribute">display</span>: block;
+    }
+}
+</div></code></pre>
+<p>このプログラムでは、ボタンが 「display: flex;」で横並びになっているのを解除するために、「display: block;」を指定しています。<br>
+これにより、横並びが解除され、ボタンは縦並びなります。</p>
+<img src="./images/block.jpg" alt="">
+<p>このままではボタンがくっついているように見えるので、ボタン同士の感覚を開け位置を調整していきます。<br>
+そして、スマホサイズになった時に文字がさらに小さくなるよう、文字のサイズも調整します。<br>
+今回は、480px以下になったら文字サイズは12pxに設定しましょう。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">@media</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">max-width:</span> <span class="hljs-number">480px</span>) { 
+    <span class="hljs-comment">/*　画面サイズ 480px以下に適用　*/</span>
+    <span class="hljs-selector-class">.button</span>{
+        <span class="hljs-attribute">display</span>: block;
+    }
+
+    <span class="hljs-selector-class">.stapro</span>,<span class="hljs-selector-class">.course</span>{
+        <span class="hljs-attribute">margin</span>: <span class="hljs-number">20px</span> auto;
+        <span class="hljs-attribute">width</span>:<span class="hljs-number">50%</span>;
+    }
+
+    <span class="hljs-selector-class">.stapro</span> <span class="hljs-selector-tag">p</span>,<span class="hljs-selector-class">.course</span> <span class="hljs-selector-tag">p</span>{
+        <span class="hljs-attribute">font-size</span>: <span class="hljs-number">12px</span>;
+    }
+}
+
+</div></code></pre>
+<h2><b>これで見本と同じプログラムが完成しました！</b></h2>
+<br>
+<h1>解説動画</h1>
+<iframe width="1000" height="600" src="https://www.youtube.com/embed/aCvh51vAoVE?si=fXBhnoN6bBBgVoLt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</body>
+</html>
+</body>
+</html>

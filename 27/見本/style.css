@@ -1,0 +1,62 @@
+.button{
+    margin-top: 50px;
+    display: flex;
+}
+
+.stapro,.course{
+    /* ↓このwidth（ボタンの横幅）を決める方法が大事です！ */
+    width: 25%;
+    height:100px;
+    background-color: rgb(187, 189, 192);
+    text-align: center;
+    margin: 0 auto;
+}
+
+.stapro:hover,.course:hover{
+    background-color: rgb(147, 230, 147);
+}
+
+.stapro p,.course p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    font-size: 20px;
+}
+
+.stapro a,.course a{
+    text-decoration: none;
+    color: black;
+}
+
+
+
+@media screen and (min-width: 480px) and (max-width: 960px) {
+    .stapro p,.course p{
+        font-size: 15px;
+    }
+}
+
+
+
+
+@media screen and (max-width: 480px) { 
+    /*　画面サイズ 480px以下に適用　*/
+    .button{
+        display: block;
+    }
+
+    .stapro,.course{
+        margin: 20px auto;
+        width:50%;
+    }
+
+    .stapro p,.course p{
+        font-size: 12px;
+    }
+}
+
+   
+
+
