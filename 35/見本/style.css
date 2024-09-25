@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100%;
+}
+
+header{
+    background-color: aqua;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+}
+
+header ul li{
+    display: inline-block;
+    width: 120px;
+    margin: 0 35px;
+    padding:25px 0;
+    cursor: pointer;
+}
+
+header a{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+
+
+.menu{
+    position: absolute;
+    margin-top: 25px;
+    display: none;
+}
+
+.menu ul li{
+    display: block;
+    width: 140px;
+    border-bottom: 1px dotted black;
+    margin-left: 0;
+}
+
+
+
+header ul li:hover .menu{
+    display: block;
+} 
