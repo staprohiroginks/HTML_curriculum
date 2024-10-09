@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>カリキュラム25宿題</title>
+</head>
+<body>
+    <h2>問題1.以下のコードの意味を選んでください</h2>
+    <p>@media screen and (max-width: 480px)</p>
+    <p>
+    <input type="radio" name="a">画面サイズ480px以上になると適用<br>
+    <input type="radio" name="a">画面サイズ480pxぴったりの時に適用<br>
+    <input type="radio" name="a">画面サイズ480px以下になると適用<br><br>
+    </p>
+    
+<!-- 折り畳み展開ポインタ -->
+<div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+   
+    <!--// 折り畳み展開ポインタ -->
+    
+    <!-- 折り畳まれ部分 -->
+    <div id="open" style="display:none;clear:both;">
+    
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+     <br> <br>
+    <p> 「画面サイズ480px以下になると適用」が正解</p>
+ </div>
+</div>
+
+
+ <br> <br>
+    <h2>問題2.以下のコードの意味を選んでください</h2>
+    <p>@media screen and (min-width: 480px) and (max-width: 960px)</p>
+    <p>
+    <input type="radio" name="a">画面サイズ480px以上960px以下の時に適用<br>
+    <input type="radio" name="a">画面サイズ480px以下の時と960px以上の時に適用<br>
+    <input type="radio" name="a">画面サイズ480pxか960pxの時に適用<br><br>
+    </p>
+
+    <!-- 折り畳み展開ポインタ -->
+<div onclick="obj=document.getElementById('two').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+   
+    <!--// 折り畳み展開ポインタ -->
+    
+    <!-- 折り畳まれ部分 -->
+    <div id="two" style="display:none;clear:both;">
+    
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+     <br> <br>
+    <p>「画面サイズ480px以上960px以下の時に適用」が正解</p>
+ </div>
+</div>
+
+
+
+ <br> <br>
+    <h2>問題3.以下のコードの意味を選んでください</h2>
+    <p>@media screen and (min-width: 960px)</p>
+    <p>
+    <input type="radio" name="a">画面サイズ960px以下になると適用<br>
+    <input type="radio" name="a">画面サイズ960px以上になると適用<br>
+    <input type="radio" name="a">画面サイズ960pxぴったりの時に適用<br><br>
+    </p>
+
+
+        <!-- 折り畳み展開ポインタ -->
+<div onclick="obj=document.getElementById('three').style; obj.display=(obj.display=='none')?'block':'none';">
+    <a style="cursor:pointer;">▼ 解答はこちらをクリックすると見れます</a>
+   
+    <!--// 折り畳み展開ポインタ -->
+    
+    <!-- 折り畳まれ部分 -->
+    <div id="three" style="display:none;clear:both;">
+    
+    <!--ここの部分が折りたたまれる＆展開される部分になります。
+    自由に記述してください。-->
+     <br> <br>
+    <p>「画面サイズ960px以上になると適用」が正解</p>
+ </div>
+</div>
+
+</body>
+</html>
