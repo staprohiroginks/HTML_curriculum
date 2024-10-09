@@ -1,0 +1,87 @@
+
+/* css */
+.box{
+    width: 50%;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+
+.dog_box{
+    display: flex;
+    justify-content: space-around;
+}
+
+.dog_box p{
+    margin: auto 0;
+    font-size: 1vw;
+}
+
+.dog_box img{
+    width: 30%;
+    padding: 10px 0;
+}
+
+
+
+
+/* css */
+/* @media screen and (min-width: 480px) and (max-width: 960px) { */
+    /*画面サイズ 480pxから960pxまで適用*/
+    /* ..dog_box{
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .dog-box p{
+        font-size: 2vw;
+        margin-top: 10px;
+    }
+
+    .dog-box img{
+        width: 80%;
+    }
+} */
+
+/* @media screen and (max-width: 480px) {  */
+    /* 画面サイズ 480px以下に適用 */
+    /* .dog-box {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .dog-box p{
+        font-size: 3vw;
+        margin-top: 10px;
+    }
+
+    .dog-box img{
+        width: 80%;
+    }
+} */
+
+
+
+@media screen and (max-width: 960px) { 
+    /* 画面サイズ 960px以下に適用 */
+    .dog_box{
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .dog_box p{
+        font-size: 2vw;
+        margin-top: 10px;
+    }
+
+    .dog_box img{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 480px) { 
+    /* 画面サイズ 480px以下に適用 */
+      .dog_box p{
+        font-size: 3vw;
+    }
+
+}
