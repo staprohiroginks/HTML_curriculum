@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML検定解答.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<p><code>HTML検定解答</code></p>
+<pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- index.html --&gt;</span>
+<span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"ja"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>HAPPINESS FITNESS CLUB<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"css/style.css"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/logo.png"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"203"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"70"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"ハピネスフィットネスクラブ"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">nav</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"info.html"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/nav1.png"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"173"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"50"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"施設のご案内"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"fee.html"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/nav2.png"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"173"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"50"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"料金プラン"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"opinion.html"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/nav3.png"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"173"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"50"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"ご意見・ご要望"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"contents"</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"main"</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"graphic"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/graphic.jpg"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"570"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"300"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"ハピネスフィットネスクラブでは さまざまなプログラムをご用意しております。"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>今月のお知らせ<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>入会された方に、ミネラルウォーターをプレゼントいたします。<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>運動中の水分補給にお使いください。<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"sub"</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">aside</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"info.html"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/bnr_info.png"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"200"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"80"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"施設のご案内"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"opinion.html"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/bnr_opinion.png"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"200"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"50"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"ご意見・ご要望"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+			<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">aside</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">small</span>&gt;</span>Copyright 2014 HAPPINESS FITNESS CLUB All rights reserved.<span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- info.html --&gt;</span>
+<span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"ja"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>施設のご案内 - HAPPINESS FITNESS CLUB<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"css/style.css"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"index.html"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/logo.png"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"203"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"70"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"ハピネスフィットネスクラブ"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">nav</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"info.html"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/nav1.png"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"173"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"50"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"施設のご案内"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"fee.html"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/nav2.png"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"173"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"50"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"料金プラン"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"opinion.html"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/nav3.png"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"173"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"50"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"ご意見・ご要望"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"contents"</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"main"</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>施設のご案内<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/pic.jpg"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"200"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"200"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"float_right"</span>&gt;</span>当施設は、スタジオやプールのほか、100台ものマシンを所有するフィットネスクラブです。<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>マシンはフィットネスに合わせた様々な設備が揃い、各専門分野のインストラクターが常に指導できるよう常駐しています。<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+			肩こりや腰痛の改善、ダイエット、体力づくりなど、様々な目的に合わせて専門のインストラクターから的確なアドバイスが受けられる体制を整えています。<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>スタジオプログラムは多彩なプログラムをご用意し、随時開催しています。定員さえ超えなければ、いくつでもご自由にご参加いただけます。<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>大浴場は、ジェットバス、シャワー、サウナ、水風呂を完備し、マッサージルームでは運動後の疲れや痛みを残さないよう資格をもったスタッフがマッサージをいたします。<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>ご興味のある方は、ぜひ無料見学にお越しください。<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"sub"</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">aside</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"info.html"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/bnr_info.png"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"200"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"80"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"施設のご案内"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"opinion.html"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/bnr_opinion.png"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"200"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"50"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"ご意見・ご要望"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+			<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">aside</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">small</span>&gt;</span>Copyright 2014 HAPPINESS FITNESS CLUB All rights reserved.<span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- fee.html --&gt;</span>
+<span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"ja"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>料金プラン - HAPPINESS FITNESS CLUB<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"css/style.css"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"index.html"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/logo.png"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"203"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"70"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"ハピネスフィットネスクラブ"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">nav</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"info.html"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/nav1.png"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"173"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"50"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"施設のご案内"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"fee.html"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/nav2.png"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"173"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"50"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"料金プラン"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"opinion.html"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/nav3.png"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"173"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"50"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"ご意見・ご要望"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"contents"</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"main"</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>料金プラン<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-name">caption</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>ご利用料金<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>ご利用する時間帯、料金をご確認いただき、ご希望に合った会員プランをお選びください。また、入会金、年会費等は一切かかりませんので、お気軽にご入会ください。<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">caption</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+					<span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">scope</span>=<span class="hljs-string">"col"</span>&gt;</span>会員プラン<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+					<span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">scope</span>=<span class="hljs-string">"col"</span>&gt;</span>利用時間<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+					<span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">scope</span>=<span class="hljs-string">"col"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"price"</span>&gt;</span>金額<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+				<span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+					<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>正会員A(全施設利用)<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+					<span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">rowspan</span>=<span class="hljs-string">"2"</span>&gt;</span>10:00-23:00<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+					<span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"price"</span>&gt;</span>9,625円/月<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+				<span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+					<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>正会員B(プールのみ利用)<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+					<span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"price"</span>&gt;</span>3,980円/月<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+				<span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+					<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>デイ会員<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+					<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>10:00-18:00<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+					<span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"price"</span>&gt;</span>6,890円/月<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+				<span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+					<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>ナイト会員<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+					<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>18:00-23:00<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+					<span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"price"</span>&gt;</span>7,950円/月<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+				<span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+					<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>都度会員<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+					<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>10:00-23:00<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+					<span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"price"</span>&gt;</span>ご利用1回ごとに<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>2,030円<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+				<span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+			<span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"sub"</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">aside</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"info.html"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/bnr_info.png"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"200"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"80"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"施設のご案内"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"opinion.html"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/bnr_opinion.png"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"200"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"50"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"ご意見・ご要望"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+			<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">aside</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">small</span>&gt;</span>Copyright 2014 HAPPINESS FITNESS CLUB All rights reserved.<span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- opinion.html --&gt;</span>
+<span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"ja"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>ご意見・ご要望 - HAPPINESS FITNESS CLUB<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"css/style.css"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"index.html"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/logo.png"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"203"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"70"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"ハピネスフィットネスクラブ"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">nav</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"info.html"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/nav1.png"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"173"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"50"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"施設のご案内"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"fee.html"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/nav2.png"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"173"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"50"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"料金プラン"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"opinion.html"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/nav3.png"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"173"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"50"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"ご意見・ご要望"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"contents"</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"main"</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>ご意見・ご要望<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>サービス改善のため、皆様のお声をお聞かせください。<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+			会員の方はもちろん、ご入会を検討している方のご意見・ご要望もお待ちしております。<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">"#"</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>お名前<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"name"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"textfield"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>ご意見・ご要望<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"comment"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"確認する"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+			<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"sub"</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">aside</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"info.html"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/bnr_info.png"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"200"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"80"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"施設のご案内"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"opinion.html"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/bnr_opinion.png"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"200"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"50"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"ご意見・ご要望"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+			<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">aside</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">small</span>&gt;</span>Copyright 2014 HAPPINESS FITNESS CLUB All rights reserved.<span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div>&lt;!<span class="hljs-selector-tag">--</span> <span class="hljs-selector-tag">style</span><span class="hljs-selector-class">.css</span> <span class="hljs-selector-tag">--</span>&gt;
+<span class="hljs-keyword">@charset</span> <span class="hljs-string">"utf-8"</span>;
+
+<span class="hljs-comment">/* 基本レイアウト ここから↓ */</span>
+<span class="hljs-keyword">@import</span> url(common.css);
+<span class="hljs-selector-tag">header</span> {
+	<span class="hljs-attribute">width</span>: <span class="hljs-number">800px</span>;
+	<span class="hljs-attribute">height</span>: <span class="hljs-number">70px</span>;
+	<span class="hljs-attribute">margin</span>: <span class="hljs-number">20px</span> auto <span class="hljs-number">40px</span> auto;
+	<span class="hljs-attribute">position</span>: relative;
+}
+<span class="hljs-selector-tag">header</span> <span class="hljs-selector-tag">h1</span> {
+	<span class="hljs-attribute">margin </span>: <span class="hljs-number">0</span>;
+	<span class="hljs-attribute">position</span>: absolute;
+}
+<span class="hljs-selector-tag">nav</span> {
+	<span class="hljs-attribute">position</span>: absolute;
+	<span class="hljs-attribute">right</span>: <span class="hljs-number">0</span>;
+}
+<span class="hljs-selector-tag">nav</span> <span class="hljs-selector-tag">ul</span> {
+	<span class="hljs-attribute">list-style-type</span>: none;
+	<span class="hljs-attribute">overflow</span>: hidden;
+}
+<span class="hljs-selector-tag">nav</span> <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span> {
+	<span class="hljs-attribute">float</span>: left;
+}
+<span class="hljs-selector-tag">nav</span> <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span> {
+	<span class="hljs-attribute">opacity</span>: <span class="hljs-number">0.7</span>;
+}
+<span class="hljs-selector-tag">footer</span> <span class="hljs-selector-tag">p</span> {
+	<span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">0</span>;
+	<span class="hljs-attribute">padding</span>: <span class="hljs-number">14px</span> <span class="hljs-number">0</span> <span class="hljs-number">14px</span> <span class="hljs-number">0</span>;
+	<span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(../images/bg_footer.png);
+	<span class="hljs-attribute">background-repeat</span>: repeat-x;
+	<span class="hljs-attribute">text-align</span>: center;
+}
+<span class="hljs-selector-tag">footer</span> <span class="hljs-selector-tag">small</span> {
+	<span class="hljs-attribute">font-size</span>: <span class="hljs-number">100%</span>;
+}
+<span class="hljs-selector-id">#main</span> <span class="hljs-selector-tag">h1</span> {
+	<span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">20px</span> <span class="hljs-number">0</span>;
+	<span class="hljs-attribute">padding</span>: <span class="hljs-number">8px</span> <span class="hljs-number">0</span> <span class="hljs-number">3px</span> <span class="hljs-number">40px</span>;
+	<span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(../images/h1.png);
+	<span class="hljs-attribute">background-repeat</span>: no-repeat;
+	<span class="hljs-attribute">font-size</span>: <span class="hljs-number">162%</span>;
+}
+<span class="hljs-comment">/* 基本レイアウト ここまで↑ */</span>
+
+<span class="hljs-comment">/* 「施設のご案内」ページ ここから↓ */</span>
+<span class="hljs-selector-tag">img</span><span class="hljs-selector-class">.float_right</span> {
+	<span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">20px</span>;
+	<span class="hljs-attribute">margin-left</span>: <span class="hljs-number">20px</span>;
+	<span class="hljs-attribute">float</span>: right;
+}
+<span class="hljs-comment">/* 「施設のご案内」ページ ここまで↑ */</span>
+
+<span class="hljs-comment">/* 「料金プラン」ページ ここから↓ */</span>
+<span class="hljs-selector-tag">table</span> {
+	<span class="hljs-attribute">width</span>: <span class="hljs-number">568px</span>;
+	<span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">20px</span>;
+	<span class="hljs-attribute">border-collapse</span>: collapse;
+}
+<span class="hljs-selector-tag">table</span> <span class="hljs-selector-tag">caption</span> {
+	<span class="hljs-attribute">text-align</span>: left;
+}
+<span class="hljs-selector-tag">table</span> <span class="hljs-selector-tag">th</span>, <span class="hljs-selector-tag">table</span> <span class="hljs-selector-tag">td</span> {
+	<span class="hljs-attribute">width</span>: <span class="hljs-number">190px</span>;
+	<span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+	<span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#7aa7a2</span>;
+	<span class="hljs-attribute">text-align</span>: center;
+}
+<span class="hljs-selector-tag">table</span> <span class="hljs-selector-tag">th</span> {
+	<span class="hljs-attribute">background-color</span>: <span class="hljs-number">#cce8e4</span>;
+}
+<span class="hljs-selector-tag">table</span> <span class="hljs-selector-class">.price</span> {
+	<span class="hljs-attribute">width</span>: <span class="hljs-number">125px</span>;
+}
+<span class="hljs-selector-tag">table</span> <span class="hljs-selector-tag">td</span><span class="hljs-selector-class">.price</span> {
+	<span class="hljs-attribute">text-align</span>: right;
+}
+<span class="hljs-comment">/* 「料金プラン」ページ ここまで↑ */</span>
+
+<span class="hljs-comment">/* 「ご意見・ご要望」ページ ここから↓ */</span>
+<span class="hljs-selector-tag">form</span> {
+	<span class="hljs-attribute">margin-top</span>: <span class="hljs-number">30px</span>;
+}
+<span class="hljs-selector-tag">input</span><span class="hljs-selector-class">.textfield</span>, <span class="hljs-selector-tag">textarea</span> {
+	<span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#d1ccb4</span>;
+}
+<span class="hljs-selector-tag">input</span><span class="hljs-selector-class">.textfield</span> {
+	<span class="hljs-attribute">width</span>: <span class="hljs-number">250px</span>;
+}
+<span class="hljs-selector-tag">textarea</span> {
+	<span class="hljs-attribute">width</span>: <span class="hljs-number">500px</span>;
+	<span class="hljs-attribute">height</span>: <span class="hljs-number">170px</span>;
+	<span class="hljs-attribute">overflow-y</span>: scroll;
+}
+<span class="hljs-comment">/* 「ご意見・ご要望」ページ ここまで↑ */</span>
+</div></code></pre>
+
+</body>
+</html>
