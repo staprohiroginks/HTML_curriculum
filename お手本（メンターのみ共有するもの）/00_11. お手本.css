@@ -1,0 +1,12 @@
+body{
+    background-color: lightyellow;
+}
+.programming h1{
+    color: orange;
+}
+.skill{
+    background-color: lightgray;
+}
+.skill li:nth-child(1){
+    color: red;
+}

@@ -1,0 +1,24 @@
+body {
+    color: white;
+}
+.box {
+    position: relative;
+    z-index: 1;
+    width: 550px;
+}
+.h1 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 3;
+}
+.text {
+    width: 480px;
+    position: absolute;
+    bottom: 10px;
+    left: 30px;
+    z-index: 2;
+}
+.box:hover {
+    opacity: 0.5;
+}
