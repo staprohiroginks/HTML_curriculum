@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Noto+Serif+JP&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Serif JP', serif;
+}
+
+header h1{
+    font-size: 2.5vw;
+    margin-left: 30px;
+    display: inline-block;
+}
+
+.future h1{
+    margin-top: 30px;
+}
+
+.learned h1,.future h1,.certified h1,footer h1{
+    font-size: 2.5vw;
+    text-align: center;
+}
+
+.learned_corse,.future_corse,.certified_kinds{
+    display: flex;
+    justify-content: center;
+}
+
+
+.scratch,.minecraft,.html,.JavaScript,.unity,.swift{
+    width: 30%;
+    text-align: center;
+}
+
+.scratch h3,.minecraft h3,.html h3,.JavaScript h3,.unity h3,.swift h3,.jr h3,.typing h3{
+    font-size: 1.5vw;
+}
+
+.scratch p,.minecraft p,.html p,.JavaScript p,.unity p,.swift p{
+    font-size: 1.3vw;
+}
+
+
+.jr,.typing{
+    width: 50%;
+    margin-top: -50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width:480px) {
+    .learned_corse,.future_corse,.certified_kinds{
+        display: block;
+    }
+
+    .scratch,.minecraft,.html,.JavaScript,.unity,.swift{
+        width: 100%;
+       margin: 0 auto;
+    }
+
+    .jr,.typing{
+        width: 100%;
+        margin-top: 0px;
+    }
+
+    header h1,.learned h1,.future h1,.certified h1,footer h1{
+        font-size: 20px;
+    }
+
+    .scratch h3,.minecraft h3,.html h3,.JavaScript h3,.unity h3,.swift h3,.jr h3,.typing h3{
+        font-size: 16px;
+    }
+
+    .scratch p,.minecraft p,.html p,.JavaScript p,.unity p,.swift p{
+        font-size: 14px
+    }
+
+    footer iframe{
+        height: 250px;
+    }
+
+}
